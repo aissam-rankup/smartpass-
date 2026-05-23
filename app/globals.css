@@ -1,0 +1,143 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    /* Primary */
+    --color-coral: #d85a30;
+    --color-coral-light: #faece7;
+    --color-coral-dark: #993c1d;
+
+    /* Secondary */
+    --color-teal: #1d9e75;
+    --color-teal-light: #e1f5ee;
+    --color-teal-mid: #5dcaa5;
+
+    /* Neutral */
+    --color-sand: #f7f3ec;
+    --color-stone: #ede8df;
+    --color-charcoal: #1a1a18;
+    --color-muted: #888780;
+    --color-border: #d3cfc6;
+
+    /* Dark surface */
+    --color-dark-bg: #141412;
+    --color-dark-surface: #1e1e1b;
+
+    /* Semantic */
+    --color-error: #e24b4a;
+    --color-warning: #ba7517;
+    --color-success: #1d9e75;
+
+    --font-display: "Bricolage Grotesque", "Inter", system-ui, sans-serif;
+    --font-body: "DM Sans", sans-serif;
+    --font-accent: "Caveat", cursive;
+  }
+
+  * {
+    border-color: var(--color-border);
+  }
+
+  html {
+    scroll-behavior: smooth;
+    -webkit-font-smoothing: antialiased;
+    text-rendering: optimizeLegibility;
+  }
+
+  body {
+    background-color: var(--color-sand);
+    color: var(--color-charcoal);
+    font-family: var(--font-body);
+    font-feature-settings: "ss01", "cv01";
+  }
+
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    font-family: var(--font-display);
+    font-weight: 700;
+    letter-spacing: -0.025em;
+    font-feature-settings: "kern", "liga", "calt", "ss01";
+    font-optical-sizing: auto;
+  }
+
+  h1 {
+    font-weight: 800;
+    letter-spacing: -0.045em;
+    line-height: 0.92;
+  }
+
+  h2 {
+    font-weight: 700;
+    letter-spacing: -0.035em;
+    line-height: 1;
+  }
+
+  h3 {
+    letter-spacing: -0.02em;
+  }
+
+  /* Inline emphasis inside headlines — color shift, NOT italics
+     (Lapoint vibe uses weight + color contrast, not italics). */
+  .font-display em,
+  h1 em,
+  h2 em,
+  h3 em {
+    font-style: normal;
+    color: var(--color-coral);
+  }
+
+  /* Handwritten accent helper */
+  .font-accent {
+    font-family: var(--font-accent);
+    font-weight: 600;
+    letter-spacing: 0.005em;
+  }
+
+  /* Outlined-text utilities — magazine-cover headlines */
+  .text-outline-coral {
+    -webkit-text-stroke: 2px var(--color-coral);
+    color: transparent;
+    text-stroke: 2px var(--color-coral);
+  }
+  .text-outline-sand {
+    -webkit-text-stroke: 2px var(--color-sand);
+    color: transparent;
+    text-stroke: 2px var(--color-sand);
+  }
+  @media (min-width: 768px) {
+    .text-outline-coral { -webkit-text-stroke-width: 3px; }
+    .text-outline-sand  { -webkit-text-stroke-width: 3px; }
+  }
+
+  /* Marquee scroll for tagline strip */
+  @keyframes marquee-x {
+    from { transform: translateX(0); }
+    to   { transform: translateX(-50%); }
+  }
+  .animate-marquee {
+    animation: marquee-x 28s linear infinite;
+  }
+}
+
+@layer components {
+  .container-px {
+    @apply mx-auto w-full max-w-7xl px-4 sm:px-6 lg:px-8;
+  }
+
+  .btn-primary {
+    @apply inline-flex items-center justify-center gap-2 rounded-full bg-coral px-6 py-3 text-base font-medium text-white shadow-sm transition hover:bg-coral-dark focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-coral focus-visible:ring-offset-2 disabled:opacity-50;
+  }
+
+  .btn-secondary {
+    @apply inline-flex items-center justify-center gap-2 rounded-full border border-charcoal px-6 py-3 text-base font-medium text-charcoal transition hover:bg-charcoal hover:text-sand;
+  }
+
+  .badge-verified {
+    @apply inline-flex items-center gap-1 rounded-full bg-teal-light px-2.5 py-0.5 text-xs font-medium text-teal;
+  }
+}
