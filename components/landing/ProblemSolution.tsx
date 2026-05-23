@@ -1,7 +1,10 @@
+"use client";
+
 import Link from "next/link";
 import { Check, X, ArrowRight } from "lucide-react";
 import { IMG } from "@/lib/images";
 import { Reveal } from "@/components/ui/Reveal";
+import { motion } from "framer-motion";
 
 const problems = [
   { icon: "🚕", text: "Taxi aéroport → hôtel : 60 MAD local / 300 MAD touriste" },
@@ -21,9 +24,9 @@ export function ProblemSolution() {
       {/* PROBLEM — image left, text right (Lapoint-style editorial) */}
       <section className="bg-sand">
         <div className="container-px py-24">
-          <Reveal>
+          <Reveal direction="up">
             <div className="grid items-center gap-10 lg:grid-cols-2 lg:gap-16">
-              <div className="relative aspect-[4/3] overflow-hidden rounded-lg lg:order-1">
+              <Reveal direction="left" delay={0.1} className="relative aspect-[4/3] overflow-hidden rounded-lg lg:order-1">
                 {/* eslint-disable-next-line @next/next/no-img-element */}
                 <img
                   src={IMG.taxiRoad}
@@ -35,9 +38,9 @@ export function ProblemSolution() {
                 <span className="absolute bottom-4 left-4 rounded-full bg-charcoal/80 px-3 py-1 text-[10px] uppercase tracking-[0.18em] text-sand backdrop-blur">
                   Le vrai problème
                 </span>
-              </div>
+              </Reveal>
 
-              <div className="lg:order-2">
+              <Reveal direction="right" delay={0.15} className="lg:order-2">
                 <span className="inline-block rounded-full bg-coral-light px-3 py-1 text-xs font-medium uppercase tracking-[0.18em] text-coral-dark">
                   Le problème
                 </span>
@@ -63,7 +66,7 @@ export function ProblemSolution() {
                     </li>
                   ))}
                 </ul>
-              </div>
+              </Reveal>
             </div>
           </Reveal>
         </div>
