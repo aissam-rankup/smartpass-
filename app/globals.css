@@ -71,16 +71,6 @@
     line-height: 1;
   }
 
-  h3,
-  h4,
-  h5,
-  h6 {
-    font-family: var(--font-display);
-    font-weight: 700;
-    letter-spacing: -0.02em;
-    text-transform: none;
-  }
-
   /* Inline emphasis inside headlines — color shift, NOT italics
      (Lapoint vibe uses weight + color contrast, not italics). */
   .font-display em,
