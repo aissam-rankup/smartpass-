@@ -31,6 +31,7 @@
     --color-success: #1d9e75;
 
     --font-display: "Bricolage Grotesque", "Inter", system-ui, sans-serif;
+    --font-headline: "Luckiest Guy", "Impact", "Arial Black", sans-serif;
     --font-body: "DM Sans", sans-serif;
     --font-accent: "Caveat", cursive;
   }
@@ -67,9 +68,11 @@
   }
 
   h1 {
-    font-weight: 800;
-    letter-spacing: -0.045em;
-    line-height: 0.92;
+    font-family: var(--font-headline);
+    font-weight: 400;
+    letter-spacing: 0.01em;
+    line-height: 1;
+    text-transform: uppercase;
   }
 
   h2 {

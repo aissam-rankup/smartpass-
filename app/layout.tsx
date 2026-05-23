@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { Bricolage_Grotesque, DM_Sans, Caveat } from "next/font/google";
+import { Bricolage_Grotesque, DM_Sans, Caveat, Luckiest_Guy } from "next/font/google";
 import "./globals.css";
 
 // Display — modern editorial sans-serif. Lapoint-style: clean, bold,
@@ -16,6 +16,15 @@ const dmSans = DM_Sans({
   subsets: ["latin"],
   weight: ["300", "400", "500", "700"],
   variable: "--font-body",
+  display: "swap",
+});
+
+// Headline display — retro surf-camp bold (Kinder Surf vibe).
+// Used for H1 across the site.
+const headline = Luckiest_Guy({
+  subsets: ["latin"],
+  weight: ["400"],
+  variable: "--font-headline",
   display: "swap",
 });
 
@@ -54,7 +63,7 @@ export const metadata: Metadata = {
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
-    <html lang="fr" className={`${display.variable} ${dmSans.variable} ${caveat.variable}`}>
+    <html lang="fr" className={`${display.variable} ${dmSans.variable} ${caveat.variable} ${headline.variable}`}>
       <body>{children}</body>
     </html>
   );

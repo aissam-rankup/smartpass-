@@ -40,6 +40,7 @@ const config: Config = {
       },
       fontFamily: {
         display: ["var(--font-display)", "Georgia", "serif"],
+        headline: ["var(--font-headline)", "var(--font-display)", "sans-serif"],
         body: ["var(--font-body)", "sans-serif"],
         sans: ["var(--font-body)", "sans-serif"],
         accent: ["var(--font-accent)", "cursive"],

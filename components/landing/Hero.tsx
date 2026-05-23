@@ -62,40 +62,40 @@ export function Hero() {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.9, ease: [0.22, 1, 0.36, 1] }}
-            className="relative font-display leading-[0.88] tracking-[-0.04em]"
+            className="relative font-headline leading-[1.05] tracking-[0.02em] uppercase"
           >
             <motion.span
               initial={{ opacity: 0, rotate: -90, scale: 0 }}
               animate={{ opacity: 1, rotate: 0, scale: 1 }}
               transition={{ delay: 0.7, type: "spring", stiffness: 180 }}
-              className="absolute -left-1 -top-4 text-coral sm:-left-2 sm:-top-6 md:-left-4 md:-top-10"
+              className="absolute -left-1 -top-3 text-coral sm:-left-2 sm:-top-5 md:-left-4 md:-top-8"
               aria-hidden
             >
               <Asterisk />
             </motion.span>
 
-            {/* Outlined */}
-            <span className="block text-outline-sand text-[clamp(2.2rem,10vw,5.5rem)] font-extrabold">
+            {/* Line 1 — sand filled, fully readable */}
+            <span className="block text-[clamp(2rem,9vw,4.5rem)] text-sand">
               Bienvenue
             </span>
-            {/* Filled + handwritten accent */}
-            <span className="block text-[clamp(2.2rem,10vw,5.5rem)] font-extrabold text-sand">
+            {/* Line 2 — sand filled + handwritten accent */}
+            <span className="block text-[clamp(2rem,9vw,4.5rem)] text-sand/85">
               chez les
-              <span className="font-accent ml-2 text-coral text-lg align-top sm:ml-3 sm:text-xl md:ml-4 md:text-3xl">
+              <span className="font-accent ml-2 normal-case text-coral text-base align-top sm:ml-3 sm:text-lg md:ml-4 md:text-2xl">
                 (vrais)
               </span>
             </span>
-            {/* Coral gradient + underline */}
-            <span className="relative block text-[clamp(2.6rem,12vw,7rem)] font-extrabold">
+            {/* Line 3 — coral, bigger, with underline */}
+            <span className="relative block text-[clamp(2.4rem,11vw,6rem)]">
               <span className="relative inline-block">
-                <span className="bg-gradient-to-br from-coral via-coral to-coral-light bg-clip-text text-transparent">
+                <span className="text-coral">
                   locaux.
                 </span>
                 <motion.svg
                   initial={{ pathLength: 0, opacity: 0 }}
                   animate={{ pathLength: 1, opacity: 1 }}
                   transition={{ duration: 1.2, delay: 1, ease: "easeInOut" }}
-                  className="pointer-events-none absolute -bottom-1 left-0 h-4 w-full sm:h-5 md:-bottom-2 md:h-8"
+                  className="pointer-events-none absolute -bottom-0.5 left-0 h-3 w-full sm:h-4 md:-bottom-1 md:h-6"
                   viewBox="0 0 320 28"
                   preserveAspectRatio="none"
                   fill="none"
