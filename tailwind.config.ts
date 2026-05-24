@@ -39,8 +39,8 @@ const config: Config = {
         foreground: "var(--color-charcoal)",
       },
       fontFamily: {
-        display: ["var(--font-display)", "Impact", "Arial Black", "sans-serif"],
-        headline: ["var(--font-display)", "Impact", "Arial Black", "sans-serif"],
+        display: ["var(--font-display)", "cursive", "sans-serif"],
+        headline: ["var(--font-display)", "cursive", "sans-serif"],
         body: ["var(--font-body)", "sans-serif"],
         sans: ["var(--font-body)", "sans-serif"],
         accent: ["var(--font-accent)", "cursive"],
