@@ -29,8 +29,8 @@ export function ProblemSolution() {
               <Reveal direction="left" delay={0.1} className="relative aspect-[4/3] overflow-hidden rounded-lg lg:order-1">
                 {/* eslint-disable-next-line @next/next/no-img-element */}
                 <img
-                  src={IMG.taxiRoad}
-                  alt="Route au Maroc"
+                  src={IMG.souksMarket}
+                  alt="Souk marocain avec touristes et artisanat"
                   className="h-full w-full object-cover"
                   loading="lazy"
                 />
