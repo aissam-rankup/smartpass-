@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { Bricolage_Grotesque, DM_Sans, Caveat, Luckiest_Guy } from "next/font/google";
+import { Bricolage_Grotesque, DM_Sans, Caveat, Lilita_One } from "next/font/google";
 import "./globals.css";
 
 // Display — modern editorial sans-serif. Lapoint-style: clean, bold,
@@ -19,9 +19,9 @@ const dmSans = DM_Sans({
   display: "swap",
 });
 
-// Headline display — retro surf-camp bold (Kinder Surf vibe).
-// Used for H1 across the site.
-const headline = Luckiest_Guy({
+// Headline display — retro surf-camp (Kinder Surf vibe, lighter strokes).
+// Used for all headings across the site.
+const headline = Lilita_One({
   subsets: ["latin"],
   weight: ["400"],
   variable: "--font-headline",
