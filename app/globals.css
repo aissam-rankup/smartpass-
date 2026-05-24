@@ -30,7 +30,7 @@
     --color-warning: #ba7517;
     --color-success: #1d9e75;
 
-    --font-display: "Patrick Hand", "Comic Sans MS", cursive, sans-serif;
+    --font-display: "Fredoka", "Nunito", "Arial Rounded MT Bold", sans-serif;
     --font-editorial: "Bricolage Grotesque", "Inter", system-ui, sans-serif;
     --font-body: "DM Sans", sans-serif;
     --font-accent: "Caveat", cursive;
@@ -61,7 +61,7 @@
   h5,
   h6 {
     font-family: var(--font-display);
-    font-weight: 400;
+    font-weight: 600;
     letter-spacing: 0.01em;
     line-height: 1.05;
     text-transform: uppercase;
