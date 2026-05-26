@@ -1,9 +1,9 @@
 import Link from "next/link";
 import { redirect } from "next/navigation";
-import { ScanLine, ListChecks, Shield, LogOut } from "lucide-react";
+import { ScanLine, ListChecks, Shield } from "lucide-react";
 import { requireRole } from "@/lib/role";
-import { signOut } from "@/lib/auth";
 import { Role } from "@/lib/enums";
+import { PartnerSignOutButton } from "@/components/partner/SignOutButton";
 
 export default async function PartnerLayout({ children }: { children: React.ReactNode }) {
   const role = await requireRole(Role.PARTNER, Role.ADMIN);
@@ -24,11 +24,7 @@ export default async function PartnerLayout({ children }: { children: React.Reac
             <Link href="/partner/offers" className="flex items-center gap-1.5 text-charcoal hover:text-coral">
               <ListChecks className="h-4 w-4" /> Offres
             </Link>
-            <form action={async () => { "use server"; await signOut({ redirectTo: "/" }); }}>
-              <button type="submit" className="flex items-center gap-1.5 text-muted hover:text-error">
-                <LogOut className="h-4 w-4" />
-              </button>
-            </form>
+            <PartnerSignOutButton />
           </nav>
         </div>
       </header>

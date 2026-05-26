@@ -1,9 +1,9 @@
 import Link from "next/link";
 import { redirect } from "next/navigation";
-import { LayoutDashboard, Building, Tag, Users, CreditCard, QrCode, LogOut, Shield } from "lucide-react";
+import { LayoutDashboard, Building, Tag, Users, CreditCard, QrCode, Shield } from "lucide-react";
 import { requireRole } from "@/lib/role";
-import { signOut } from "@/lib/auth";
 import { Role } from "@/lib/enums";
+import { SignOutButton } from "@/components/admin/SignOutButton";
 
 const nav = [
   { href: "/admin/dashboard", label: "Vue d'ensemble", icon: LayoutDashboard },
@@ -19,8 +19,8 @@ export default async function AdminLayout({ children }: { children: React.ReactN
   if (!role.ok) redirect("/login?callbackUrl=/admin/dashboard");
 
   return (
-    <div className="grid min-h-screen grid-cols-[240px_1fr] bg-sand">
-      <aside className="border-r border-border bg-dark-bg text-sand">
+    <div className="grid min-h-screen grid-cols-1 bg-sand md:grid-cols-[240px_1fr]">
+      <aside className="hidden border-r border-border bg-dark-bg text-sand md:block">
         <div className="flex h-16 items-center gap-2 border-b border-white/10 px-6 font-display text-lg font-bold">
           <Shield className="h-5 w-5 text-coral" /> SmartPass
         </div>
@@ -38,18 +38,9 @@ export default async function AdminLayout({ children }: { children: React.ReactN
               </li>
             ))}
           </ul>
-
-          <form
-            action={async () => {
-              "use server";
-              await signOut({ redirectTo: "/" });
-            }}
-            className="mt-8 px-3"
-          >
-            <button className="flex items-center gap-2 text-sm text-sand/60 hover:text-error">
-              <LogOut className="h-4 w-4" /> Déconnexion
-            </button>
-          </form>
+          <div className="mt-8 px-3">
+            <SignOutButton />
+          </div>
         </nav>
       </aside>
       <main className="overflow-auto">{children}</main>
