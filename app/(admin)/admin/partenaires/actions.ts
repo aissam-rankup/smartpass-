@@ -23,8 +23,8 @@ export async function createPartner(formData: FormData) {
   const description = formData.get("description") as string;
   const category = formData.get("category") as string;
   const city = formData.get("city") as string;
-  const slugInput = formData.get("slug") as string;
-  const slug = slugInput?.trim() || slugify(`${name}-${city}`);
+  const slugInput = (formData.get("slug") as string)?.trim();
+  const slug = slugInput ? slugify(slugInput) : slugify(`${name}-${city}`);
 
   const partner = await prisma.partner.create({
     data: {
