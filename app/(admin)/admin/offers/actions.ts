@@ -13,7 +13,7 @@ const OfferSchema = z.object({
   tags: z.string().optional(),
   normalPrice: z.coerce.number().positive(),
   reducedPrice: z.coerce.number().positive(),
-  imageUrl: z.string().url().optional().or(z.literal("")),
+  imageUrl: z.string().optional(),
   isActive: z.coerce.boolean().optional(),
   isPaused: z.coerce.boolean().optional(),
 });

@@ -5,7 +5,7 @@ import { redirect } from "next/navigation";
 import { z } from "zod";
 import { prisma } from "@/lib/prisma";
 import { requireRole } from "@/lib/role";
-import { PartnerCategory, Role } from "@/lib/enums";
+import { Role } from "@/lib/enums";
 
 function slugify(s: string) {
   return s
@@ -21,13 +21,13 @@ const PartnerSchema = z.object({
   name: z.string().min(2),
   slug: z.string().optional(),
   description: z.string().min(10),
-  category: z.nativeEnum(PartnerCategory),
+  category: z.string().min(2),
   city: z.string().min(2),
   address: z.string().optional(),
   phone: z.string().optional(),
-  email: z.string().email().optional().or(z.literal("")),
-  website: z.string().url().optional().or(z.literal("")),
-  coverImageUrl: z.string().url().optional().or(z.literal("")),
+  email: z.string().optional(),
+  website: z.string().optional(),
+  coverImageUrl: z.string().optional(),
   isVerified: z.coerce.boolean().optional(),
   isActive: z.coerce.boolean().optional(),
 });
