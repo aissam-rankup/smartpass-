@@ -2,12 +2,11 @@
 
 import { revalidatePath } from "next/cache";
 import { prisma } from "@/lib/prisma";
-import { requireRole } from "@/lib/role";
-import { QRStatus, Role } from "@/lib/enums";
+import { auth } from "@/lib/auth";
 
 export async function revokeQr(id: string) {
-  const r = await requireRole(Role.ADMIN);
-  if (!r.ok) throw new Error("Forbidden");
-  await prisma.qRCode.update({ where: { id }, data: { status: QRStatus.REVOKED } });
+  const session = await auth();
+  if (!session?.user?.id) throw new Error("Not authenticated");
+  await prisma.qRCode.update({ where: { id }, data: { status: "REVOKED" } });
   revalidatePath("/admin/qr");
 }

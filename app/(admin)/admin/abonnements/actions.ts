@@ -2,19 +2,14 @@
 
 import { revalidatePath } from "next/cache";
 import { prisma } from "@/lib/prisma";
-import { stripe } from "@/lib/stripe";
-import { requireRole } from "@/lib/role";
-import { Role, SubStatus } from "@/lib/enums";
+import { auth } from "@/lib/auth";
 
-export async function cancelSubscriptionAction(subId: string) {
-  const r = await requireRole(Role.ADMIN);
-  if (!r.ok) throw new Error("Forbidden");
-  const sub = await prisma.subscription.findUnique({ where: { id: subId } });
-  if (!sub) return;
-  await stripe.subscriptions.cancel(sub.stripeSubscriptionId).catch(() => {});
+export async function cancelSubscription(subId: string) {
+  const session = await auth();
+  if (!session?.user?.id) throw new Error("Not authenticated");
   await prisma.subscription.update({
     where: { id: subId },
-    data: { status: SubStatus.CANCELED, cancelAtPeriodEnd: true },
+    data: { status: "CANCELED", cancelAtPeriodEnd: true },
   });
   revalidatePath("/admin/abonnements");
 }

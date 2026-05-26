@@ -1,49 +1,40 @@
 import Link from "next/link";
 import { redirect } from "next/navigation";
-import { LayoutDashboard, Building, Tag, Users, CreditCard, QrCode, Shield } from "lucide-react";
-import { requireRole } from "@/lib/role";
-import { Role } from "@/lib/enums";
-import { SignOutButton } from "@/components/admin/SignOutButton";
+import { auth } from "@/lib/auth";
+import { prisma } from "@/lib/prisma";
 
-const nav = [
-  { href: "/admin/dashboard", label: "Vue d'ensemble", icon: LayoutDashboard },
-  { href: "/admin/partenaires", label: "Partenaires", icon: Building },
-  { href: "/admin/offers", label: "Offres", icon: Tag },
-  { href: "/admin/users", label: "Utilisateurs", icon: Users },
-  { href: "/admin/abonnements", label: "Abonnements", icon: CreditCard },
-  { href: "/admin/qr", label: "QR codes", icon: QrCode },
-];
+export const dynamic = "force-dynamic";
 
 export default async function AdminLayout({ children }: { children: React.ReactNode }) {
-  const role = await requireRole(Role.ADMIN);
-  if (!role.ok) redirect("/login?callbackUrl=/admin/dashboard");
+  const session = await auth();
+  if (!session?.user?.id) redirect("/login");
+
+  const user = await prisma.user.findUnique({
+    where: { id: session.user.id },
+    select: { role: true },
+  });
+
+  if (user?.role !== "ADMIN") redirect("/login");
 
   return (
-    <div className="grid min-h-screen grid-cols-1 bg-sand md:grid-cols-[240px_1fr]">
-      <aside className="hidden border-r border-border bg-dark-bg text-sand md:block">
-        <div className="flex h-16 items-center gap-2 border-b border-white/10 px-6 font-display text-lg font-bold">
-          <Shield className="h-5 w-5 text-coral" /> SmartPass
+    <div className="min-h-screen bg-sand">
+      <header className="border-b border-border bg-dark-bg text-sand">
+        <div className="container-px flex h-14 items-center justify-between">
+          <Link href="/admin/dashboard" className="font-display text-lg font-bold">
+            SmartPass Admin
+          </Link>
+          <nav className="flex items-center gap-4 text-sm">
+            <Link href="/admin/dashboard" className="text-sand/80 hover:text-coral">Dashboard</Link>
+            <Link href="/admin/partenaires" className="text-sand/80 hover:text-coral">Partenaires</Link>
+            <Link href="/admin/offers" className="text-sand/80 hover:text-coral">Offres</Link>
+            <Link href="/admin/users" className="text-sand/80 hover:text-coral">Users</Link>
+            <Link href="/admin/abonnements" className="text-sand/80 hover:text-coral">Abos</Link>
+            <Link href="/admin/qr" className="text-sand/80 hover:text-coral">QR</Link>
+            <Link href="/" className="text-sand/60 hover:text-error">Quitter</Link>
+          </nav>
         </div>
-        <nav className="p-4">
-          <p className="px-3 text-[10px] uppercase tracking-wider text-sand/40">Administration</p>
-          <ul className="mt-3 space-y-1">
-            {nav.map((n) => (
-              <li key={n.href}>
-                <Link
-                  href={n.href}
-                  className="flex items-center gap-2 rounded-md px-3 py-2 text-sm text-sand/80 transition hover:bg-white/5 hover:text-coral"
-                >
-                  <n.icon className="h-4 w-4" /> {n.label}
-                </Link>
-              </li>
-            ))}
-          </ul>
-          <div className="mt-8 px-3">
-            <SignOutButton />
-          </div>
-        </nav>
-      </aside>
-      <main className="overflow-auto">{children}</main>
+      </header>
+      <main>{children}</main>
     </div>
   );
 }

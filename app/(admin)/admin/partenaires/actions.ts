@@ -2,10 +2,8 @@
 
 import { revalidatePath } from "next/cache";
 import { redirect } from "next/navigation";
-import { z } from "zod";
 import { prisma } from "@/lib/prisma";
-import { requireRole } from "@/lib/role";
-import { Role } from "@/lib/enums";
+import { auth } from "@/lib/auth";
 
 function slugify(s: string) {
   return s
@@ -17,39 +15,31 @@ function slugify(s: string) {
     .slice(0, 80);
 }
 
-const PartnerSchema = z.object({
-  name: z.string().min(2),
-  slug: z.string().optional(),
-  description: z.string().min(10),
-  category: z.string().min(2),
-  city: z.string().min(2),
-  address: z.string().optional(),
-  phone: z.string().optional(),
-  email: z.string().optional(),
-  website: z.string().optional(),
-  coverImageUrl: z.string().optional(),
-  isVerified: z.coerce.boolean().optional(),
-  isActive: z.coerce.boolean().optional(),
-});
-
 export async function createPartner(formData: FormData) {
-  const role = await requireRole(Role.ADMIN);
-  if (!role.ok) throw new Error("Forbidden");
+  const session = await auth();
+  if (!session?.user?.id) throw new Error("Not authenticated");
 
-  const data = PartnerSchema.parse(Object.fromEntries(formData));
-  const slug = data.slug?.trim() || slugify(`${data.name}-${data.city}`);
+  const name = formData.get("name") as string;
+  const description = formData.get("description") as string;
+  const category = formData.get("category") as string;
+  const city = formData.get("city") as string;
+  const slugInput = formData.get("slug") as string;
+  const slug = slugInput?.trim() || slugify(`${name}-${city}`);
 
   const partner = await prisma.partner.create({
     data: {
-      ...data,
+      name,
       slug,
-      isVerified: !!data.isVerified,
-      isActive: data.isActive !== false,
-      email: data.email || null,
-      website: data.website || null,
-      address: data.address || null,
-      phone: data.phone || null,
-      coverImageUrl: data.coverImageUrl || null,
+      description,
+      category,
+      city,
+      address: (formData.get("address") as string) || null,
+      phone: (formData.get("phone") as string) || null,
+      email: (formData.get("email") as string) || null,
+      website: (formData.get("website") as string) || null,
+      coverImageUrl: (formData.get("coverImageUrl") as string) || null,
+      isVerified: formData.get("isVerified") === "on",
+      isActive: formData.get("isActive") === "on",
     },
   });
 
@@ -58,34 +48,26 @@ export async function createPartner(formData: FormData) {
 }
 
 export async function updatePartner(id: string, formData: FormData) {
-  const role = await requireRole(Role.ADMIN);
-  if (!role.ok) throw new Error("Forbidden");
-
-  const data = PartnerSchema.parse(Object.fromEntries(formData));
+  const session = await auth();
+  if (!session?.user?.id) throw new Error("Not authenticated");
 
   await prisma.partner.update({
     where: { id },
     data: {
-      ...data,
-      isVerified: !!data.isVerified,
-      isActive: data.isActive !== false,
-      email: data.email || null,
-      website: data.website || null,
-      address: data.address || null,
-      phone: data.phone || null,
-      coverImageUrl: data.coverImageUrl || null,
+      name: formData.get("name") as string,
+      description: formData.get("description") as string,
+      category: formData.get("category") as string,
+      city: formData.get("city") as string,
+      address: (formData.get("address") as string) || null,
+      phone: (formData.get("phone") as string) || null,
+      email: (formData.get("email") as string) || null,
+      website: (formData.get("website") as string) || null,
+      coverImageUrl: (formData.get("coverImageUrl") as string) || null,
+      isVerified: formData.get("isVerified") === "on",
+      isActive: formData.get("isActive") === "on",
     },
   });
 
   revalidatePath("/admin/partenaires");
   revalidatePath(`/admin/partenaires/${id}`);
-}
-
-export async function togglePartnerActive(id: string) {
-  const role = await requireRole(Role.ADMIN);
-  if (!role.ok) throw new Error("Forbidden");
-  const partner = await prisma.partner.findUnique({ where: { id }, select: { isActive: true } });
-  if (!partner) return;
-  await prisma.partner.update({ where: { id }, data: { isActive: !partner.isActive } });
-  revalidatePath("/admin/partenaires");
 }

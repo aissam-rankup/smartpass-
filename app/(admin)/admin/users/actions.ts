@@ -1,26 +1,22 @@
 "use server";
 
 import { revalidatePath } from "next/cache";
-import { z } from "zod";
 import { prisma } from "@/lib/prisma";
-import { requireRole } from "@/lib/role";
-import { Role } from "@/lib/enums";
-
-const Schema = z.object({
-  userId: z.string().min(1),
-  role: z.nativeEnum(Role),
-  partnerId: z.string().optional().or(z.literal("")),
-});
+import { auth } from "@/lib/auth";
 
 export async function updateUserRole(formData: FormData) {
-  const r = await requireRole(Role.ADMIN);
-  if (!r.ok) throw new Error("Forbidden");
-  const data = Schema.parse(Object.fromEntries(formData));
+  const session = await auth();
+  if (!session?.user?.id) throw new Error("Not authenticated");
+
+  const userId = formData.get("userId") as string;
+  const role = formData.get("role") as string;
+  const partnerId = (formData.get("partnerId") as string) || null;
+
   await prisma.user.update({
-    where: { id: data.userId },
+    where: { id: userId },
     data: {
-      role: data.role,
-      partnerId: data.role === Role.PARTNER ? (data.partnerId || null) : null,
+      role,
+      partnerId: role === "PARTNER" ? partnerId : null,
     },
   });
   revalidatePath("/admin/users");
