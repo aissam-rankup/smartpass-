@@ -233,16 +233,34 @@ export function Hero() {
                       </span>
                     </div>
 
-                    <div className="bg-sand px-3 py-2">
-                      <p className="text-[10px] uppercase tracking-wider text-muted line-through">
+                    <div className="bg-sand px-3 pb-3 pt-2">
+                      {/* Normal price — struck, visible */}
+                      <div className="flex items-baseline gap-1.5">
+                        <span className="text-[9px] font-semibold uppercase tracking-wider text-charcoal/55">
+                          Prix touriste
+                        </span>
+                      </div>
+                      <p className="mt-0.5 font-display text-lg font-bold leading-none text-charcoal/45 line-through decoration-error/70 decoration-2">
                         ${o.normal}
                       </p>
-                      <div className="mt-0.5 flex items-end justify-between gap-2">
-                        <p className="font-display text-xl font-bold leading-none text-coral">
-                          ${o.reduced}
-                        </p>
-                        <span className="rounded bg-teal-light px-1.5 py-0.5 text-[9px] font-bold uppercase text-teal">
-                          +${saved}
+
+                      {/* Divider */}
+                      <div className="my-1.5 h-px w-full bg-border" />
+
+                      {/* Smart Pass price — large, coral, prominent */}
+                      <div className="flex items-end justify-between gap-2">
+                        <div>
+                          <span className="block text-[9px] font-bold uppercase tracking-wider text-coral">
+                            Smart Pass
+                          </span>
+                          <p className="font-display text-2xl font-extrabold leading-none text-coral">
+                            ${o.reduced}
+                          </p>
+                        </div>
+                        <span className="rounded-md bg-teal text-white px-1.5 py-1 text-[9px] font-bold uppercase leading-none">
+                          + ${saved}
+                          <br />
+                          économisé
                         </span>
                       </div>
                     </div>
