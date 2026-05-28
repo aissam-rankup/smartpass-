@@ -164,70 +164,146 @@ export function Hero() {
             </Link>
           </div>
 
-          {/* RIGHT — 3 offer cards */}
-          <motion.div
-            initial={{ opacity: 0, y: 24 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.7, delay: 0.4 }}
-            className="lg:col-span-5"
-          >
-            <div className="grid grid-cols-3 gap-2 sm:gap-3 lg:grid-cols-1 lg:gap-3">
-              {PREVIEW_OFFERS.map((o) => (
-                <article
-                  key={o.label}
-                  className="group overflow-hidden rounded-lg border border-sand/15 bg-charcoal/55 backdrop-blur"
-                >
-                  <div className="relative aspect-[4/3] overflow-hidden lg:aspect-[16/8]">
-                    {/* eslint-disable-next-line @next/next/no-img-element */}
-                    <img
-                      src={o.img}
-                      alt={o.label}
-                      className="h-full w-full object-cover transition duration-500 group-hover:scale-105"
-                      loading="lazy"
+          {/* RIGHT — 3 scrapbook-style offer cards */}
+          <div className="relative lg:col-span-5">
+            {/* Decorative dashed arrow + caption */}
+            <motion.div
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              transition={{ delay: 1.1 }}
+              className="absolute -top-8 left-4 hidden items-center gap-2 lg:flex"
+              aria-hidden
+            >
+              <span className="font-accent text-2xl leading-none text-coral">
+                Voici ce que vous économisez ↓
+              </span>
+            </motion.div>
+
+            {/* Offer card stack (desktop: rotated scrapbook · mobile: horizontal scroll) */}
+            <div className="-mx-4 flex snap-x snap-mandatory gap-4 overflow-x-auto px-4 pb-2 pt-4 lg:mx-0 lg:flex-col lg:gap-5 lg:overflow-visible lg:px-0">
+              {PREVIEW_OFFERS.map((o, i) => {
+                const saved = o.normal - o.reduced;
+                const rotations = ["lg:-rotate-2", "lg:rotate-1", "lg:-rotate-1"];
+                const offsets = ["lg:ml-0", "lg:ml-8", "lg:ml-2"];
+                const popular = i === 0;
+                return (
+                  <motion.article
+                    key={o.label}
+                    initial={{ opacity: 0, y: 30, rotate: 0 }}
+                    animate={{ opacity: 1, y: 0 }}
+                    transition={{ duration: 0.6, delay: 0.5 + i * 0.12, ease: [0.22, 1, 0.36, 1] }}
+                    whileHover={{ y: -6, rotate: 0, scale: 1.02 }}
+                    className={`group relative w-[260px] shrink-0 snap-start overflow-hidden rounded-xl border-4 border-sand bg-sand shadow-2xl transition lg:w-auto ${rotations[i]} ${offsets[i]}`}
+                  >
+                    {/* Tape strip */}
+                    <span
+                      className="absolute -top-2 left-1/2 z-10 h-4 w-16 -translate-x-1/2 rotate-3 bg-coral/40"
+                      aria-hidden
                     />
-                    <div className="absolute inset-0 bg-gradient-to-t from-charcoal/85 to-transparent" />
-                    <span className="absolute right-2 top-2 rounded-md bg-coral px-2 py-0.5 text-[10px] font-bold text-white sm:text-xs">
+
+                    {/* Popular sticker */}
+                    {popular && (
+                      <motion.span
+                        initial={{ scale: 0, rotate: 0 }}
+                        animate={{ scale: 1, rotate: -12 }}
+                        transition={{ delay: 1, type: "spring", stiffness: 200 }}
+                        className="absolute -left-2 top-3 z-20 inline-flex items-center gap-1 rounded-full bg-coral px-2.5 py-1 text-[10px] font-bold uppercase tracking-wide text-white shadow-lg"
+                      >
+                        <Star className="h-3 w-3 fill-white" /> Populaire
+                      </motion.span>
+                    )}
+
+                    {/* Discount stamp (top-right) */}
+                    <motion.span
+                      initial={{ scale: 0, rotate: 0 }}
+                      animate={{ scale: 1, rotate: 8 }}
+                      transition={{ delay: 0.9 + i * 0.1, type: "spring", stiffness: 220 }}
+                      className="absolute right-3 top-3 z-20 flex h-12 w-12 items-center justify-center rounded-full bg-coral font-display text-sm font-bold leading-none text-white shadow-lg"
+                    >
                       −{o.pct}%
-                    </span>
-                    <span className="absolute bottom-2 left-2 font-display text-sm font-bold uppercase text-sand sm:text-base">
-                      {o.label}
-                    </span>
-                  </div>
-                  <div className="flex items-center justify-between gap-2 p-2 sm:p-3">
-                    <div>
-                      <p className="text-[10px] uppercase tracking-wider text-sand/55 line-through">
-                        ${o.normal}
-                      </p>
-                      <p className="font-display text-base font-bold text-teal-mid sm:text-lg">
-                        ${o.reduced}
-                      </p>
+                    </motion.span>
+
+                    {/* Photo */}
+                    <div className="relative aspect-[4/3] overflow-hidden">
+                      {/* eslint-disable-next-line @next/next/no-img-element */}
+                      <img
+                        src={o.img}
+                        alt={o.label}
+                        className="h-full w-full object-cover transition duration-700 group-hover:scale-110"
+                        loading="lazy"
+                      />
+                      <div className="absolute inset-0 bg-gradient-to-t from-charcoal/80 via-charcoal/10 to-transparent" />
+                      <span className="absolute bottom-3 left-3 font-display text-xl font-bold uppercase text-sand">
+                        {o.label}
+                      </span>
                     </div>
-                    <p className="hidden text-[9px] uppercase tracking-wider text-sand/60 sm:block">
-                      {o.chip}
-                    </p>
-                  </div>
-                </article>
-              ))}
+
+                    {/* Polaroid info strip */}
+                    <div className="relative bg-sand px-4 py-3">
+                      <p className="font-accent text-base leading-none text-charcoal/70">
+                        {o.chip}
+                      </p>
+
+                      <div className="mt-2 flex items-end justify-between gap-3">
+                        <div>
+                          <p className="text-[10px] uppercase tracking-wider text-muted line-through">
+                            Prix touriste ${o.normal}
+                          </p>
+                          <p className="font-display text-2xl font-bold leading-none text-coral">
+                            ${o.reduced}
+                          </p>
+                        </div>
+
+                        {/* Saved sticker */}
+                        <span className="inline-flex items-center gap-1 rounded-md bg-teal-light px-2 py-1 text-[10px] font-bold uppercase text-teal">
+                          + ${saved} économisés
+                        </span>
+                      </div>
+                    </div>
+                  </motion.article>
+                );
+              })}
             </div>
 
-            {/* ROI math */}
+            {/* ROI math callout */}
             <motion.div
-              initial={{ opacity: 0, scale: 0.95 }}
-              animate={{ opacity: 1, scale: 1 }}
-              transition={{ duration: 0.5, delay: 0.85 }}
-              className="mt-3 rounded-lg border border-coral/40 bg-coral-light/15 p-3 text-center backdrop-blur sm:p-4"
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.6, delay: 1 }}
+              className="relative mt-5 overflow-hidden rounded-xl border-2 border-dashed border-coral/60 bg-charcoal/70 p-4 backdrop-blur sm:p-5"
             >
-              <p className="text-xs leading-snug text-sand sm:text-sm">
-                Économisé sur 3 sorties :{" "}
-                <strong className="text-coral">${savedTotal}</strong>{" "}
-                <span className="opacity-70">›</span>{" "}
-                Pass : <strong>${PASS_PRICE}</strong>
-              </p>
-              <p className="mt-1 text-[11px] text-teal-mid">
-                = Pass rentabilisé dès la 3<sup>e</sup> activité 🎯
+              {/* Decorative corner sparkle */}
+              <span className="font-accent absolute -top-3 right-3 rotate-6 rounded-md bg-coral px-2 py-0.5 text-xs text-white shadow">
+                💡 Le calcul
+              </span>
+
+              <div className="flex flex-wrap items-center justify-center gap-1.5 text-center font-display text-sm font-bold text-sand sm:text-base">
+                <span className="rounded-md bg-teal-mid/20 px-2 py-1 text-teal-mid">
+                  ${PREVIEW_OFFERS[0].normal - PREVIEW_OFFERS[0].reduced}
+                </span>
+                <span className="text-sand/60">+</span>
+                <span className="rounded-md bg-teal-mid/20 px-2 py-1 text-teal-mid">
+                  ${PREVIEW_OFFERS[1].normal - PREVIEW_OFFERS[1].reduced}
+                </span>
+                <span className="text-sand/60">+</span>
+                <span className="rounded-md bg-teal-mid/20 px-2 py-1 text-teal-mid">
+                  ${PREVIEW_OFFERS[2].normal - PREVIEW_OFFERS[2].reduced}
+                </span>
+                <span className="text-sand/60">=</span>
+                <span className="rounded-md bg-coral px-2.5 py-1 text-white">
+                  ${savedTotal}
+                </span>
+                <span className="text-sand/60">{">"}</span>
+                <span className="rounded-md border border-sand/30 px-2 py-1 text-sand">
+                  Pass ${PASS_PRICE}
+                </span>
+              </div>
+
+              <p className="mt-3 text-center font-accent text-lg leading-tight text-coral">
+                Rentabilisé dès la 3<sup>e</sup> activité.
               </p>
             </motion.div>
-          </motion.div>
+          </div>
         </div>
 
         {/* STATS BAR */}
