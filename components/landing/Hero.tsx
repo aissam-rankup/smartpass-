@@ -2,7 +2,7 @@
 
 import Link from "next/link";
 import { motion } from "framer-motion";
-import { Shield, Star, ArrowRight, MapPin, Trophy, Lock, Users, CheckCircle2 } from "lucide-react";
+import { Shield, Star, ArrowRight, MapPin, Trophy, Lock, Users, CheckCircle2, Sparkles } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { IMG } from "@/lib/images";
 
