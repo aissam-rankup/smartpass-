@@ -228,15 +228,15 @@ export function Hero() {
                         loading="lazy"
                       />
                       <div className="absolute inset-0 bg-gradient-to-t from-charcoal/80 via-charcoal/10 to-transparent" />
-                      {/* Creative ticket-style label — tilted coral sticker, well inside photo */}
+                      {/* Smaller, more refined sticker label */}
                       <div
-                        className="absolute bottom-5 left-1/2 z-10"
+                        className="absolute bottom-3 left-1/2 z-10"
                         style={{ transform: "translateX(-50%) rotate(-2deg)" }}
                       >
-                        <span className="relative inline-flex items-center gap-2 whitespace-nowrap rounded-full border-2 border-sand bg-coral px-4 py-1.5 font-display text-sm font-extrabold uppercase tracking-[0.16em] text-white shadow-2xl sm:text-base">
+                        <span className="relative inline-flex items-center gap-1 whitespace-nowrap rounded-full border border-sand bg-coral px-2.5 py-0.5 font-display text-[10px] font-extrabold uppercase tracking-[0.15em] text-white shadow-lg sm:text-[11px]">
                           <svg
-                            width="12"
-                            height="12"
+                            width="7"
+                            height="7"
                             viewBox="0 0 12 12"
                             fill="currentColor"
                             aria-hidden
@@ -245,8 +245,8 @@ export function Hero() {
                           </svg>
                           {o.label}
                           <svg
-                            width="12"
-                            height="12"
+                            width="7"
+                            height="7"
                             viewBox="0 0 12 12"
                             fill="currentColor"
                             aria-hidden
