@@ -4,18 +4,18 @@ import { CheckoutButton } from "@/components/subscription/CheckoutButton";
 import { FAQ } from "@/components/landing/FAQ";
 
 export const metadata: Metadata = {
-  title: "Le Smart Pass — $30/mois · Anti-arnaque touristique au Maroc",
+  title: "Le Smart Pass — $29.99 paiement unique · Valable 2 mois",
   description:
-    "Abonnement Smart Pass : $30/mois. Accès illimité à 47 partenaires certifiés dans 6 villes du Maroc. Sans engagement, annulation 1 clic.",
+    "Smart Pass : $29.99 en paiement unique, valable 2 mois. Accès illimité à 47 partenaires certifiés dans 6 villes du Maroc.",
   alternates: { canonical: "/smart-pass" },
 };
 
 const features = [
-  "Accès à tous les 47 partenaires certifiés",
-  "Offres et QR codes illimités",
+  "Accès aux 47 partenaires certifiés pendant 2 mois",
+  "Offres et QR codes illimités durant la période",
   "6 villes : Agadir, Marrakech, Essaouira, Taghazout, Ouarzazate, Casablanca",
-  "Support voyageur par email",
-  "Sans engagement — annulation en 1 clic",
+  "Renouvelable à votre rythme — uniquement si vous le souhaitez",
+  "Paiement unique — pas d'abonnement, pas de prélèvement automatique",
   "Remboursé sous 7 jours si insatisfait",
 ];
 
@@ -29,7 +29,7 @@ export default function SmartPassPage({ searchParams }: { searchParams: { cancel
             Votre bouclier anti-arnaque
           </h1>
           <p className="mx-auto mt-4 max-w-xl text-sand/75">
-            $30/mois pour économiser en moyenne $90 par semaine de voyage.
+            $29.99 en un seul paiement, valable 2 mois pour économiser en moyenne $90 par semaine de voyage.
           </p>
           {searchParams.canceled && (
             <p className="mx-auto mt-6 max-w-md rounded-lg border border-coral/40 bg-coral/10 px-4 py-3 text-sm text-coral">
@@ -56,11 +56,11 @@ export default function SmartPassPage({ searchParams }: { searchParams: { cancel
               </div>
 
               <div className="mt-6 flex items-baseline gap-2">
-                <span className="font-display text-6xl font-bold text-charcoal md:text-7xl">$30</span>
-                <span className="text-muted">/mois</span>
+                <span className="font-display text-6xl font-bold text-charcoal md:text-7xl">$29.99</span>
+                <span className="text-muted">une seule fois</span>
               </div>
               <p className="mt-1 text-sm text-muted">
-                Un seul prix. Tout inclus. Sans engagement.
+                Paiement unique. Valable 2 mois. Pas d'abonnement.
               </p>
 
               <ul className="mt-8 space-y-3">
@@ -73,7 +73,7 @@ export default function SmartPassPage({ searchParams }: { searchParams: { cancel
               </ul>
 
               <div className="mt-10">
-                <CheckoutButton plan="monthly">Commencer maintenant</CheckoutButton>
+                <CheckoutButton plan="monthly">Obtenir le Smart Pass</CheckoutButton>
               </div>
 
               <p className="mt-4 text-center text-xs text-muted">

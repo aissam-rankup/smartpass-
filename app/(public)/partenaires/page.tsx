@@ -9,7 +9,7 @@ import { PartnerCategory } from "@/lib/enums";
 export const metadata: Metadata = {
   title: "Partenaires SmartPass — Restaurants, Surf, Transport & Excursions au Maroc",
   description:
-    "Découvrez les 47 partenaires certifiés SmartPass au Maroc. Comparez les tarifs officiels et les réductions disponibles avec votre abonnement Smart Pass.",
+    "Découvrez les 47 partenaires certifiés SmartPass au Maroc. Comparez les tarifs officiels et les réductions disponibles avec votre Smart Pass ($29.99, valable 2 mois).",
   alternates: { canonical: "/partenaires" },
 };
 

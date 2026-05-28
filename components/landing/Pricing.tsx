@@ -4,11 +4,11 @@ import { Button } from "@/components/ui/button";
 import { Reveal } from "@/components/ui/Reveal";
 
 const features = [
-  "Accès à tous les 47 partenaires certifiés",
-  "Offres et QR codes illimités",
-  "Couvre 6 villes : Agadir, Marrakech, Essaouira, Taghazout, Ouarzazate, Casablanca",
-  "Support voyageur par email",
-  "Sans engagement — annulation en 1 clic",
+  "Accès aux 47 partenaires certifiés pendant 2 mois",
+  "Offres et QR codes illimités durant la période",
+  "6 villes : Agadir, Marrakech, Essaouira, Taghazout, Ouarzazate, Casablanca",
+  "Renouvelable à votre rythme — uniquement si vous le souhaitez",
+  "Paiement unique — pas d'abonnement, pas de prélèvement automatique",
   "Remboursé sous 7 jours si insatisfait",
 ];
 
@@ -24,7 +24,7 @@ export function Pricing() {
             Un Pass. <em className="text-coral">Tout le Maroc.</em>
           </h2>
           <p className="mt-3 text-muted md:text-lg">
-            Un seul prix. Tout inclus. Annulez quand vous voulez.
+            Un paiement unique de $29.99. Valable 2 mois. Renouvelable à votre rythme.
           </p>
         </div>
       </Reveal>
@@ -47,8 +47,8 @@ export function Pricing() {
               </div>
 
               <div className="mt-6 flex items-baseline gap-2">
-                <span className="font-display text-6xl font-bold text-charcoal md:text-7xl">$30</span>
-                <span className="text-muted">/mois</span>
+                <span className="font-display text-6xl font-bold text-charcoal md:text-7xl">$29.99</span>
+                <span className="text-muted">une seule fois</span>
               </div>
               <p className="mt-1 text-sm text-muted">
                 Économisez en moyenne $90 par semaine de voyage.

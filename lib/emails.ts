@@ -38,7 +38,7 @@ export const emails = {
         <p>Vous venez de rejoindre 1 284 voyageurs qui parcourent le Maroc au tarif local.</p>
         <p><strong>Pour commencer :</strong></p>
         <ol>
-          <li>Activez votre abonnement Smart Pass (99 MAD/mois)</li>
+          <li>Activez votre Smart Pass ($29.99 en paiement unique, valable 2 mois)</li>
           <li>Explorez le catalogue de 47 partenaires certifiés</li>
           <li>Générez vos QR codes et économisez immédiatement</li>
         </ol>
@@ -90,7 +90,7 @@ export const emails = {
       "⚠️ Paiement échoué — Votre Smart Pass est suspendu",
       wrap(`
         <h2 style="font-size:24px;margin:0 0 12px;">Problème de paiement</h2>
-        <p>Nous n'avons pas pu prélever votre abonnement. Votre Pass est temporairement suspendu.</p>
+        <p>Nous n'avons pas pu finaliser votre paiement. Votre Pass n'a pas été activé.</p>
         <p>Mettez à jour votre moyen de paiement pour réactiver l'accès :</p>
         <p style="margin-top:24px;">
           <a href="${process.env.NEXT_PUBLIC_APP_URL}/dashboard" style="background:#d85a30;color:#fff;padding:12px 24px;border-radius:999px;text-decoration:none;font-weight:600;">

@@ -37,7 +37,7 @@ export function FinalCTA() {
               </Button>
             </div>
             <p className="mt-4 text-xs text-sand/60">
-              99 MAD/mois · Sans engagement · Annulation en 1 clic
+              $29.99 · Paiement unique · Valable 2 mois
             </p>
           </div>
         </div>

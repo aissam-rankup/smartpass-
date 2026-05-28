@@ -7,7 +7,7 @@ const steps = [
     Icon: Crown,
     title: "Obtenir le Smart Pass en 2 minutes",
     body:
-      "Créez votre compte, choisissez votre Pass (99 MAD/mois ou 899 MAD/an), et accédez immédiatement à tous les partenaires.",
+      "Créez votre compte, payez $29.99 en un seul paiement, et accédez immédiatement à tous les partenaires pour 2 mois.",
     img: IMG.surfBoards,
     alt: "Planches de surf empilées",
   },

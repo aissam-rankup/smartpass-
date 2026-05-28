@@ -32,7 +32,7 @@ export default async function DashboardPage({ searchParams }: { searchParams: { 
     <div className="container-px py-10">
       {searchParams.welcome && (
         <div className="mb-8 rounded-lg border border-teal/40 bg-teal-light p-4 text-sm text-teal">
-          🎉 Bienvenue sur SmartPass ! Votre abonnement est actif.
+          🎉 Bienvenue sur SmartPass ! Votre Pass est actif.
         </div>
       )}
 
@@ -44,12 +44,12 @@ export default async function DashboardPage({ searchParams }: { searchParams: { 
       <div className="mt-8 grid gap-4 md:grid-cols-3">
         <StatCard
           icon={<Crown className="h-5 w-5 text-coral" />}
-          label="Abonnement"
+          label="Smart Pass"
           value={hasSubscription ? "Actif" : "Inactif"}
           sub={
             subscription
-              ? `Jusqu'au ${subscription.currentPeriodEnd.toLocaleDateString("fr-FR")}`
-              : "Pas d'abonnement"
+              ? `Valable jusqu'au ${subscription.currentPeriodEnd.toLocaleDateString("fr-FR")}`
+              : "Aucun Pass actif"
           }
         />
         <StatCard

@@ -13,7 +13,7 @@ export async function POST(req: Request) {
   if (!session?.user?.id) return NextResponse.json({ error: "Unauthorized" }, { status: 401 });
 
   const sub = await getActiveSubscription(session.user.id);
-  if (!sub) return NextResponse.json({ error: "Abonnement requis" }, { status: 402 });
+  if (!sub) return NextResponse.json({ error: "Smart Pass requis" }, { status: 402 });
 
   const rl = rateLimit(`qr-gen:${session.user.id}`, 20, 60 * 60 * 1000);
   if (!rl.ok) return NextResponse.json({ error: "Trop de demandes" }, { status: 429 });

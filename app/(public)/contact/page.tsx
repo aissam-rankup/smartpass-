@@ -25,7 +25,7 @@ export default function ContactPage() {
           <Mail className="h-6 w-6 text-coral" />
           <h3 className="mt-4 font-display text-lg font-semibold">Support touristes</h3>
           <p className="mt-1 text-sm text-muted">
-            Litige, question sur votre abonnement, problème de QR code.
+            Litige, question sur votre Smart Pass, problème de QR code.
           </p>
           <p className="mt-3 text-sm font-medium text-coral">support@smartpass.ma</p>
         </a>

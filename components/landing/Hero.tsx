@@ -37,7 +37,7 @@ const savedTotal = PREVIEW_OFFERS.reduce(
   (sum, o) => sum + (o.normal - o.reduced),
   0
 );
-const PASS_PRICE = 30;
+const PASS_PRICE = "29.99";
 
 export function Hero() {
   return (
@@ -126,11 +126,11 @@ export function Hero() {
               <div>
                 <p className="font-display text-[clamp(2.5rem,7vw,4rem)] leading-none text-sand">
                   ${PASS_PRICE}
-                  <span className="ml-1 font-display text-base text-sand/65">/mois</span>
+                  <span className="ml-1 font-display text-base text-sand/65">une seule fois</span>
                 </p>
                 <p className="mt-1 flex items-center gap-1 text-[11px] text-teal-mid">
                   <CheckCircle2 className="h-3 w-3" />
-                  Rentabilisé en 2-3 sorties
+                  Paiement unique · Valable 2 mois
                 </p>
               </div>
 

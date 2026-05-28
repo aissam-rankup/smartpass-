@@ -97,7 +97,7 @@ export function AgadirExperience() {
         <Reveal delay={0.2} className="mt-10 text-center">
           <p className="text-sm text-muted md:text-base">
             <span className="font-semibold text-coral">Total économisé sur la journée : 760 MAD</span>{" "}
-            · Soit 7 mois d'abonnement SmartPass remboursés.
+            · Le prix du Smart Pass remboursé en une seule journée.
           </p>
         </Reveal>
       </div>
