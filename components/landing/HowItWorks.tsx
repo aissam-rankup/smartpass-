@@ -5,7 +5,7 @@ import { Reveal, RevealStagger, RevealItem } from "@/components/ui/Reveal";
 const steps = [
   {
     Icon: Crown,
-    title: "Abonnez-vous en 2 minutes",
+    title: "Obtenir le Smart Pass en 2 minutes",
     body:
       "Créez votre compte, choisissez votre Pass (99 MAD/mois ou 899 MAD/an), et accédez immédiatement à tous les partenaires.",
     img: IMG.surfBoards,

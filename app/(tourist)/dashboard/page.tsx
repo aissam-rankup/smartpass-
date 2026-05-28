@@ -70,10 +70,10 @@ export default async function DashboardPage({ searchParams }: { searchParams: { 
         <div className="mt-8 rounded-lg border border-coral/40 bg-coral-light p-6">
           <h2 className="font-display text-lg font-semibold">Activez votre Smart Pass</h2>
           <p className="mt-1 text-sm text-coral-dark">
-            Pour générer des QR codes et bénéficier des réductions, abonnez-vous.
+            Pour générer des QR codes et bénéficier des réductions, obtenez votre Smart Pass.
           </p>
           <Button asChild className="mt-4">
-            <Link href="/smart-pass">S'abonner maintenant</Link>
+            <Link href="/smart-pass">Obtenir le Smart Pass</Link>
           </Button>
         </div>
       )}

@@ -13,7 +13,7 @@ const problems = [
 ];
 
 const solutions = [
-  { title: "Abonnez-vous", body: "99 MAD/mois. Accès immédiat à tous les partenaires." },
+  { title: "Obtenir le Smart Pass", body: "$30/mois. Accès immédiat à tous les partenaires." },
   { title: "Explorez les offres", body: "47 partenaires certifiés, 300+ offres, 6 villes." },
   { title: "Générez votre QR", body: "Un code unique par offre. Présentez. Économisez." },
 ];
