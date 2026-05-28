@@ -339,7 +339,7 @@ export function Hero() {
               </div>
 
               <p className="mt-2 text-center font-accent text-base leading-none text-coral">
-                Rentabilisé dès la 3<sup>e</sup> activité ✨
+                Rentabilisé dès la 2<sup>e</sup> activité ✨
               </p>
             </motion.div>
 
