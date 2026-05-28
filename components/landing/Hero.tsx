@@ -233,34 +233,34 @@ export function Hero() {
                       </span>
                     </div>
 
-                    <div className="bg-sand px-3 pb-3 pt-2">
-                      {/* Normal price — struck, visible */}
-                      <div className="flex items-baseline gap-1.5">
-                        <span className="text-[9px] font-semibold uppercase tracking-wider text-charcoal/55">
-                          Prix touriste
-                        </span>
-                      </div>
-                      <p className="mt-0.5 font-display text-lg font-bold leading-none text-charcoal/45 line-through decoration-error/70 decoration-2">
-                        ${o.normal}
-                      </p>
+                    {/* Side-by-side price comparison block */}
+                    <div className="bg-sand p-3">
+                      <div className="grid grid-cols-2 gap-2">
+                        {/* Prix touriste — BIG, struck, visible */}
+                        <div className="rounded-md bg-stone p-2 text-center">
+                          <p className="text-[9px] font-bold uppercase tracking-wider text-charcoal/70">
+                            Prix touriste
+                          </p>
+                          <p className="mt-1 font-display text-xl font-extrabold leading-none text-charcoal/70 line-through decoration-error decoration-[3px]">
+                            ${o.normal}
+                          </p>
+                        </div>
 
-                      {/* Divider */}
-                      <div className="my-1.5 h-px w-full bg-border" />
-
-                      {/* Smart Pass price — large, coral, prominent */}
-                      <div className="flex items-end justify-between gap-2">
-                        <div>
-                          <span className="block text-[9px] font-bold uppercase tracking-wider text-coral">
+                        {/* Smart Pass — BIG, coral, prominent */}
+                        <div className="rounded-md bg-coral p-2 text-center text-white">
+                          <p className="text-[9px] font-bold uppercase tracking-wider text-white/90">
                             Smart Pass
-                          </span>
-                          <p className="font-display text-2xl font-extrabold leading-none text-coral">
+                          </p>
+                          <p className="mt-1 font-display text-xl font-extrabold leading-none">
                             ${o.reduced}
                           </p>
                         </div>
-                        <span className="rounded-md bg-teal text-white px-1.5 py-1 text-[9px] font-bold uppercase leading-none">
-                          + ${saved}
-                          <br />
-                          économisé
+                      </div>
+
+                      {/* Saved badge — full width below */}
+                      <div className="mt-2 flex items-center justify-center gap-1 rounded-md bg-teal py-1.5 text-center text-white">
+                        <span className="text-[10px] font-bold uppercase tracking-wide">
+                          ✓ Économisez ${saved}
                         </span>
                       </div>
                     </div>
