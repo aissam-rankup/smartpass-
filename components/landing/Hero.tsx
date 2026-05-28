@@ -236,12 +236,12 @@ export function Hero() {
                     {/* Side-by-side price comparison block */}
                     <div className="bg-sand p-3">
                       <div className="grid grid-cols-2 gap-2">
-                        {/* Prix touriste — BIG, struck, visible */}
-                        <div className="rounded-md bg-stone p-2 text-center">
-                          <p className="text-[9px] font-bold uppercase tracking-wider text-charcoal/70">
+                        {/* Prix touriste — BIG, red, struck */}
+                        <div className="rounded-md border border-error/30 bg-error/10 p-2 text-center">
+                          <p className="text-[9px] font-bold uppercase tracking-wider text-error">
                             Prix touriste
                           </p>
-                          <p className="mt-1 font-display text-xl font-extrabold leading-none text-charcoal/70 line-through decoration-error decoration-[3px]">
+                          <p className="mt-1 font-display text-xl font-extrabold leading-none text-error line-through decoration-error decoration-[3px]">
                             ${o.normal}
                           </p>
                         </div>
