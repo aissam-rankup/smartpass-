@@ -34,7 +34,7 @@ const moments = [
 
 export function AgadirExperience() {
   return (
-    <section className="relative overflow-hidden bg-sand py-24">
+    <section className="relative overflow-hidden bg-sand py-14 md:py-24">
       <svg
         className="pointer-events-none absolute -top-1 left-0 w-full text-coral/5"
         viewBox="0 0 1440 120"

@@ -14,7 +14,7 @@ const cities = [
 
 export function Cities() {
   return (
-    <section className="container-px py-24">
+    <section className="container-px py-14 md:py-24">
       <Reveal>
         <div className="flex flex-wrap items-end justify-between gap-4">
           <div className="max-w-2xl">

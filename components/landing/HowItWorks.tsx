@@ -31,7 +31,7 @@ const steps = [
 
 export function HowItWorks() {
   return (
-    <section className="container-px py-24">
+    <section className="container-px py-14 md:py-24">
       <Reveal>
         <div className="mx-auto max-w-2xl text-center">
           <span className="inline-block rounded-full bg-coral-light px-3 py-1 text-xs font-medium uppercase tracking-[0.18em] text-coral-dark">

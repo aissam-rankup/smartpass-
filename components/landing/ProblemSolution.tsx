@@ -23,7 +23,7 @@ export function ProblemSolution() {
     <>
       {/* PROBLEM — image left, text right (Lapoint-style editorial) */}
       <section className="bg-sand">
-        <div className="container-px py-24">
+        <div className="container-px py-14 md:py-24">
           <Reveal direction="up">
             <div className="grid items-center gap-10 lg:grid-cols-2 lg:gap-16">
               <Reveal direction="left" delay={0.1} className="relative aspect-[4/3] overflow-hidden rounded-lg lg:order-1">
@@ -82,7 +82,7 @@ export function ProblemSolution() {
           }}
           aria-hidden
         />
-        <div className="container-px relative py-24">
+        <div className="container-px relative py-14 md:py-24">
           <Reveal delay={0.05}>
             <div className="grid items-center gap-10 lg:grid-cols-2 lg:gap-16">
               <div>

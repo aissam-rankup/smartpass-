@@ -172,7 +172,7 @@ export function Hero() {
               initial={{ opacity: 0, y: 12 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6, delay: 0.55 }}
-              className="mt-8 grid grid-cols-4 gap-px overflow-hidden rounded-lg border border-sand/15 bg-sand/5 backdrop-blur"
+              className="mt-8 grid grid-cols-2 gap-px overflow-hidden rounded-lg border border-sand/15 bg-sand/5 backdrop-blur sm:grid-cols-4"
             >
               <Stat icon={<Users className="h-3.5 w-3.5" />} label="Partenaires" value="47+" />
               <Stat icon={<MapPin className="h-3.5 w-3.5" />} label="Villes" value="6" />
@@ -292,7 +292,7 @@ export function Hero() {
                             Prix touriste
                           </p>
                           <p
-                            className="mt-1 font-display text-xl font-extrabold leading-none line-through decoration-[3px]"
+                            className="mt-1 font-display text-base font-extrabold leading-none line-through decoration-[3px] sm:text-xl"
                             style={{ color: "#FF0000", textDecorationColor: "#FF0000" }}
                           >
                             ${o.normal}
@@ -304,7 +304,7 @@ export function Hero() {
                           <p className="text-[9px] font-bold uppercase tracking-wider text-white/90">
                             Smart Pass
                           </p>
-                          <p className="mt-1 font-display text-xl font-extrabold leading-none">
+                          <p className="mt-1 font-display text-base font-extrabold leading-none sm:text-xl">
                             ${o.reduced}
                           </p>
                         </div>

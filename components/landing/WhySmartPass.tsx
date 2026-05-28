@@ -34,7 +34,7 @@ const benefits = [
 
 export function WhySmartPass() {
   return (
-    <section className="bg-sand py-24">
+    <section className="bg-sand py-14 md:py-24">
       <div className="container-px">
         <Reveal>
           <div className="grid items-end gap-8 lg:grid-cols-[1fr_auto]">

@@ -38,7 +38,7 @@ const testimonials = [
 
 export function Testimonials() {
   return (
-    <section className="relative overflow-hidden bg-stone py-24">
+    <section className="relative overflow-hidden bg-stone py-14 md:py-24">
       {/* Soft brand-color decorative wash — full-width, no forced positioning */}
       <div
         className="pointer-events-none absolute inset-0 opacity-50"

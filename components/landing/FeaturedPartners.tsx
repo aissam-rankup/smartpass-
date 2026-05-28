@@ -11,7 +11,7 @@ const featured = [
     city: "Taghazout",
     category: "Surf",
     img: IMG.surfStanding,
-    scans: 142, normal: 600, reduced: 250,
+    scans: 142, normal: 60, reduced: 25,
     offerName: "Cours découverte 2h",
   },
   {
@@ -20,7 +20,7 @@ const featured = [
     city: "Marrakech",
     category: "Hébergement",
     img: IMG.cityMarrakech,
-    scans: 89, normal: 850, reduced: 480,
+    scans: 89, normal: 85, reduced: 48,
     offerName: "Nuit + petit-déj",
   },
   {
@@ -29,7 +29,7 @@ const featured = [
     city: "Agadir",
     category: "Transport",
     img: IMG.taxiMorocco,
-    scans: 312, normal: 300, reduced: 90,
+    scans: 312, normal: 30, reduced: 9,
     offerName: "Transfert aéroport",
   },
   {
@@ -38,7 +38,7 @@ const featured = [
     city: "Marrakech",
     category: "Excursions",
     img: IMG.desertCamels,
-    scans: 67, normal: 1200, reduced: 650,
+    scans: 67, normal: 120, reduced: 65,
     offerName: "Désert 2 jours",
   },
   {
@@ -47,7 +47,7 @@ const featured = [
     city: "Essaouira",
     category: "Restaurant",
     img: IMG.restaurantSpread,
-    scans: 198, normal: 280, reduced: 140,
+    scans: 198, normal: 28, reduced: 14,
     offerName: "Menu poisson",
   },
   {
@@ -56,14 +56,14 @@ const featured = [
     city: "Agadir",
     category: "Bien-être",
     img: IMG.hammamArch,
-    scans: 76, normal: 350, reduced: 180,
+    scans: 76, normal: 35, reduced: 18,
     offerName: "Hammam + gommage",
   },
 ];
 
 export function FeaturedPartners() {
   return (
-    <section className="container-px py-24">
+    <section className="container-px py-14 md:py-24">
       <Reveal>
         <div className="flex flex-wrap items-end justify-between gap-4">
           <div className="max-w-2xl">
@@ -123,9 +123,9 @@ export function FeaturedPartners() {
                       </p>
                       <div className="mt-0.5 flex items-baseline gap-2">
                         <span className="font-display text-lg font-bold text-coral">
-                          {p.reduced} MAD
+                          ${p.reduced}
                         </span>
-                        <span className="text-xs text-sand/55 line-through">{p.normal} MAD</span>
+                        <span className="text-xs text-sand/55 line-through">${p.normal}</span>
                       </div>
                     </div>
                     <ArrowUpRight className="h-5 w-5 transition group-hover:-translate-y-0.5 group-hover:translate-x-0.5 group-hover:text-coral" />

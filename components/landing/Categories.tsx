@@ -17,7 +17,7 @@ const categories = [
 
 export function Categories() {
   return (
-    <section className="relative overflow-hidden bg-dark-bg py-24 text-sand">
+    <section className="relative overflow-hidden bg-dark-bg py-14 md:py-24 text-sand">
       <div
         className="absolute inset-0 opacity-20"
         style={{
