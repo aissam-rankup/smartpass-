@@ -116,39 +116,56 @@ export function Hero() {
               <span className="font-semibold text-coral">à prix réduits.</span>
             </motion.p>
 
-            {/* Price + CTA row */}
+            {/* Price block */}
             <motion.div
               initial={{ opacity: 0, y: 12 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6, delay: 0.35 }}
-              className="mt-6 flex items-end gap-5"
+              className="mt-6"
             >
-              <div>
-                <p className="font-display text-[clamp(2.5rem,7vw,4rem)] leading-none text-sand">
-                  ${PASS_PRICE}
-                  <span className="ml-1 font-display text-base text-sand/65">une seule fois</span>
-                </p>
-                <p className="mt-1 flex items-center gap-1 text-[11px] text-teal-mid">
-                  <CheckCircle2 className="h-3 w-3" />
-                  Paiement unique · Valable 2 mois
-                </p>
-              </div>
+              <p className="font-display text-[clamp(2.5rem,7vw,4rem)] leading-none text-sand">
+                ${PASS_PRICE}
+                <span className="ml-1 font-display text-base text-sand/65">une seule fois</span>
+              </p>
+              <p className="mt-1 flex items-center gap-1 text-[11px] text-teal-mid">
+                <CheckCircle2 className="h-3 w-3" />
+                Paiement unique · Valable 2 mois
+              </p>
+            </motion.div>
 
-              <Button asChild size="lg" className="group flex-1">
+            {/* Primary CTA — full width, glowing, prominent */}
+            <motion.div
+              initial={{ opacity: 0, y: 12 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.6, delay: 0.5 }}
+              className="relative mt-4"
+            >
+              {/* Pulsing glow halo */}
+              <span
+                className="pointer-events-none absolute inset-0 -z-10 rounded-full bg-coral/40 blur-2xl"
+                style={{ animation: "pulse 2.5s ease-in-out infinite" }}
+                aria-hidden
+              />
+              <Button asChild size="lg" className="group w-full text-base sm:max-w-sm">
                 <Link href="/smart-pass">
-                  OBTENIR LE PASS
+                  <Sparkles className="h-4 w-4" />
+                  OBTENIR VOTRE SMART PASS
                   <ArrowRight className="h-4 w-4 transition group-hover:translate-x-1" />
                 </Link>
               </Button>
+              <p className="mt-2 flex flex-wrap items-center gap-x-3 gap-y-1 text-[11px] text-sand/70">
+                <span className="flex items-center gap-1">
+                  <Lock className="h-3 w-3" /> Paiement sécurisé Stripe
+                </span>
+                <span>·</span>
+                <Link
+                  href="/partenaires"
+                  className="text-sand/80 underline-offset-4 hover:text-coral hover:underline"
+                >
+                  Voir les 47 partenaires →
+                </Link>
+              </p>
             </motion.div>
-
-            <Link
-              href="/partenaires"
-              className="mt-3 inline-flex items-center gap-1 text-sm font-medium text-sand/80 underline-offset-4 hover:text-coral hover:underline"
-            >
-              Voir les 47 partenaires
-              <ArrowRight className="h-3.5 w-3.5" />
-            </Link>
 
             {/* Stats merged in left column on desktop */}
             <motion.div
@@ -340,6 +357,25 @@ export function Hero() {
 
               <p className="mt-2 text-center font-accent text-base leading-none text-coral">
                 Rentabilisé dès la 2<sup>e</sup> activité ✨
+              </p>
+            </motion.div>
+
+            {/* Strategic SECOND CTA — placed right after ROI math (peak conviction) */}
+            <motion.div
+              initial={{ opacity: 0, y: 12 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.6, delay: 1.1 }}
+              className="relative mt-4"
+            >
+              <Button asChild size="lg" className="group w-full">
+                <Link href="/smart-pass">
+                  <Sparkles className="h-4 w-4" />
+                  OBTENIR VOTRE SMART PASS — ${PASS_PRICE}
+                  <ArrowRight className="h-4 w-4 transition group-hover:translate-x-1" />
+                </Link>
+              </Button>
+              <p className="mt-2 text-center text-[11px] text-sand/65">
+                Paiement unique · Valable 2 mois · Remboursé sous 7 jours
               </p>
             </motion.div>
 
