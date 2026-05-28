@@ -228,7 +228,14 @@ export function Hero() {
                         loading="lazy"
                       />
                       <div className="absolute inset-0 bg-gradient-to-t from-charcoal/80 via-charcoal/10 to-transparent" />
-                      <span className="absolute bottom-2 left-2 font-display text-base font-bold uppercase text-sand">
+                      <span
+                        className="absolute bottom-2 left-2 font-display text-2xl font-extrabold uppercase tracking-wide text-white"
+                        style={{
+                          WebkitTextStroke: "2px #1A1A18",
+                          textShadow:
+                            "0 2px 8px rgba(0,0,0,0.6), -1px -1px 0 #1A1A18, 1px -1px 0 #1A1A18, -1px 1px 0 #1A1A18, 1px 1px 0 #1A1A18",
+                        }}
+                      >
                         {o.label}
                       </span>
                     </div>
