@@ -56,7 +56,7 @@ export function Hero() {
       </div>
 
       <div className="container-px relative py-10 md:py-14">
-        <div className="grid gap-8 lg:grid-cols-12 lg:items-start lg:gap-10">
+        <div className="grid w-full gap-8 lg:grid-cols-12 lg:items-start lg:gap-10">
           {/* ============ LEFT — text + price + CTA ============ */}
           <div className="lg:col-span-6 lg:pt-2">
             {/* Trust pill row */}
@@ -82,7 +82,7 @@ export function Hero() {
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.7, ease: [0.22, 1, 0.36, 1] }}
-                className="font-display text-[clamp(2.1rem,6vw,4.25rem)] leading-[0.95] tracking-tight"
+                className="font-display text-[clamp(1.85rem,8vw,4.25rem)] leading-[0.95] tracking-tight"
               >
                 <span className="block text-sand">PAYEZ MOINS CHER</span>
                 <span className="block text-sand">VOS ACTIVITÉS</span>
@@ -146,11 +146,12 @@ export function Hero() {
                 style={{ animation: "pulse 2.5s ease-in-out infinite" }}
                 aria-hidden
               />
-              <Button asChild size="lg" className="group w-full text-base sm:max-w-sm">
+              <Button asChild size="lg" className="group w-full text-sm sm:max-w-sm sm:text-base">
                 <Link href="/smart-pass">
-                  <Sparkles className="h-4 w-4" />
-                  OBTENIR VOTRE SMART PASS
-                  <ArrowRight className="h-4 w-4 transition group-hover:translate-x-1" />
+                  <Sparkles className="h-4 w-4 shrink-0" />
+                  <span className="sm:hidden">OBTENIR MON PASS</span>
+                  <span className="hidden sm:inline">OBTENIR VOTRE SMART PASS</span>
+                  <ArrowRight className="h-4 w-4 shrink-0 transition group-hover:translate-x-1" />
                 </Link>
               </Button>
               <p className="mt-2 flex flex-wrap items-center gap-x-3 gap-y-1 text-[11px] text-sand/70">
@@ -209,7 +210,7 @@ export function Hero() {
                     animate={{ opacity: 1, y: 0 }}
                     transition={{ duration: 0.6, delay: 0.45 + i * 0.1 }}
                     whileHover={{ y: -6, rotate: 0, scale: 1.03 }}
-                    className={`group relative w-[220px] shrink-0 snap-start overflow-hidden rounded-xl border-[6px] border-sand bg-sand shadow-2xl transition lg:w-auto ${rotations[i]}`}
+                    className={`group relative w-[180px] shrink-0 snap-start overflow-hidden rounded-xl border-[6px] border-sand bg-sand shadow-2xl transition sm:w-[220px] lg:w-auto ${rotations[i]}`}
                   >
                     {/* Tape strip */}
                     <span
@@ -367,11 +368,12 @@ export function Hero() {
               transition={{ duration: 0.6, delay: 1.1 }}
               className="relative mt-4"
             >
-              <Button asChild size="lg" className="group w-full">
+              <Button asChild size="lg" className="group w-full text-sm sm:text-base">
                 <Link href="/smart-pass">
-                  <Sparkles className="h-4 w-4" />
-                  OBTENIR VOTRE SMART PASS — ${PASS_PRICE}
-                  <ArrowRight className="h-4 w-4 transition group-hover:translate-x-1" />
+                  <Sparkles className="h-4 w-4 shrink-0" />
+                  <span className="sm:hidden">OBTENIR — ${PASS_PRICE}</span>
+                  <span className="hidden sm:inline">OBTENIR VOTRE SMART PASS — ${PASS_PRICE}</span>
+                  <ArrowRight className="h-4 w-4 shrink-0 transition group-hover:translate-x-1" />
                 </Link>
               </Button>
               <p className="mt-2 text-center text-[11px] text-sand/65">
