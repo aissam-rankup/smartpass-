@@ -228,9 +228,44 @@ export function Hero() {
                         loading="lazy"
                       />
                       <div className="absolute inset-0 bg-gradient-to-t from-charcoal/80 via-charcoal/10 to-transparent" />
-                      <span className="absolute bottom-3 left-3 right-3 inline-flex items-center justify-center rounded-md bg-charcoal/85 px-3 py-1.5 font-display text-sm font-extrabold uppercase tracking-[0.12em] text-sand shadow-lg backdrop-blur-sm sm:text-base">
-                        {o.label}
-                      </span>
+                      {/* Creative ticket-style label — tilted coral sticker */}
+                      <div
+                        className="absolute -bottom-3 left-1/2 z-10 -translate-x-1/2"
+                        style={{ transform: "translateX(-50%) rotate(-2deg)" }}
+                      >
+                        <div className="relative">
+                          {/* Subtle white halo behind for double-sticker look */}
+                          <span
+                            className="absolute inset-0 rounded-full bg-sand shadow-lg"
+                            style={{ transform: "translate(3px, 3px)" }}
+                            aria-hidden
+                          />
+                          {/* Main coral pill */}
+                          <span className="relative inline-flex items-center gap-1.5 rounded-full border-2 border-sand bg-coral px-3 py-1 font-display text-xs font-extrabold uppercase tracking-[0.18em] text-white shadow-xl sm:text-sm">
+                            <svg
+                              width="10"
+                              height="10"
+                              viewBox="0 0 12 12"
+                              fill="currentColor"
+                              aria-hidden
+                              className="opacity-90"
+                            >
+                              <path d="M6 0 L7.4 4.6 L12 6 L7.4 7.4 L6 12 L4.6 7.4 L0 6 L4.6 4.6 Z" />
+                            </svg>
+                            {o.label}
+                            <svg
+                              width="10"
+                              height="10"
+                              viewBox="0 0 12 12"
+                              fill="currentColor"
+                              aria-hidden
+                              className="opacity-90"
+                            >
+                              <path d="M6 0 L7.4 4.6 L12 6 L7.4 7.4 L6 12 L4.6 7.4 L0 6 L4.6 4.6 Z" />
+                            </svg>
+                          </span>
+                        </div>
+                      </div>
                     </div>
 
                     {/* Side-by-side price comparison block */}
