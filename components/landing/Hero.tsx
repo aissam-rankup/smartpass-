@@ -17,36 +17,36 @@ const PASS_PRICE = "29.99";
 
 export function Hero() {
   return (
-    <section className="relative isolate overflow-hidden bg-charcoal text-sand">
-      {/* Background */}
+    <section className="relative isolate overflow-hidden bg-sand text-charcoal">
+      {/* Background — softened photo so dark text reads cleanly */}
       <div className="absolute inset-0 -z-10">
         {/* eslint-disable-next-line @next/next/no-img-element */}
         <img
           src={IMG.heroDesertSunset}
           alt="Coucher de soleil au Maroc"
-          className="h-full w-full object-cover"
+          className="h-full w-full object-cover opacity-25"
           loading="eager"
         />
-        <div className="absolute inset-0 bg-gradient-to-b from-charcoal/85 via-charcoal/75 to-charcoal/90" />
+        <div className="absolute inset-0 bg-gradient-to-b from-sand via-sand/85 to-sand" />
       </div>
 
       <div className="container-px relative py-10 md:py-16">
         <div className="mx-auto max-w-5xl">
-          {/* ============ HEADER BLOCK (always centered on mobile) ============ */}
+          {/* ============ HEADER BLOCK ============ */}
           <motion.div
             initial={{ opacity: 0, y: -8 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.1 }}
             className="flex flex-wrap items-center justify-center gap-2"
           >
-            <span className="inline-flex items-center gap-1.5 rounded-full border border-sand/20 bg-sand/10 px-3 py-1 text-[10px] uppercase tracking-[0.15em] text-sand backdrop-blur">
+            <span className="inline-flex items-center gap-1.5 rounded-full border border-charcoal/20 bg-charcoal/5 px-3 py-1 text-[10px] uppercase tracking-[0.15em] text-charcoal backdrop-blur">
               <Shield className="h-3 w-3 text-coral" />
               Anti-arnaque · Maroc
             </span>
-            <span className="inline-flex items-center gap-1 text-xs text-sand/85">
+            <span className="inline-flex items-center gap-1 text-xs text-charcoal/85">
               <Star className="h-3 w-3 fill-coral text-coral" />
-              <strong className="text-sand">4,9/5</strong>
-              <span className="text-sand/65">· 1 284 voyageurs</span>
+              <strong className="text-charcoal">4,9/5</strong>
+              <span className="text-charcoal/65">· 1 284 voyageurs</span>
             </span>
           </motion.div>
 
@@ -58,8 +58,8 @@ export function Hero() {
             className="mt-6 text-center font-display leading-[0.95] tracking-tight"
             style={{ fontSize: "clamp(1.85rem, 8.5vw, 4.5rem)" }}
           >
-            <span className="block text-sand">PAYEZ MOINS CHER</span>
-            <span className="block text-sand">VOS ACTIVITÉS</span>
+            <span className="block text-charcoal">PAYEZ MOINS CHER</span>
+            <span className="block text-charcoal">VOS ACTIVITÉS</span>
             <span className="block text-coral">AU MAROC.</span>
           </motion.h1>
 
@@ -68,41 +68,39 @@ export function Hero() {
             initial={{ opacity: 0, y: 8 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, delay: 0.2 }}
-            className="mx-auto mt-5 max-w-md px-2 text-center text-sm leading-relaxed text-sand/85 sm:text-base"
+            className="mx-auto mt-5 max-w-md px-2 text-center text-sm leading-relaxed text-charcoal/85 sm:text-base"
           >
             Surf, restaurants, bien-être, excursions —{" "}
             <span className="font-semibold text-coral">à prix réduits.</span>
           </motion.p>
 
-          {/* ============ PRICE + CTA BLOCK ============ */}
+          {/* ============ PRICE ============ */}
           <motion.div
             initial={{ opacity: 0, y: 12 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, delay: 0.3 }}
             className="mx-auto mt-7 flex max-w-md flex-col items-center gap-1"
           >
-            {/* Price */}
             <p
-              className="font-display leading-none text-sand"
+              className="font-display leading-none text-charcoal"
               style={{ fontSize: "clamp(2.5rem, 11vw, 4.5rem)" }}
             >
               ${PASS_PRICE}
             </p>
-            <p className="text-sm text-sand/80">une seule fois</p>
-            <p className="mt-1 inline-flex items-center gap-1 text-[11px] text-teal-mid">
+            <p className="text-sm text-charcoal/80">une seule fois</p>
+            <p className="mt-1 inline-flex items-center gap-1 text-[11px] text-teal">
               <CheckCircle2 className="h-3 w-3" />
               Paiement unique · Valable 2 mois
             </p>
           </motion.div>
 
-          {/* Main CTA */}
+          {/* ============ CTA ============ */}
           <motion.div
             initial={{ opacity: 0, y: 12 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, delay: 0.45 }}
             className="relative mx-auto mt-6 w-full max-w-md"
           >
-            {/* glow */}
             <span
               className="pointer-events-none absolute inset-0 -z-10 rounded-full bg-coral/35 blur-2xl"
               style={{ animation: "pulse 2.5s ease-in-out infinite" }}
@@ -116,8 +114,7 @@ export function Hero() {
               </Link>
             </Button>
 
-            {/* Reassurance row — always centered, wraps clean */}
-            <div className="mt-3 flex flex-wrap items-center justify-center gap-x-3 gap-y-1 text-[11px] text-sand/70">
+            <div className="mt-3 flex flex-wrap items-center justify-center gap-x-3 gap-y-1 text-[11px] text-charcoal/70">
               <span className="inline-flex items-center gap-1">
                 <Lock className="h-3 w-3" /> Paiement Stripe
               </span>
@@ -128,12 +125,12 @@ export function Hero() {
             </div>
           </motion.div>
 
-          {/* ============ STATS BAR (centered, no overflow) ============ */}
+          {/* ============ STATS BAR ============ */}
           <motion.div
             initial={{ opacity: 0, y: 12 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, delay: 0.55 }}
-            className="mx-auto mt-8 grid w-full max-w-md grid-cols-2 gap-px overflow-hidden rounded-2xl border border-sand/15 bg-sand/5 backdrop-blur sm:max-w-2xl sm:grid-cols-4"
+            className="mx-auto mt-8 grid w-full max-w-md grid-cols-2 gap-px overflow-hidden rounded-2xl border border-charcoal/15 bg-charcoal/5 backdrop-blur sm:max-w-2xl sm:grid-cols-4"
           >
             <Stat icon={<Users className="h-4 w-4" />}   label="Partenaires" value="47+" />
             <Stat icon={<MapPin className="h-4 w-4" />}  label="Villes"      value="6" />
@@ -152,16 +149,14 @@ export function Hero() {
               Voici ce que vous économisez ↓
             </p>
 
-            {/* Cards — horizontal scroll on mobile, 3 cols sm+ */}
             <div className="mt-4 grid grid-cols-3 gap-2 sm:gap-3">
               {PREVIEW_OFFERS.map((o) => {
                 const saved = o.normal - o.reduced;
                 return (
                   <article
                     key={o.label}
-                    className="relative overflow-hidden rounded-xl border-4 border-sand bg-sand shadow-xl"
+                    className="relative overflow-hidden rounded-xl border-4 border-white bg-white shadow-xl"
                   >
-                    {/* photo */}
                     <div className="relative aspect-[4/3] overflow-hidden">
                       {/* eslint-disable-next-line @next/next/no-img-element */}
                       <img src={o.img} alt={o.label} className="h-full w-full object-cover" loading="lazy" />
@@ -174,7 +169,6 @@ export function Hero() {
                       </span>
                     </div>
 
-                    {/* prices */}
                     <div className="p-1.5 sm:p-2">
                       <div className="flex items-center justify-between gap-1.5">
                         <div className="text-center">
@@ -211,17 +205,17 @@ export function Hero() {
             </div>
 
             {/* ROI math */}
-            <div className="mx-auto mt-4 max-w-md rounded-xl border-2 border-dashed border-coral/60 bg-charcoal/70 px-3 py-3 backdrop-blur sm:max-w-2xl">
-              <div className="flex flex-wrap items-center justify-center gap-1 font-display text-xs font-bold text-sand sm:gap-1.5 sm:text-sm">
-                <span className="rounded bg-teal-mid/20 px-1.5 py-0.5 text-teal-mid">${PREVIEW_OFFERS[0].normal - PREVIEW_OFFERS[0].reduced}</span>
-                <span className="text-sand/55">+</span>
-                <span className="rounded bg-teal-mid/20 px-1.5 py-0.5 text-teal-mid">${PREVIEW_OFFERS[1].normal - PREVIEW_OFFERS[1].reduced}</span>
-                <span className="text-sand/55">+</span>
-                <span className="rounded bg-teal-mid/20 px-1.5 py-0.5 text-teal-mid">${PREVIEW_OFFERS[2].normal - PREVIEW_OFFERS[2].reduced}</span>
-                <span className="text-sand/55">=</span>
+            <div className="mx-auto mt-4 max-w-md rounded-xl border-2 border-dashed border-coral/60 bg-white px-3 py-3 shadow-sm sm:max-w-2xl">
+              <div className="flex flex-wrap items-center justify-center gap-1 font-display text-xs font-bold text-charcoal sm:gap-1.5 sm:text-sm">
+                <span className="rounded bg-teal-light px-1.5 py-0.5 text-teal">${PREVIEW_OFFERS[0].normal - PREVIEW_OFFERS[0].reduced}</span>
+                <span className="text-charcoal/55">+</span>
+                <span className="rounded bg-teal-light px-1.5 py-0.5 text-teal">${PREVIEW_OFFERS[1].normal - PREVIEW_OFFERS[1].reduced}</span>
+                <span className="text-charcoal/55">+</span>
+                <span className="rounded bg-teal-light px-1.5 py-0.5 text-teal">${PREVIEW_OFFERS[2].normal - PREVIEW_OFFERS[2].reduced}</span>
+                <span className="text-charcoal/55">=</span>
                 <span className="rounded bg-coral px-2 py-0.5 text-white">${savedTotal}</span>
-                <span className="text-sand/55">{">"}</span>
-                <span className="rounded border border-sand/30 px-1.5 py-0.5 text-sand">Pass ${PASS_PRICE}</span>
+                <span className="text-charcoal/55">{">"}</span>
+                <span className="rounded border border-charcoal/30 px-1.5 py-0.5 text-charcoal">Pass ${PASS_PRICE}</span>
               </div>
               <p className="mt-1.5 text-center font-accent text-base text-coral">
                 Rentabilisé dès la 2<sup>e</sup> activité ✨
@@ -246,15 +240,15 @@ function Stat({
   highlight?: boolean;
 }) {
   return (
-    <div className="bg-charcoal/55 px-3 py-2.5 text-center backdrop-blur sm:text-left">
-      <div className="flex items-center justify-center gap-1.5 text-sand/65 sm:justify-start">
+    <div className="bg-white px-3 py-2.5 text-center backdrop-blur sm:text-left">
+      <div className="flex items-center justify-center gap-1.5 text-charcoal/65 sm:justify-start">
         {icon}
         <p className="text-[9px] uppercase tracking-wider">{label}</p>
       </div>
       <p
         className={
           "mt-0.5 font-display text-lg font-bold leading-none sm:text-xl " +
-          (highlight ? "text-coral" : "text-sand")
+          (highlight ? "text-coral" : "text-charcoal")
         }
       >
         {value}
