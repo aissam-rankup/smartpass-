@@ -42,7 +42,7 @@ export const metadata: Metadata = {
     template: "%s · SmartPass",
   },
   description:
-    "SmartPass vous garantit des tarifs officiels chez 47+ partenaires certifiés au Maroc. Restaurants, surf, transport, excursions — voyagez en toute sécurité pour $29.99 (paiement unique, valable 2 mois).",
+    "SmartPass vous garantit des tarifs officiels chez 47+ partenaires certifiés au Maroc. Restaurants, surf, transport, excursions — voyagez en toute sécurité pour 299 DH (paiement unique, valable 2 mois).",
   keywords: [
     "arnaque touriste maroc",
     "tarifs certifiés agadir",

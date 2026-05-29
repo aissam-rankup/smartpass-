@@ -4,9 +4,9 @@ import { CheckoutButton } from "@/components/subscription/CheckoutButton";
 import { FAQ } from "@/components/landing/FAQ";
 
 export const metadata: Metadata = {
-  title: "Le Smart Pass — $29.99 paiement unique · Valable 2 mois",
+  title: "Le Smart Pass — 299 DH paiement unique · Valable 2 mois",
   description:
-    "Smart Pass : $29.99 en paiement unique, valable 2 mois. Accès illimité à 47 partenaires certifiés dans 6 villes du Maroc.",
+    "Smart Pass : 299 DH en paiement unique, valable 2 mois. Accès illimité à 47 partenaires certifiés dans 6 villes du Maroc.",
   alternates: { canonical: "/smart-pass" },
 };
 
@@ -29,7 +29,7 @@ export default function SmartPassPage({ searchParams }: { searchParams: { cancel
             Votre bouclier anti-arnaque
           </h1>
           <p className="mx-auto mt-4 max-w-xl text-sand/75">
-            $29.99 en un seul paiement, valable 2 mois pour économiser en moyenne $90 par semaine de voyage.
+            299 DH en un seul paiement, valable 2 mois pour économiser en moyenne 900 DH par semaine de voyage.
           </p>
           {searchParams.canceled && (
             <p className="mx-auto mt-6 max-w-md rounded-lg border border-coral/40 bg-coral/10 px-4 py-3 text-sm text-coral">
@@ -56,7 +56,7 @@ export default function SmartPassPage({ searchParams }: { searchParams: { cancel
               </div>
 
               <div className="mt-6 flex items-baseline gap-2">
-                <span className="font-display text-6xl font-bold text-charcoal md:text-7xl">$29.99</span>
+                <span className="font-display text-6xl font-bold text-charcoal md:text-7xl">299 DH</span>
                 <span className="text-muted">une seule fois</span>
               </div>
               <p className="mt-1 text-sm text-muted">

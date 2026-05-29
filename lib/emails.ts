@@ -38,7 +38,7 @@ export const emails = {
         <p>Vous venez de rejoindre 1 284 voyageurs qui parcourent le Maroc au tarif local.</p>
         <p><strong>Pour commencer :</strong></p>
         <ol>
-          <li>Activez votre Smart Pass ($29.99 en paiement unique, valable 2 mois)</li>
+          <li>Activez votre Smart Pass (299 DH en paiement unique, valable 2 mois)</li>
           <li>Explorez le catalogue de 47 partenaires certifiés</li>
           <li>Générez vos QR codes et économisez immédiatement</li>
         </ol>

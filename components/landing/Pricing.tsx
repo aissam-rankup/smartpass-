@@ -24,7 +24,7 @@ export function Pricing() {
             Un Pass. <em className="text-coral">Tout le Maroc.</em>
           </h2>
           <p className="mt-3 text-muted md:text-lg">
-            Un paiement unique de $29.99. Valable 2 mois. Renouvelable à votre rythme.
+            Un paiement unique de 299 DH. Valable 2 mois. Renouvelable à votre rythme.
           </p>
         </div>
       </Reveal>
@@ -47,11 +47,11 @@ export function Pricing() {
               </div>
 
               <div className="mt-6 flex items-baseline gap-2">
-                <span className="font-display text-6xl font-bold text-charcoal md:text-7xl">$29.99</span>
+                <span className="font-display text-6xl font-bold text-charcoal md:text-7xl">299 DH</span>
                 <span className="text-muted">une seule fois</span>
               </div>
               <p className="mt-1 text-sm text-muted">
-                Économisez en moyenne $90 par semaine de voyage.
+                Économisez en moyenne 900 DH par semaine de voyage.
               </p>
 
               <ul className="mt-8 space-y-3">

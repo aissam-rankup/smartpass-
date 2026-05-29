@@ -7,13 +7,14 @@ import { Button } from "@/components/ui/button";
 import { IMG } from "@/lib/images";
 
 const PREVIEW_OFFERS = [
-  { label: "Surf",       img: IMG.surfStanding,    normal: 60, reduced: 25, pct: 58 },
-  { label: "Hammam",     img: IMG.hammamArch,      normal: 35, reduced: 18, pct: 49 },
-  { label: "Restaurant", img: IMG.restaurantTagine, normal: 28, reduced: 14, pct: 50 },
+  { label: "Surf",       img: IMG.surfStanding,    normal: 600, reduced: 250, pct: 58 },
+  { label: "Hammam",     img: IMG.hammamArch,      normal: 350, reduced: 180, pct: 49 },
+  { label: "Restaurant", img: IMG.restaurantTagine, normal: 280, reduced: 140, pct: 50 },
 ];
 
 const savedTotal = PREVIEW_OFFERS.reduce((s, o) => s + (o.normal - o.reduced), 0);
-const PASS_PRICE = "29.99";
+const PASS_PRICE = "299";
+const CUR = "DH";
 
 export function Hero() {
   return (
@@ -58,8 +59,8 @@ export function Hero() {
             className="mt-6 text-center font-display leading-[0.95] tracking-tight"
             style={{ fontSize: "clamp(1.85rem, 8.5vw, 4.5rem)" }}
           >
-            <span className="block text-charcoal">PAYEZ MOINS CHER</span>
-            <span className="block text-charcoal">VOS ACTIVITÉS</span>
+            <span className="block text-charcoal">ÉVITEZ LES</span>
+            <span className="block text-charcoal">PRIX TOURISTES</span>
             <span className="block text-coral">AU MAROC.</span>
           </motion.h1>
 
@@ -85,9 +86,9 @@ export function Hero() {
               className="font-display leading-none text-charcoal"
               style={{ fontSize: "clamp(2.5rem, 11vw, 4.5rem)" }}
             >
-              ${PASS_PRICE}
+              {PASS_PRICE} <span className="text-3xl text-charcoal/75 sm:text-4xl">{CUR}</span>
             </p>
-            <p className="text-sm text-charcoal/80">une seule fois</p>
+            <p className="text-sm text-charcoal/80">seulement</p>
             <p className="mt-1 inline-flex items-center gap-1 text-[11px] text-teal">
               <CheckCircle2 className="h-3 w-3" />
               Paiement unique · Valable 2 mois
@@ -109,7 +110,7 @@ export function Hero() {
             <Button asChild size="lg" className="group w-full text-sm sm:text-base">
               <Link href="/smart-pass">
                 <Sparkles className="h-4 w-4 shrink-0" />
-                OBTENIR MON SMART PASS
+                OBTENIR MON SMART PASS — {PASS_PRICE} {CUR}
                 <ArrowRight className="h-4 w-4 shrink-0 transition group-hover:translate-x-1" />
               </Link>
             </Button>
@@ -182,7 +183,7 @@ export function Hero() {
                             className="font-display text-xs font-extrabold leading-none line-through decoration-[2px] sm:text-base"
                             style={{ color: "#FF0000", textDecorationColor: "#FF0000" }}
                           >
-                            ${o.normal}
+                            {o.normal} {CUR}
                           </p>
                         </div>
                         <ArrowRight className="h-3 w-3 shrink-0 text-charcoal/40" aria-hidden />
@@ -191,12 +192,12 @@ export function Hero() {
                             S.Pass
                           </p>
                           <p className="font-display text-xs font-extrabold leading-none sm:text-base">
-                            ${o.reduced}
+                            {o.reduced} {CUR}
                           </p>
                         </div>
                       </div>
                       <p className="mt-1 rounded bg-teal py-0.5 text-center text-[8px] font-bold uppercase text-white sm:text-[10px]">
-                        +${saved} économisés
+                        +{saved} {CUR} économisés
                       </p>
                     </div>
                   </article>
@@ -207,15 +208,15 @@ export function Hero() {
             {/* ROI math */}
             <div className="mx-auto mt-4 max-w-md rounded-xl border-2 border-dashed border-coral/60 bg-white px-3 py-3 shadow-sm sm:max-w-2xl">
               <div className="flex flex-wrap items-center justify-center gap-1 font-display text-xs font-bold text-charcoal sm:gap-1.5 sm:text-sm">
-                <span className="rounded bg-teal-light px-1.5 py-0.5 text-teal">${PREVIEW_OFFERS[0].normal - PREVIEW_OFFERS[0].reduced}</span>
+                <span className="rounded bg-teal-light px-1.5 py-0.5 text-teal">{PREVIEW_OFFERS[0].normal - PREVIEW_OFFERS[0].reduced} {CUR}</span>
                 <span className="text-charcoal/55">+</span>
-                <span className="rounded bg-teal-light px-1.5 py-0.5 text-teal">${PREVIEW_OFFERS[1].normal - PREVIEW_OFFERS[1].reduced}</span>
+                <span className="rounded bg-teal-light px-1.5 py-0.5 text-teal">{PREVIEW_OFFERS[1].normal - PREVIEW_OFFERS[1].reduced} {CUR}</span>
                 <span className="text-charcoal/55">+</span>
-                <span className="rounded bg-teal-light px-1.5 py-0.5 text-teal">${PREVIEW_OFFERS[2].normal - PREVIEW_OFFERS[2].reduced}</span>
+                <span className="rounded bg-teal-light px-1.5 py-0.5 text-teal">{PREVIEW_OFFERS[2].normal - PREVIEW_OFFERS[2].reduced} {CUR}</span>
                 <span className="text-charcoal/55">=</span>
-                <span className="rounded bg-coral px-2 py-0.5 text-white">${savedTotal}</span>
+                <span className="rounded bg-coral px-2 py-0.5 text-white">{savedTotal} {CUR}</span>
                 <span className="text-charcoal/55">{">"}</span>
-                <span className="rounded border border-charcoal/30 px-1.5 py-0.5 text-charcoal">Pass ${PASS_PRICE}</span>
+                <span className="rounded border border-charcoal/30 px-1.5 py-0.5 text-charcoal">Pass {PASS_PRICE} {CUR}</span>
               </div>
               <p className="mt-1.5 text-center font-accent text-base text-coral">
                 Rentabilisé dès la 2<sup>e</sup> activité ✨

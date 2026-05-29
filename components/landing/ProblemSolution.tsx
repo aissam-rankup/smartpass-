@@ -13,7 +13,7 @@ const problems = [
 ];
 
 const solutions = [
-  { title: "Obtenir le Smart Pass", body: "$29.99 en un paiement. Valable 2 mois." },
+  { title: "Obtenir le Smart Pass", body: "299 DH en un paiement. Valable 2 mois." },
   { title: "Explorez les offres", body: "47 partenaires certifiés, 300+ offres, 6 villes." },
   { title: "Générez votre QR", body: "Un code unique par offre. Présentez. Économisez." },
 ];

@@ -8,7 +8,7 @@ import {
 export const FAQ_ITEMS = [
   {
     q: "Combien coûte le Smart Pass et comment fonctionne le paiement ?",
-    a: "Le Smart Pass coûte $29.99 en un seul paiement. C'est un paiement unique (pas d'abonnement, pas de prélèvement automatique). Votre Pass est valable pendant 2 mois à partir de l'achat.",
+    a: "Le Smart Pass coûte 299 DH en un seul paiement. C'est un paiement unique (pas d'abonnement, pas de prélèvement automatique). Votre Pass est valable pendant 2 mois à partir de l'achat.",
   },
   {
     q: "Que se passe-t-il après les 2 mois ?",

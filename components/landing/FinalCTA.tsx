@@ -37,7 +37,7 @@ export function FinalCTA() {
               </Button>
             </div>
             <p className="mt-4 text-xs text-sand/60">
-              $29.99 · Paiement unique · Valable 2 mois
+              299 DH · Paiement unique · Valable 2 mois
             </p>
           </div>
         </div>

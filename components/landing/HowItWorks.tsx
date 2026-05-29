@@ -7,7 +7,7 @@ const steps = [
     Icon: Crown,
     title: "Obtenir le Smart Pass en 2 minutes",
     body:
-      "Créez votre compte, payez $29.99 en un seul paiement, et accédez immédiatement à tous les partenaires pour 2 mois.",
+      "Créez votre compte, payez 299 DH en un seul paiement, et accédez immédiatement à tous les partenaires pour 2 mois.",
     img: IMG.surfBoards,
     alt: "Planches de surf empilées",
   },

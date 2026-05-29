@@ -144,7 +144,7 @@ export function Navbar() {
               >
                 <Button asChild size="lg" className="w-full">
                   <Link href="/smart-pass">
-                    Obtenir mon Pass — $29.99
+                    Obtenir mon Pass — 299 DH
                     <ArrowRight className="h-4 w-4" />
                   </Link>
                 </Button>
