@@ -19,16 +19,28 @@ const CUR = "DH";
 export function Hero() {
   return (
     <section className="relative isolate overflow-hidden bg-sand text-charcoal">
-      {/* Background — softened photo so dark text reads cleanly */}
+      {/* Background — visible photo with strategic overlay for text contrast */}
       <div className="absolute inset-0 -z-10">
         {/* eslint-disable-next-line @next/next/no-img-element */}
         <img
           src={IMG.heroDesertSunset}
           alt="Coucher de soleil au Maroc"
-          className="h-full w-full object-cover opacity-25"
+          className="h-full w-full object-cover"
           loading="eager"
         />
-        <div className="absolute inset-0 bg-gradient-to-b from-sand via-sand/85 to-sand" />
+        {/* Soft sand frosted-glass overlay — keeps photo visible while ensuring text reads */}
+        <div className="absolute inset-0 bg-sand/70 backdrop-blur-[2px]" />
+        {/* Subtle bottom fade for grounding */}
+        <div className="absolute inset-x-0 bottom-0 h-1/3 bg-gradient-to-t from-sand/60 to-transparent" />
+        {/* Center spotlight — slightly brighter behind hero text */}
+        <div
+          className="absolute inset-0 opacity-50"
+          style={{
+            backgroundImage:
+              "radial-gradient(ellipse at center, rgba(247,243,236,0.55) 0%, transparent 60%)",
+          }}
+          aria-hidden
+        />
       </div>
 
       <div className="container-px relative py-10 md:py-16">
@@ -57,7 +69,10 @@ export function Hero() {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.7 }}
             className="mt-6 text-center font-display leading-[0.95] tracking-tight"
-            style={{ fontSize: "clamp(1.85rem, 8.5vw, 4.5rem)" }}
+            style={{
+              fontSize: "clamp(1.85rem, 8.5vw, 4.5rem)",
+              textShadow: "0 1px 0 rgba(247,243,236,0.6), 0 2px 12px rgba(247,243,236,0.4)",
+            }}
           >
             <span className="block text-charcoal">ÉVITEZ LES</span>
             <span className="block text-charcoal">PRIX TOURISTES</span>
