@@ -48,6 +48,7 @@ export const IMG = {
   taxiRoad: u("photo-1473445730015-841f29a9490b"),         // open road (kept from seed)
   taxiMorocco: u("photo-1775599326332-765a4175d159"),      // yellow Moroccan taxis on street
   taxiPetit: u("photo-1705765276710-51b6362f9ea7"),        // small red car parked before storefront
+  carRentalKeys: u("photo-1727893512947-8bdc773ceb02"),    // person handing over car keys
   beachAgadirAerial: u("photo-1536868313473-7480e7c169f8"),// aerial of beach
   beachAgadirMountain: u("photo-1710092538995-4af0c11a3f3c"), // beach with mountain
   cultureMarketColor: u("photo-1675266410217-f335c2535545"),  // colorful market

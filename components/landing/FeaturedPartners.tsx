@@ -123,9 +123,10 @@ export function FeaturedPartners() {
                       </p>
                       <div className="mt-0.5 flex items-baseline gap-2">
                         <span className="font-display text-lg font-bold text-coral">
-                          ${p.reduced}
+                          {p.reduced * 10} DH
                         </span>
-                        <span className="text-xs text-sand/55 line-through">${p.normal}</span>
+                        <span className="text-xs text-sand/55 line-through">{p.normal * 10} DH</span>
+                        <span className="text-[10px] text-sand/40">(~${p.reduced})</span>
                       </div>
                     </div>
                     <ArrowUpRight className="h-5 w-5 transition group-hover:-translate-y-0.5 group-hover:translate-x-0.5 group-hover:text-coral" />
