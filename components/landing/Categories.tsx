@@ -4,15 +4,15 @@ import { IMG } from "@/lib/images";
 import { Reveal, RevealStagger, RevealItem } from "@/components/ui/Reveal";
 
 const categories = [
-  { emoji: "🍽️", name: "Restauration",     slug: "RESTAURATION",     desc: "Tagines, couscous, petit-déj marocain", from: "40 DH",  usd: "~$4",  img: IMG.restaurantTagine },
-  { emoji: "🌊", name: "Surf & Sport",     slug: "SURF_SPORT",       desc: "Cours, location, packs activités",       from: "150 DH", usd: "~$15", img: IMG.surfStanding },
-  { emoji: "🚐", name: "Transport",        slug: "TRANSPORT",        desc: "Transferts, excursions, navettes",       from: "80 DH",  usd: "~$8",  img: IMG.taxiMorocco },
-  { emoji: "🐪", name: "Excursions",       slug: "EXCURSIONS",       desc: "Désert, circuits, journées",             from: "300 DH", usd: "~$30", img: IMG.desertCamels },
-  { emoji: "🚗", name: "Location voiture", slug: "LOCATION_VOITURE", desc: "Citadines, SUV, 4x4",                    from: "180 DH", usd: "~$18", img: IMG.carRentalKeys },
-  { emoji: "💆", name: "Bien-être",        slug: "BIEN_ETRE",        desc: "Hammam, massage, spa",                   from: "100 DH", usd: "~$10", img: IMG.hammamArch },
-  { emoji: "🏨", name: "Hébergement",      slug: "HEBERGEMENT",      desc: "Riads, guesthouses",                     from: "250 DH", usd: "~$25", img: IMG.hotelRiad },
-  { emoji: "🎨", name: "Culture",          slug: "CULTURE",          desc: "Musées, guides, ateliers",               from: "60 DH",  usd: "~$6",  img: IMG.cultureMarketColor },
-  { emoji: "🛍️", name: "Shopping",         slug: "SHOPPING",         desc: "Artisanat, souvenirs certifiés",         from: "20 DH",  usd: "~$2",  img: IMG.souksSpices },
+  { name: "Restauration",     slug: "RESTAURATION",     desc: "Tagines, couscous, petit-déj marocain", from: "40 DH",  usd: "~$4",  img: IMG.restaurantTagine },
+  { name: "Surf & Sport",     slug: "SURF_SPORT",       desc: "Cours, location, packs activités",       from: "150 DH", usd: "~$15", img: IMG.surfStanding },
+  { name: "Transport",        slug: "TRANSPORT",        desc: "Transferts, excursions, navettes",       from: "80 DH",  usd: "~$8",  img: IMG.taxiMorocco },
+  { name: "Excursions",       slug: "EXCURSIONS",       desc: "Désert, circuits, journées",             from: "300 DH", usd: "~$30", img: IMG.desertCamels },
+  { name: "Location voiture", slug: "LOCATION_VOITURE", desc: "Citadines, SUV, 4x4",                    from: "180 DH", usd: "~$18", img: IMG.carRentalKeys },
+  { name: "Bien-être",        slug: "BIEN_ETRE",        desc: "Hammam, massage, spa",                   from: "100 DH", usd: "~$10", img: IMG.hammamArch },
+  { name: "Hébergement",      slug: "HEBERGEMENT",      desc: "Riads, guesthouses",                     from: "250 DH", usd: "~$25", img: IMG.hotelRiad },
+  { name: "Culture",          slug: "CULTURE",          desc: "Musées, guides, ateliers",               from: "60 DH",  usd: "~$6",  img: IMG.cultureMarketColor },
+  { name: "Shopping",         slug: "SHOPPING",         desc: "Artisanat, souvenirs certifiés",         from: "20 DH",  usd: "~$2",  img: IMG.souksSpices },
 ];
 
 export function Categories() {
@@ -57,12 +57,6 @@ export function Categories() {
                     loading="lazy"
                   />
                   <div className="absolute inset-0 bg-gradient-to-t from-dark-surface via-dark-surface/55 to-transparent" />
-                  <span
-                    className="absolute right-3 top-3 text-2xl drop-shadow-lg"
-                    aria-hidden
-                  >
-                    {c.emoji}
-                  </span>
                 </div>
                 <div className="relative p-5">
                   <div className="flex items-start justify-between gap-2">
