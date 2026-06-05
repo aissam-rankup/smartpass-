@@ -7,6 +7,7 @@ const u = (id: string, w = 1600) =>
 
 export const IMG = {
   // ---------- Hero / surf ----------
+  heroAgadirNight: "/iStock-843510762-HEADERMOBILE.webp",  // local — Agadir kasbah lit at night with beach
   heroDesertSunset: u("photo-1581353458680-6dae683fcc6c"), // traveler at sunset in desert — editorial
   heroSurfer: u("photo-1635009445997-a1941d8c73c1"),       // man riding wave
   heroLineup: u("photo-1697145808130-dfc61fcdf820"),       // group carrying surfboards on beach

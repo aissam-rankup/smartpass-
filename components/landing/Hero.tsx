@@ -23,24 +23,24 @@ export function Hero() {
       <div className="absolute inset-0 -z-10">
         {/* eslint-disable-next-line @next/next/no-img-element */}
         <img
-          src={IMG.heroDesertSunset}
-          alt="Coucher de soleil au Maroc"
-          className="h-full w-full object-cover"
+          src={IMG.heroAgadirNight}
+          alt="Agadir la nuit — kasbah illuminée"
+          className="h-full w-full object-cover object-[70%_center] md:object-center"
           loading="eager"
         />
-        {/* Soft sand frosted-glass overlay — keeps photo visible while ensuring text reads */}
-        <div className="absolute inset-0 bg-sand/70 backdrop-blur-[2px]" />
-        {/* Subtle bottom fade for grounding */}
-        <div className="absolute inset-x-0 bottom-0 h-1/3 bg-gradient-to-t from-sand/60 to-transparent" />
-        {/* Center spotlight — slightly brighter behind hero text */}
+        {/* Layered overlays — stronger on mobile (harder to read on narrow crop) */}
+        <div className="absolute inset-0 bg-sand/82 backdrop-blur-[2px] md:bg-sand/72" />
+        {/* Center radial spotlight — brighter behind hero text */}
         <div
-          className="absolute inset-0 opacity-50"
+          className="absolute inset-0"
           style={{
             backgroundImage:
-              "radial-gradient(ellipse at center, rgba(247,243,236,0.55) 0%, transparent 60%)",
+              "radial-gradient(ellipse at center 40%, rgba(247,243,236,0.55) 0%, rgba(247,243,236,0.2) 45%, transparent 70%)",
           }}
           aria-hidden
         />
+        {/* Strong bottom fade — eases into the next section's sand background */}
+        <div className="absolute inset-x-0 bottom-0 h-1/2 bg-gradient-to-t from-sand via-sand/85 to-transparent" />
       </div>
 
       <div className="container-px relative py-10 md:py-16">
@@ -239,6 +239,36 @@ export function Hero() {
             </div>
           </motion.div>
         </div>
+      </div>
+
+      {/* ============ ORGANIC WAVE DIVIDER ============ */}
+      <div
+        aria-hidden
+        className="pointer-events-none relative mt-8 h-24 w-full sm:mt-10 sm:h-28 md:h-32"
+      >
+        <svg
+          viewBox="0 0 1440 160"
+          preserveAspectRatio="none"
+          className="absolute inset-0 h-full w-full"
+        >
+          <defs>
+            <linearGradient id="waveFill" x1="0" y1="0" x2="0" y2="1">
+              <stop offset="0%" stopColor="var(--color-sand)" stopOpacity="0.85" />
+              <stop offset="100%" stopColor="var(--color-sand)" stopOpacity="1" />
+            </linearGradient>
+          </defs>
+          {/* Back wave — soft accent */}
+          <path
+            d="M0,80 C240,140 480,20 720,70 C960,120 1200,40 1440,90 L1440,160 L0,160 Z"
+            fill="var(--color-coral)"
+            fillOpacity="0.07"
+          />
+          {/* Front wave — main sand color */}
+          <path
+            d="M0,100 C240,160 520,30 760,90 C1000,150 1220,60 1440,110 L1440,160 L0,160 Z"
+            fill="url(#waveFill)"
+          />
+        </svg>
       </div>
     </section>
   );
