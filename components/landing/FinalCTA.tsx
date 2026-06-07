@@ -26,14 +26,14 @@ export function FinalCTA() {
           />
           <div className="relative p-12 text-center md:p-20">
             <h2 className="font-display text-3xl font-bold md:text-4xl">
-              Prêt à voyager sans stress ?
+              Prêt à voyager au vrai prix ?
             </h2>
             <p className="mt-3 text-sand/85">
-              Rejoignez 1 284 voyageurs qui surfent les vagues marocaines au juste prix.
+              Rejoignez plus de 1 200 voyageurs ayant déjà économisé grâce à SmartPass.
             </p>
             <div className="mt-8">
               <Button asChild size="lg">
-                <Link href="/smart-pass">Obtenir mon Smart Pass maintenant</Link>
+                <Link href="/smart-pass">Obtenir mon SmartPass — 299 DH</Link>
               </Button>
             </div>
             <p className="mt-4 text-xs text-sand/60">

@@ -5,25 +5,25 @@ import { Reveal, RevealStagger, RevealItem } from "@/components/ui/Reveal";
 const steps = [
   {
     Icon: Crown,
-    title: "Obtenir le Smart Pass en 2 minutes",
+    title: "Achetez votre SmartPass",
     body:
-      "Créez votre compte, payez 299 DH en un seul paiement, et accédez immédiatement à tous les partenaires pour 2 mois.",
+      "Créez votre compte et payez 299 DH en un seul paiement sécurisé Stripe. Activation immédiate, valable 2 mois.",
     img: IMG.surfBoards,
     alt: "Planches de surf empilées",
   },
   {
-    Icon: MapPin,
-    title: "Trouvez votre offre",
+    Icon: QrCode,
+    title: "Présentez votre SmartPass",
     body:
-      "Parcourez 47 partenaires certifiés dans 6 villes. Filtrez par catégorie, comparez les tarifs, lisez les descriptions.",
+      "Accédez immédiatement à nos 47 partenaires certifiés. Générez un QR code par offre et présentez-le sur place.",
     img: IMG.cityMarrakech,
     alt: "Carriole et minaret à Marrakech",
   },
   {
-    Icon: QrCode,
-    title: "Générez votre QR code",
+    Icon: MapPin,
+    title: "Payez moins cher",
     body:
-      "Un QR unique sécurisé par offre. Présentez-le au partenaire, il scanne, le tarif réduit s'applique.",
+      "Profitez des tarifs négociés et économisez jusqu'à 60% sur vos restaurants, activités et hébergements.",
     img: IMG.surfWaves,
     alt: "Surfeurs sur les vagues",
   },

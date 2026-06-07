@@ -3,12 +3,12 @@ import { Reveal, RevealStagger, RevealItem } from "@/components/ui/Reveal";
 
 const testimonials = [
   {
-    name: "Emma K.",
-    flag: "🇩🇪",
-    country: "Allemagne",
+    name: "Sarah & Thomas",
+    flag: "🇫🇷",
+    country: "France",
     city: "Agadir",
     quote:
-      "J'ai économisé plus de 800 MAD sur mon séjour à Agadir grâce à SmartPass. Le cours de surf et les transferts à prix fixe, ça change tout. Plus jamais sans ça au Maroc.",
+      "Nous avons économisé plus de 900 DH pendant notre séjour à Agadir. Le cours de surf et le hammam à prix fixe, ça change tout — fini les négociations stressantes.",
   },
   {
     name: "Lucas B.",

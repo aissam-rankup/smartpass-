@@ -2,24 +2,24 @@
 
 import Link from "next/link";
 import { motion } from "framer-motion";
-import { Shield, Star, ArrowRight, MapPin, Trophy, Users, CheckCircle2, Sparkles, Lock } from "lucide-react";
+import { Shield, Star, ArrowRight, CheckCircle2, Sparkles, Lock, BadgeCheck, Zap } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { IMG } from "@/lib/images";
 
-const PREVIEW_OFFERS = [
-  { label: "Surf",       img: IMG.surfStanding,    normal: 600, reduced: 250, pct: 58 },
-  { label: "Hammam",     img: IMG.hammamArch,      normal: 350, reduced: 180, pct: 49 },
-  { label: "Restaurant", img: IMG.restaurantTagine, normal: 280, reduced: 140, pct: 50 },
-];
-
-const savedTotal = PREVIEW_OFFERS.reduce((s, o) => s + (o.normal - o.reduced), 0);
 const PASS_PRICE = "299";
 const CUR = "DH";
+
+const REASSURANCES = [
+  { Icon: Lock,        label: "Paiement Stripe" },
+  { Icon: CheckCircle2,label: "Aucun abonnement" },
+  { Icon: BadgeCheck,  label: "Partenaires vérifiés" },
+  { Icon: Zap,         label: "Activation immédiate" },
+];
 
 export function Hero() {
   return (
     <section className="relative isolate overflow-hidden bg-sand text-charcoal">
-      {/* Background — visible photo with strategic overlay for text contrast */}
+      {/* Background — photo with strategic overlay for text contrast */}
       <div className="absolute inset-0 -z-10">
         {/* eslint-disable-next-line @next/next/no-img-element */}
         <img
@@ -28,9 +28,7 @@ export function Hero() {
           className="h-full w-full object-cover object-[70%_center] md:object-center"
           loading="eager"
         />
-        {/* Layered overlays — stronger on mobile (harder to read on narrow crop) */}
         <div className="absolute inset-0 bg-sand/82 backdrop-blur-[2px] md:bg-sand/72" />
-        {/* Center radial spotlight — brighter behind hero text */}
         <div
           className="absolute inset-0"
           style={{
@@ -39,78 +37,83 @@ export function Hero() {
           }}
           aria-hidden
         />
-        {/* Strong bottom fade — eases into the next section's sand background */}
         <div className="absolute inset-x-0 bottom-0 h-1/2 bg-gradient-to-t from-sand via-sand/85 to-transparent" />
       </div>
 
-      <div className="container-px relative py-10 md:py-16">
-        <div className="mx-auto max-w-5xl">
-          {/* ============ HEADER BLOCK ============ */}
+      <div className="container-px relative py-12 md:py-20">
+        <div className="mx-auto max-w-3xl">
+
+          {/* Badge réassurance */}
           <motion.div
             initial={{ opacity: 0, y: -8 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.1 }}
             className="flex flex-wrap items-center justify-center gap-2"
           >
-            <span className="inline-flex items-center gap-1.5 rounded-full border border-charcoal/20 bg-charcoal/5 px-3 py-1 text-[10px] uppercase tracking-[0.15em] text-charcoal backdrop-blur">
+            <span className="inline-flex items-center gap-1.5 rounded-full border border-charcoal/20 bg-white/70 px-3 py-1 text-[11px] font-medium uppercase tracking-[0.15em] text-charcoal backdrop-blur">
               <Shield className="h-3 w-3 text-coral" />
               Anti-arnaque · Maroc
             </span>
-            <span className="inline-flex items-center gap-1 text-xs text-charcoal/85">
+            <span className="inline-flex items-center gap-1 rounded-full bg-white/70 px-3 py-1 text-xs text-charcoal backdrop-blur">
               <Star className="h-3 w-3 fill-coral text-coral" />
-              <strong className="text-charcoal">4,9/5</strong>
-              <span className="text-charcoal/65">· 1 284 voyageurs</span>
+              <strong>4,9/5</strong>
+              <span className="text-charcoal/70">· 1 284 voyageurs</span>
             </span>
           </motion.div>
 
-          {/* Headline */}
+          {/* Titre principal — clair et explicite */}
           <motion.h1
             initial={{ opacity: 0, y: 18 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.7 }}
-            className="mt-6 text-center font-display leading-[0.95] tracking-tight"
+            className="mt-7 text-center font-display font-bold leading-[1.05] tracking-tight"
             style={{
-              fontSize: "clamp(1.85rem, 8.5vw, 4.5rem)",
+              fontSize: "clamp(2rem, 7vw, 4rem)",
               textShadow: "0 1px 0 rgba(247,243,236,0.6), 0 2px 12px rgba(247,243,236,0.4)",
             }}
           >
-            <span className="block text-charcoal">ÉVITEZ LES</span>
-            <span className="block text-charcoal">PRIX TOURISTES</span>
-            <span className="block text-coral">AU MAROC.</span>
+            Le pass qui vous donne accès aux{" "}
+            <span className="text-coral">tarifs locaux</span> au Maroc.
           </motion.h1>
 
-          {/* Subhead */}
+          {/* Sous-titre */}
           <motion.p
             initial={{ opacity: 0, y: 8 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, delay: 0.2 }}
-            className="mx-auto mt-5 max-w-md px-2 text-center text-sm leading-relaxed text-charcoal/85 sm:text-base"
+            className="mx-auto mt-5 max-w-2xl px-2 text-center text-base leading-relaxed text-charcoal/85 sm:text-lg"
           >
-            Surf, restaurants, bien-être, excursions —{" "}
-            <span className="font-semibold text-coral">à prix réduits.</span>
+            Économisez{" "}
+            <span className="font-semibold text-coral">jusqu&apos;à 60%</span>{" "}
+            sur les restaurants, activités, hammams, excursions et hébergements partenaires.
           </motion.p>
 
-          {/* ============ PRICE ============ */}
+          {/* Prix */}
           <motion.div
             initial={{ opacity: 0, y: 12 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, delay: 0.3 }}
-            className="mx-auto mt-7 flex max-w-md flex-col items-center gap-1"
+            className="mx-auto mt-8 flex max-w-md flex-col items-center"
           >
-            <p
-              className="font-display leading-none text-charcoal"
-              style={{ fontSize: "clamp(2.5rem, 11vw, 4.5rem)" }}
-            >
-              {PASS_PRICE} <span className="text-3xl text-charcoal/75 sm:text-4xl">{CUR}</span>
-            </p>
-            <p className="text-sm text-charcoal/80">seulement</p>
-            <p className="mt-1 inline-flex items-center gap-1 text-[11px] text-teal">
-              <CheckCircle2 className="h-3 w-3" />
-              Paiement unique · Valable 2 mois
+            <div className="flex items-baseline gap-2">
+              <span
+                className="font-display font-bold leading-none text-charcoal"
+                style={{ fontSize: "clamp(2.75rem, 11vw, 4.5rem)" }}
+              >
+                {PASS_PRICE}
+              </span>
+              <span className="font-display text-2xl font-bold text-charcoal/75 sm:text-3xl">
+                {CUR}
+              </span>
+              <span className="ml-1 text-sm text-charcoal/70">seulement</span>
+            </div>
+            <p className="mt-2 inline-flex items-center gap-1.5 rounded-full bg-teal-light px-3 py-1 text-xs font-medium text-teal">
+              <CheckCircle2 className="h-3.5 w-3.5" />
+              Valable 2 mois · Paiement unique
             </p>
           </motion.div>
 
-          {/* ============ CTA ============ */}
+          {/* CTA */}
           <motion.div
             initial={{ opacity: 0, y: 12 }}
             animate={{ opacity: 1, y: 0 }}
@@ -122,129 +125,40 @@ export function Hero() {
               style={{ animation: "pulse 2.5s ease-in-out infinite" }}
               aria-hidden
             />
-            <Button asChild size="lg" className="group w-full text-sm sm:text-base">
+            <Button asChild size="lg" className="group w-full text-base">
               <Link href="/smart-pass">
                 <Sparkles className="h-4 w-4 shrink-0" />
-                OBTENIR MON SMART PASS — {PASS_PRICE} {CUR}
+                Obtenir mon SmartPass
                 <ArrowRight className="h-4 w-4 shrink-0 transition group-hover:translate-x-1" />
               </Link>
             </Button>
-
-            <div className="mt-3 flex flex-wrap items-center justify-center gap-x-3 gap-y-1 text-[11px] text-charcoal/70">
-              <span className="inline-flex items-center gap-1">
-                <Lock className="h-3 w-3" /> Paiement Stripe
-              </span>
-              <span className="opacity-50">·</span>
-              <Link href="/partenaires" className="underline-offset-4 hover:text-coral hover:underline">
-                Voir les 47 partenaires →
-              </Link>
-            </div>
           </motion.div>
 
-          {/* ============ STATS BAR ============ */}
-          <motion.div
+          {/* Réassurances sous le bouton */}
+          <motion.ul
             initial={{ opacity: 0, y: 12 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, delay: 0.55 }}
-            className="mx-auto mt-8 grid w-full max-w-md grid-cols-2 gap-px overflow-hidden rounded-2xl border border-charcoal/15 bg-charcoal/5 backdrop-blur sm:max-w-2xl sm:grid-cols-4"
+            className="mx-auto mt-6 grid w-full max-w-xl grid-cols-2 gap-x-4 gap-y-2 sm:grid-cols-4"
           >
-            <Stat icon={<Users className="h-4 w-4" />}   label="Partenaires" value="47+" />
-            <Stat icon={<MapPin className="h-4 w-4" />}  label="Villes"      value="6" />
-            <Stat icon={<Trophy className="h-4 w-4" />}  label="Économies"   value="−25%" highlight />
-            <Stat icon={<Star className="h-4 w-4 fill-coral text-coral" />} label="Note" value="4,9" />
-          </motion.div>
+            {REASSURANCES.map(({ Icon, label }) => (
+              <li
+                key={label}
+                className="flex items-center justify-center gap-1.5 text-xs text-charcoal/80 sm:text-[13px]"
+              >
+                <Icon className="h-3.5 w-3.5 shrink-0 text-teal" />
+                <span className="font-medium">{label}</span>
+              </li>
+            ))}
+          </motion.ul>
 
-          {/* ============ MINI OFFERS PREVIEW ============ */}
-          <motion.div
-            initial={{ opacity: 0, y: 12 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6, delay: 0.7 }}
-            className="mt-10"
-          >
-            <p className="text-center font-accent text-xl leading-none text-coral sm:text-2xl">
-              Voici ce que vous économisez ↓
-            </p>
-
-            <div className="mt-4 grid grid-cols-3 gap-2 sm:gap-3">
-              {PREVIEW_OFFERS.map((o) => {
-                const saved = o.normal - o.reduced;
-                return (
-                  <article
-                    key={o.label}
-                    className="relative overflow-hidden rounded-xl border-4 border-white bg-white shadow-xl"
-                  >
-                    <div className="relative aspect-[4/3] overflow-hidden">
-                      {/* eslint-disable-next-line @next/next/no-img-element */}
-                      <img src={o.img} alt={o.label} className="h-full w-full object-cover" loading="lazy" />
-                      <div className="absolute inset-0 bg-gradient-to-t from-charcoal/80 to-transparent" />
-                      <span className="absolute right-1.5 top-1.5 flex h-8 w-8 items-center justify-center rounded-full bg-coral text-[9px] font-bold leading-none text-white shadow-lg sm:h-10 sm:w-10 sm:text-xs">
-                        −{o.pct}%
-                      </span>
-                      <span className="absolute bottom-1.5 left-1/2 -translate-x-1/2 whitespace-nowrap rounded-full bg-coral px-2 py-0.5 text-[9px] font-extrabold uppercase tracking-wider text-white shadow sm:text-[11px]">
-                        {o.label}
-                      </span>
-                    </div>
-
-                    <div className="p-1.5 sm:p-2">
-                      <div className="flex items-center justify-between gap-1.5">
-                        <div className="text-center">
-                          <p
-                            className="text-[7px] font-bold uppercase tracking-wider sm:text-[9px]"
-                            style={{ color: "#FF0000" }}
-                          >
-                            Touriste
-                          </p>
-                          <p
-                            className="font-display text-xs font-extrabold leading-none line-through decoration-[2px] sm:text-base"
-                            style={{ color: "#FF0000", textDecorationColor: "#FF0000" }}
-                          >
-                            {o.normal} {CUR}
-                          </p>
-                        </div>
-                        <ArrowRight className="h-3 w-3 shrink-0 text-charcoal/40" aria-hidden />
-                        <div className="rounded-md bg-coral px-1.5 py-1 text-center text-white sm:px-2">
-                          <p className="text-[7px] font-bold uppercase tracking-wider text-white/90 sm:text-[9px]">
-                            S.Pass
-                          </p>
-                          <p className="font-display text-xs font-extrabold leading-none sm:text-base">
-                            {o.reduced} {CUR}
-                          </p>
-                        </div>
-                      </div>
-                      <p className="mt-1 rounded bg-teal py-0.5 text-center text-[8px] font-bold uppercase text-white sm:text-[10px]">
-                        +{saved} {CUR} économisés
-                      </p>
-                    </div>
-                  </article>
-                );
-              })}
-            </div>
-
-            {/* ROI math */}
-            <div className="mx-auto mt-4 max-w-md rounded-xl border-2 border-dashed border-coral/60 bg-white px-3 py-3 shadow-sm sm:max-w-2xl">
-              <div className="flex flex-wrap items-center justify-center gap-1 font-display text-xs font-bold text-charcoal sm:gap-1.5 sm:text-sm">
-                <span className="rounded bg-teal-light px-1.5 py-0.5 text-teal">{PREVIEW_OFFERS[0].normal - PREVIEW_OFFERS[0].reduced} {CUR}</span>
-                <span className="text-charcoal/55">+</span>
-                <span className="rounded bg-teal-light px-1.5 py-0.5 text-teal">{PREVIEW_OFFERS[1].normal - PREVIEW_OFFERS[1].reduced} {CUR}</span>
-                <span className="text-charcoal/55">+</span>
-                <span className="rounded bg-teal-light px-1.5 py-0.5 text-teal">{PREVIEW_OFFERS[2].normal - PREVIEW_OFFERS[2].reduced} {CUR}</span>
-                <span className="text-charcoal/55">=</span>
-                <span className="rounded bg-coral px-2 py-0.5 text-white">{savedTotal} {CUR}</span>
-                <span className="text-charcoal/55">{">"}</span>
-                <span className="rounded border border-charcoal/30 px-1.5 py-0.5 text-charcoal">Pass {PASS_PRICE} {CUR}</span>
-              </div>
-              <p className="mt-1.5 text-center font-accent text-base text-coral">
-                Rentabilisé dès la 2<sup>e</sup> activité ✨
-              </p>
-            </div>
-          </motion.div>
         </div>
       </div>
 
       {/* ============ ORGANIC WAVE DIVIDER ============ */}
       <div
         aria-hidden
-        className="pointer-events-none relative mt-8 h-24 w-full sm:mt-10 sm:h-28 md:h-32"
+        className="pointer-events-none relative mt-4 h-20 w-full sm:h-24 md:h-28"
       >
         <svg
           viewBox="0 0 1440 160"
@@ -257,13 +171,11 @@ export function Hero() {
               <stop offset="100%" stopColor="var(--color-sand)" stopOpacity="1" />
             </linearGradient>
           </defs>
-          {/* Back wave — soft accent */}
           <path
             d="M0,80 C240,140 480,20 720,70 C960,120 1200,40 1440,90 L1440,160 L0,160 Z"
             fill="var(--color-coral)"
             fillOpacity="0.07"
           />
-          {/* Front wave — main sand color */}
           <path
             d="M0,100 C240,160 520,30 760,90 C1000,150 1220,60 1440,110 L1440,160 L0,160 Z"
             fill="url(#waveFill)"
@@ -271,34 +183,5 @@ export function Hero() {
         </svg>
       </div>
     </section>
-  );
-}
-
-function Stat({
-  icon,
-  label,
-  value,
-  highlight,
-}: {
-  icon: React.ReactNode;
-  label: string;
-  value: string;
-  highlight?: boolean;
-}) {
-  return (
-    <div className="bg-white px-3 py-2.5 text-center backdrop-blur sm:text-left">
-      <div className="flex items-center justify-center gap-1.5 text-charcoal/65 sm:justify-start">
-        {icon}
-        <p className="text-[9px] uppercase tracking-wider">{label}</p>
-      </div>
-      <p
-        className={
-          "mt-0.5 font-display text-lg font-bold leading-none sm:text-xl " +
-          (highlight ? "text-coral" : "text-charcoal")
-        }
-      >
-        {value}
-      </p>
-    </div>
   );
 }
