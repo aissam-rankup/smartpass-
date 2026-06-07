@@ -40,8 +40,8 @@ export function Hero() {
         <div className="absolute inset-x-0 bottom-0 h-1/2 bg-gradient-to-t from-sand via-sand/85 to-transparent" />
       </div>
 
-      <div className="container-px relative py-12 md:py-20">
-        <div className="mx-auto max-w-3xl">
+      <div className="container-px relative pt-4 pb-12 md:pt-6 md:pb-16">
+        <div className="mx-auto max-w-4xl">
 
           {/* Badge réassurance */}
           <motion.div
@@ -61,30 +61,31 @@ export function Hero() {
             </span>
           </motion.div>
 
-          {/* Titre principal — clair et explicite */}
+          {/* Titre principal — 2 lignes max */}
           <motion.h1
             initial={{ opacity: 0, y: 18 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.7 }}
-            className="mt-7 text-center font-display font-bold leading-[1.05] tracking-tight"
+            className="mt-5 text-center font-display font-bold leading-[1.05] tracking-tight"
             style={{
-              fontSize: "clamp(2rem, 7vw, 4rem)",
-              textShadow: "0 1px 0 rgba(247,243,236,0.6), 0 2px 12px rgba(247,243,236,0.4)",
+              fontSize: "clamp(2.1rem, 7.5vw, 4.5rem)",
+              textShadow:
+                "0 1px 0 rgba(247,243,236,0.85), 0 2px 14px rgba(247,243,236,0.6), 0 0 28px rgba(247,243,236,0.4)",
             }}
           >
-            Le pass qui vous donne accès aux{" "}
-            <span className="text-coral">tarifs locaux</span> au Maroc.
+            <span className="block">Accédez aux tarifs</span>
+            <span className="block text-coral">locaux au Maroc.</span>
           </motion.h1>
 
-          {/* Sous-titre */}
+          {/* Sous-titre — frosted backdrop pour visibilité */}
           <motion.p
             initial={{ opacity: 0, y: 8 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, delay: 0.2 }}
-            className="mx-auto mt-5 max-w-2xl px-2 text-center text-base leading-relaxed text-charcoal/85 sm:text-lg"
+            className="mx-auto mt-5 max-w-2xl rounded-2xl bg-white/55 px-4 py-3 text-center text-base font-medium leading-relaxed text-charcoal backdrop-blur-md sm:text-lg"
           >
             Économisez{" "}
-            <span className="font-semibold text-coral">jusqu&apos;à 60%</span>{" "}
+            <span className="font-bold text-coral">jusqu&apos;à 60%</span>{" "}
             sur les restaurants, activités, hammams, excursions et hébergements partenaires.
           </motion.p>
 
