@@ -13,7 +13,7 @@ const problems = [
 ];
 
 const solutions = [
-  { title: "Obtenir le Smart Pass", body: "299 DH en un paiement. Valable 2 mois." },
+  { title: "Obtenir le Morocco Pass", body: "299 DH en un paiement. Valable 2 mois." },
   { title: "Explorez les offres", body: "47 partenaires certifiés, 300+ offres, 6 villes." },
   { title: "Générez votre QR", body: "Un code unique par offre. Présentez. Économisez." },
 ];
@@ -90,12 +90,12 @@ export function ProblemSolution() {
                   La solution
                 </span>
                 <h2 className="mt-4 font-display text-3xl font-bold leading-tight text-charcoal md:text-5xl">
-                  SmartPass.
+                  Morocco Pass.
                   <br />
                   <em className="text-coral">Votre bouclier.</em>
                 </h2>
                 <p className="mt-4 max-w-lg text-charcoal/75 md:text-lg">
-                  Avec SmartPass, vous accédez aux tarifs officiels négociés avec chaque
+                  Avec Morocco Pass, vous accédez aux tarifs officiels négociés avec chaque
                   partenaire certifié. Vous montrez votre QR. Vous profitez du vrai prix. C'est tout.
                 </p>
                 <ol className="mt-8 space-y-3">
@@ -130,7 +130,7 @@ export function ProblemSolution() {
                 {/* eslint-disable-next-line @next/next/no-img-element */}
                 <img
                   src={IMG.heroLineup}
-                  alt="Voyageurs SmartPass à Taghazout"
+                  alt="Voyageurs Morocco Pass à Taghazout"
                   className="h-full w-full object-cover"
                   loading="lazy"
                 />

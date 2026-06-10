@@ -6,7 +6,7 @@ import { Button } from "@/components/ui/button";
 export const metadata: Metadata = {
   title: "À propos — Notre mission anti-arnaque au Maroc",
   description:
-    "SmartPass a été créé pour protéger les touristes au Maroc des prix gonflés et des arnaques. Notre mission, notre équipe, nos partenaires.",
+    "Morocco Pass a été créé pour protéger les touristes au Maroc des prix gonflés et des arnaques. Notre mission, notre équipe, nos partenaires.",
   alternates: { canonical: "/about" },
 };
 
@@ -20,7 +20,7 @@ export default function AboutPage() {
             Notre mission : voyager au vrai prix.
           </h1>
           <p className="mx-auto mt-4 max-w-2xl text-sand/75">
-            SmartPass est né d'un constat simple — au Maroc, le prix touriste existe et il pénalise
+            Morocco Pass est né d'un constat simple — au Maroc, le prix touriste existe et il pénalise
             ceux qui veulent juste profiter du voyage.
           </p>
         </div>
@@ -47,7 +47,7 @@ export default function AboutPage() {
 
         <div className="mt-16 text-center">
           <Button asChild size="lg">
-            <Link href="/smart-pass">Rejoindre SmartPass</Link>
+            <Link href="/smart-pass">Rejoindre Morocco Pass</Link>
           </Button>
         </div>
       </section>

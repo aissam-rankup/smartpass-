@@ -21,7 +21,7 @@ export default async function AdminLayout({ children }: { children: React.ReactN
       <header className="border-b border-border bg-dark-bg text-sand">
         <div className="container-px flex h-14 items-center justify-between">
           <Link href="/admin/dashboard" className="font-display text-lg font-bold">
-            SmartPass Admin
+            Morocco Pass Admin
           </Link>
           <nav className="flex items-center gap-4 text-sm">
             <Link href="/admin/dashboard" className="text-sand/80 hover:text-coral">Dashboard</Link>

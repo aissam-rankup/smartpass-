@@ -7,9 +7,9 @@ import type { Prisma } from "@prisma/client";
 import { PartnerCategory } from "@/lib/enums";
 
 export const metadata: Metadata = {
-  title: "Partenaires SmartPass — Restaurants, Surf, Transport & Excursions au Maroc",
+  title: "Partenaires Morocco Pass — Restaurants, Surf, Transport & Excursions au Maroc",
   description:
-    "Découvrez les 47 partenaires certifiés SmartPass au Maroc. Comparez les tarifs officiels et les réductions disponibles avec votre Smart Pass (299 DH, valable 2 mois).",
+    "Découvrez les 47 partenaires certifiés Morocco Pass au Maroc. Comparez les tarifs officiels et les réductions disponibles avec votre Morocco Pass (299 DH, valable 2 mois).",
   alternates: { canonical: "/partenaires" },
 };
 

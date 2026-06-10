@@ -9,7 +9,7 @@ export function getStripe(): Stripe {
   _stripe = new Stripe(key, {
     apiVersion: "2025-02-24.acacia",
     typescript: true,
-    appInfo: { name: "SmartPass", version: "0.1.0" },
+    appInfo: { name: "Morocco Pass", version: "0.1.0" },
   });
   return _stripe;
 }

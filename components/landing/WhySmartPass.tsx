@@ -40,7 +40,7 @@ export function WhySmartPass() {
           <div className="grid items-end gap-8 lg:grid-cols-[1fr_auto]">
             <div className="max-w-2xl">
               <span className="inline-block rounded-full bg-coral-light px-3 py-1 text-xs font-medium uppercase tracking-[0.18em] text-coral-dark">
-                Pourquoi SmartPass ?
+                Pourquoi Morocco Pass ?
               </span>
               <h2 className="mt-4 font-display text-3xl font-bold leading-[0.95] md:text-6xl">
                 On ne fait pas de la
@@ -49,7 +49,7 @@ export function WhySmartPass() {
               </h2>
             </div>
             <p className="max-w-sm text-charcoal/70 md:text-lg">
-              SmartPass n'est pas un site coupon. C'est un pacte : entre vous, nos partenaires
+              Morocco Pass n'est pas un site coupon. C'est un pacte : entre vous, nos partenaires
               certifiés, et le vrai Maroc.
             </p>
           </div>

@@ -7,7 +7,7 @@ export default function LoginPage() {
       <div className="w-full max-w-md rounded-lg border border-border bg-white p-8">
         <h1 className="font-display text-2xl font-bold">Connexion</h1>
         <p className="mt-2 text-sm text-muted">
-          Connectez-vous avec votre compte Google pour accéder à SmartPass.
+          Connectez-vous avec votre compte Google pour accéder à Morocco Pass.
         </p>
 
         <form

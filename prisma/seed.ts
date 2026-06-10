@@ -8,7 +8,7 @@ async function main() {
   await prisma.user.upsert({
     where: { email: "admin@smartpass.ma" },
     update: { role: Role.ADMIN },
-    create: { email: "admin@smartpass.ma", name: "SmartPass Admin", role: Role.ADMIN },
+    create: { email: "admin@smartpass.ma", name: "Morocco Pass Admin", role: Role.ADMIN },
   });
 
   // Sample partners

@@ -5,7 +5,7 @@ export function HomeJsonLd() {
     {
       "@context": "https://schema.org",
       "@type": "SoftwareApplication",
-      name: "SmartPass Maroc",
+      name: "Morocco Pass Maroc",
       applicationCategory: "TravelApplication",
       operatingSystem: "Web",
       offers: {

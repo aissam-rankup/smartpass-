@@ -52,7 +52,7 @@ export function Categories() {
                   {/* eslint-disable-next-line @next/next/no-img-element */}
                   <img
                     src={c.img}
-                    alt={`${c.name} — partenaires SmartPass`}
+                    alt={`${c.name} — partenaires Morocco Pass`}
                     className="h-full w-full object-cover opacity-90 transition duration-[800ms] group-hover:scale-110 group-hover:opacity-100"
                     loading="lazy"
                   />
@@ -67,7 +67,7 @@ export function Categories() {
                     <ArrowUpRight className="h-4 w-4 shrink-0 text-sand/40 transition group-hover:-translate-y-0.5 group-hover:translate-x-0.5 group-hover:text-coral" />
                   </div>
                   <p className="mt-4 text-xs font-medium text-coral">
-                    À partir de {c.from} avec SmartPass{" "}
+                    À partir de {c.from} avec Morocco Pass{" "}
                     <span className="text-[10px] font-normal text-sand/50">({c.usd})</span>
                   </p>
                 </div>

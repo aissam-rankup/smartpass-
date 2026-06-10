@@ -36,7 +36,7 @@ export function ComparisonTable() {
           <div className="grid grid-cols-[1.4fr_1fr_1fr] gap-2 border-b border-border bg-sand px-4 py-3 text-[10px] font-bold uppercase tracking-wider text-charcoal/65 sm:px-6 sm:text-xs">
             <p>Activité</p>
             <p className="text-right">Tarif standard</p>
-            <p className="text-right">Tarif SmartPass</p>
+            <p className="text-right">Tarif Morocco Pass</p>
           </div>
 
           {/* Rows */}

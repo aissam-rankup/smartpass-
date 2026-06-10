@@ -1,7 +1,7 @@
 import { Resend } from "resend";
 
 const resend = process.env.RESEND_API_KEY ? new Resend(process.env.RESEND_API_KEY) : null;
-const FROM = process.env.RESEND_FROM_EMAIL || "SmartPass <noreply@smartpass.ma>";
+const FROM = process.env.RESEND_FROM_EMAIL || "Morocco Pass <noreply@smartpass.ma>";
 
 async function send(to: string, subject: string, html: string) {
   if (!resend) {
@@ -17,12 +17,12 @@ function wrap(content: string) {
 <body style="margin:0;background:#f7f3ec;font-family:'DM Sans',sans-serif;color:#1a1a18;">
   <div style="max-width:560px;margin:32px auto;background:#fff;border-radius:16px;overflow:hidden;border:1px solid #d3cfc6;">
     <div style="background:#1a1a18;padding:24px;color:#f7f3ec;">
-      <h1 style="margin:0;font-size:22px;font-weight:700;">SmartPass</h1>
+      <h1 style="margin:0;font-size:22px;font-weight:700;">Morocco Pass</h1>
       <p style="margin:4px 0 0;color:#888780;font-size:12px;">Voyagez au Maroc. Au vrai prix.</p>
     </div>
     <div style="padding:32px;line-height:1.6;">${content}</div>
     <div style="background:#ede8df;padding:16px;text-align:center;font-size:11px;color:#888780;">
-      © ${new Date().getFullYear()} SmartPass Maroc · noreply@smartpass.ma
+      © ${new Date().getFullYear()} Morocco Pass Maroc · noreply@smartpass.ma
     </div>
   </div>
 </body></html>`;
@@ -32,13 +32,13 @@ export const emails = {
   welcome: (to: string, name?: string) =>
     send(
       to,
-      "Bienvenue sur SmartPass 🛡️ — Votre guide anti-arnaque au Maroc",
+      "Bienvenue sur Morocco Pass 🛡️ — Votre guide anti-arnaque au Maroc",
       wrap(`
         <h2 style="font-size:24px;margin:0 0 12px;">Bienvenue${name ? ` ${name}` : ""} !</h2>
         <p>Vous venez de rejoindre 1 284 voyageurs qui parcourent le Maroc au tarif local.</p>
         <p><strong>Pour commencer :</strong></p>
         <ol>
-          <li>Activez votre Smart Pass (299 DH en paiement unique, valable 2 mois)</li>
+          <li>Activez votre Morocco Pass (299 DH en paiement unique, valable 2 mois)</li>
           <li>Explorez le catalogue de 47 partenaires certifiés</li>
           <li>Générez vos QR codes et économisez immédiatement</li>
         </ol>
@@ -53,9 +53,9 @@ export const emails = {
   subscriptionConfirmed: (to: string) =>
     send(
       to,
-      "SmartPass activé ✓ — 47 partenaires vous attendent",
+      "Morocco Pass activé ✓ — 47 partenaires vous attendent",
       wrap(`
-        <h2 style="font-size:24px;margin:0 0 12px;">Votre Smart Pass est actif !</h2>
+        <h2 style="font-size:24px;margin:0 0 12px;">Votre Morocco Pass est actif !</h2>
         <p>Vous pouvez maintenant générer des QR codes pour tous nos partenaires certifiés.</p>
         <p style="margin-top:24px;">
           <a href="${process.env.NEXT_PUBLIC_APP_URL}/partenaires" style="background:#d85a30;color:#fff;padding:12px 24px;border-radius:999px;text-decoration:none;font-weight:600;">
@@ -71,7 +71,7 @@ export const emails = {
   subscriptionCanceled: (to: string) =>
     send(
       to,
-      "Votre Smart Pass est annulé — On espère vous revoir",
+      "Votre Morocco Pass est annulé — On espère vous revoir",
       wrap(`
         <h2 style="font-size:24px;margin:0 0 12px;">Annulation confirmée</h2>
         <p>Vous gardez l'accès à toutes les fonctionnalités jusqu'à la fin de votre période payée.</p>
@@ -87,7 +87,7 @@ export const emails = {
   paymentFailed: (to: string) =>
     send(
       to,
-      "⚠️ Paiement échoué — Votre Smart Pass est suspendu",
+      "⚠️ Paiement échoué — Votre Morocco Pass est suspendu",
       wrap(`
         <h2 style="font-size:24px;margin:0 0 12px;">Problème de paiement</h2>
         <p>Nous n'avons pas pu finaliser votre paiement. Votre Pass n'a pas été activé.</p>

@@ -4,9 +4,9 @@ import { CheckoutButton } from "@/components/subscription/CheckoutButton";
 import { FAQ } from "@/components/landing/FAQ";
 
 export const metadata: Metadata = {
-  title: "Le Smart Pass — 299 DH paiement unique · Valable 2 mois",
+  title: "Le Morocco Pass — 299 DH paiement unique · Valable 2 mois",
   description:
-    "Smart Pass : 299 DH en paiement unique, valable 2 mois. Accès illimité à 47 partenaires certifiés dans 6 villes du Maroc.",
+    "Morocco Pass : 299 DH en paiement unique, valable 2 mois. Accès illimité à 47 partenaires certifiés dans 6 villes du Maroc.",
   alternates: { canonical: "/smart-pass" },
 };
 
@@ -51,7 +51,7 @@ export default function SmartPassPage({ searchParams }: { searchParams: { cancel
               <div className="flex items-center gap-2">
                 <Sparkles className="h-4 w-4 text-coral" />
                 <p className="text-xs font-medium uppercase tracking-[0.18em] text-coral">
-                  Le Smart Pass
+                  Le Morocco Pass
                 </p>
               </div>
 
@@ -73,7 +73,7 @@ export default function SmartPassPage({ searchParams }: { searchParams: { cancel
               </ul>
 
               <div className="mt-10">
-                <CheckoutButton plan="monthly">Obtenir le Smart Pass</CheckoutButton>
+                <CheckoutButton plan="monthly">Obtenir le Morocco Pass</CheckoutButton>
               </div>
 
               <p className="mt-4 text-center text-xs text-muted">

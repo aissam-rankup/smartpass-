@@ -16,7 +16,7 @@ const testimonials = [
     country: "France",
     city: "Marrakech",
     quote:
-      "On s'est fait avoir au premier jour avec un taxi. Le lendemain j'ai pris SmartPass et c'était fini l'arnaque. Les partenaires sont pros et respectent vraiment les prix affichés.",
+      "On s'est fait avoir au premier jour avec un taxi. Le lendemain j'ai pris Morocco Pass et c'était fini l'arnaque. Les partenaires sont pros et respectent vraiment les prix affichés.",
   },
   {
     name: "Sarah M.",
@@ -32,7 +32,7 @@ const testimonials = [
     country: "Belgique",
     city: "Taghazout",
     quote:
-      "Pour un séjour surf à Taghazout, SmartPass est indispensable. J'ai pris le Pass. Rentabilisé en 3 jours entre les cours et les resto.",
+      "Pour un séjour surf à Taghazout, Morocco Pass est indispensable. J'ai pris le Pass. Rentabilisé en 3 jours entre les cours et les resto.",
   },
 ];
 

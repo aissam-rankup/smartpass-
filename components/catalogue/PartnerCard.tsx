@@ -28,7 +28,7 @@ export function PartnerCard({ p }: { p: PartnerCardData }) {
           // eslint-disable-next-line @next/next/no-img-element
           <img
             src={p.coverImageUrl}
-            alt={`${p.name} — ${CATEGORY_LABEL[p.category as PartnerCategory]} ${p.city} (partenaire SmartPass)`}
+            alt={`${p.name} — ${CATEGORY_LABEL[p.category as PartnerCategory]} ${p.city} (partenaire Morocco Pass)`}
             className="h-full w-full object-cover transition group-hover:scale-105"
             loading="lazy"
           />

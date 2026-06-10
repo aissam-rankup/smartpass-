@@ -5,7 +5,7 @@ const PILLARS = [
   {
     Icon: Handshake,
     title: "Tarifs négociés directement",
-    body: "Nous travaillons directement avec chaque partenaire pour obtenir des tarifs préférentiels réservés aux membres SmartPass.",
+    body: "Nous travaillons directement avec chaque partenaire pour obtenir des tarifs préférentiels réservés aux membres Morocco Pass.",
   },
   {
     Icon: Eye,

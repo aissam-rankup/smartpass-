@@ -28,7 +28,7 @@ export function SavingsDemo() {
             <em className="text-coral">3 activités.</em>
           </h2>
           <p className="mt-3 text-muted md:text-lg">
-            Voici ce que vous payez sans SmartPass, et ce que vous payez avec.
+            Voici ce que vous payez sans Morocco Pass, et ce que vous payez avec.
           </p>
         </div>
       </Reveal>
@@ -43,7 +43,7 @@ export function SavingsDemo() {
               </span>
               <div>
                 <p className="font-display text-base font-bold text-charcoal">
-                  Pass SmartPass
+                  Morocco Pass
                 </p>
                 <p className="text-xs text-muted">Paiement unique · Valable 2 mois</p>
               </div>
@@ -112,7 +112,7 @@ export function SavingsDemo() {
         <div className="mx-auto mt-8 flex max-w-md justify-center">
           <Button asChild size="lg" className="group w-full">
             <Link href="/smart-pass">
-              Obtenir mon SmartPass — {PASS_PRICE} DH
+              Obtenir mon Morocco Pass — {PASS_PRICE} DH
               <ArrowRight className="h-4 w-4 transition group-hover:translate-x-1" />
             </Link>
           </Button>

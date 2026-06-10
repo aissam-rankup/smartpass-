@@ -50,18 +50,18 @@ export function Hero() {
             transition={{ delay: 0.1 }}
             className="flex flex-wrap items-center justify-center gap-2"
           >
-            <span className="inline-flex items-center gap-1.5 rounded-full border border-charcoal/20 bg-white/70 px-3 py-1 text-[11px] font-medium uppercase tracking-[0.15em] text-charcoal backdrop-blur">
-              <Shield className="h-3 w-3 text-coral" />
-              Anti-arnaque · Maroc
+            <span className="inline-flex items-center gap-1.5 rounded-full bg-gradient-to-r from-coral to-coral-dark px-3 py-1 text-[11px] font-bold uppercase tracking-[0.15em] text-white shadow-sm">
+              <Sparkles className="h-3 w-3" />
+              Club privilégié · Maroc
             </span>
             <span className="inline-flex items-center gap-1 rounded-full bg-white/70 px-3 py-1 text-xs text-charcoal backdrop-blur">
               <Star className="h-3 w-3 fill-coral text-coral" />
               <strong>4,9/5</strong>
-              <span className="text-charcoal/70">· 1 284 voyageurs</span>
+              <span className="text-charcoal/70">· 1 284 membres</span>
             </span>
           </motion.div>
 
-          {/* Titre principal — 2 lignes max */}
+          {/* Titre principal — accès illimité, all inclusive */}
           <motion.h1
             initial={{ opacity: 0, y: 18 }}
             animate={{ opacity: 1, y: 0 }}
@@ -73,8 +73,10 @@ export function Hero() {
                 "0 1px 0 rgba(247,243,236,0.85), 0 2px 14px rgba(247,243,236,0.6), 0 0 28px rgba(247,243,236,0.4)",
             }}
           >
-            <span className="block">Accédez aux tarifs</span>
-            <span className="block text-coral">locaux au Maroc.</span>
+            <span className="block">Accès illimité aux</span>
+            <span className="block bg-gradient-to-r from-coral via-coral-dark to-coral bg-clip-text text-transparent">
+              tarifs privilégiés du Maroc.
+            </span>
           </motion.h1>
 
           {/* Sous-titre — frosted backdrop pour visibilité */}
@@ -84,9 +86,10 @@ export function Hero() {
             transition={{ duration: 0.6, delay: 0.2 }}
             className="mx-auto mt-5 max-w-2xl rounded-2xl bg-white/55 px-4 py-3 text-center text-base font-medium leading-relaxed text-charcoal backdrop-blur-md sm:text-lg"
           >
-            Économisez{" "}
-            <span className="font-bold text-coral">jusqu&apos;à 60%</span>{" "}
-            sur les restaurants, activités, hammams, excursions et hébergements partenaires.
+            Un pass <span className="font-bold text-coral">all inclusive</span> qui vous ouvre les portes
+            de tous nos partenaires vérifiés — restaurants, activités, hammams,
+            excursions, hébergements.{" "}
+            <span className="font-bold text-teal">Jusqu&apos;à 60% d&apos;économies.</span>
           </motion.p>
 
           {/* Prix */}
@@ -129,7 +132,7 @@ export function Hero() {
             <Button asChild size="lg" className="group w-full text-base">
               <Link href="/smart-pass">
                 <Sparkles className="h-4 w-4 shrink-0" />
-                Obtenir mon SmartPass
+                Obtenir mon Morocco Pass
                 <ArrowRight className="h-4 w-4 shrink-0 transition group-hover:translate-x-1" />
               </Link>
             </Button>

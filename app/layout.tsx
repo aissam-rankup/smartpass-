@@ -38,11 +38,11 @@ const caveat = Caveat({
 export const metadata: Metadata = {
   metadataBase: new URL(process.env.NEXT_PUBLIC_APP_URL || "https://smartpass.ma"),
   title: {
-    default: "SmartPass Maroc — Protégez-vous des arnaques touristiques",
-    template: "%s · SmartPass",
+    default: "Morocco Pass Maroc — Protégez-vous des arnaques touristiques",
+    template: "%s · Morocco Pass",
   },
   description:
-    "SmartPass vous garantit des tarifs officiels chez 47+ partenaires certifiés au Maroc. Restaurants, surf, transport, excursions — voyagez en toute sécurité pour 299 DH (paiement unique, valable 2 mois).",
+    "Morocco Pass vous garantit des tarifs officiels chez 47+ partenaires certifiés au Maroc. Restaurants, surf, transport, excursions — voyagez en toute sécurité pour 299 DH (paiement unique, valable 2 mois).",
   keywords: [
     "arnaque touriste maroc",
     "tarifs certifiés agadir",
@@ -51,7 +51,7 @@ export const metadata: Metadata = {
     "smart pass maroc",
   ],
   openGraph: {
-    title: "SmartPass — Voyagez malin au Maroc",
+    title: "Morocco Pass — Voyagez malin au Maroc",
     description: "Accédez aux vrais prix. 47+ partenaires certifiés. Anti-arnaque garanti.",
     locale: "fr_MA",
     type: "website",

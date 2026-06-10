@@ -93,14 +93,30 @@ export default async function EditPartnerPage({ params }: { params: { id: string
           <input name="coverImageUrl" defaultValue={partner.coverImageUrl ?? ""} className="mt-1 h-10 w-full rounded border border-border bg-white px-3 text-sm" />
         </label>
 
-        <div className="flex gap-6">
+        <div className="flex flex-wrap gap-6">
           <label className="flex items-center gap-2 text-sm">
             <input type="checkbox" name="isVerified" defaultChecked={partner.isVerified} className="accent-coral" /> Vérifié
           </label>
           <label className="flex items-center gap-2 text-sm">
             <input type="checkbox" name="isActive" defaultChecked={partner.isActive} className="accent-coral" /> Actif
           </label>
+          <label className="flex items-center gap-2 text-sm">
+            <input type="checkbox" name="isFeatured" defaultChecked={partner.isFeatured} className="accent-coral" />
+            <span>⭐ Mettre en avant sur la page d&apos;accueil</span>
+          </label>
         </div>
+
+        <label className="block max-w-xs">
+          <span className="text-xs font-semibold uppercase text-muted">Ordre d&apos;affichage (mise en avant)</span>
+          <input
+            type="number"
+            name="featuredOrder"
+            defaultValue={partner.featuredOrder}
+            min={0}
+            className="mt-1 h-10 w-full rounded border border-border bg-white px-3 text-sm"
+          />
+          <span className="mt-1 block text-xs text-muted">Plus petit = affiché en premier.</span>
+        </label>
 
         <button type="submit" className="rounded-full bg-coral px-6 py-3 text-sm font-medium text-white hover:bg-coral-dark">
           Enregistrer

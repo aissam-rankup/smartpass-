@@ -40,10 +40,13 @@ export async function createPartner(formData: FormData) {
       coverImageUrl: (formData.get("coverImageUrl") as string) || null,
       isVerified: formData.get("isVerified") === "on",
       isActive: formData.get("isActive") === "on",
+      isFeatured: formData.get("isFeatured") === "on",
+      featuredOrder: Number(formData.get("featuredOrder")) || 0,
     },
   });
 
   revalidatePath("/admin/partenaires");
+  revalidatePath("/");
   redirect(`/admin/partenaires/${partner.id}`);
 }
 
@@ -65,9 +68,12 @@ export async function updatePartner(id: string, formData: FormData) {
       coverImageUrl: (formData.get("coverImageUrl") as string) || null,
       isVerified: formData.get("isVerified") === "on",
       isActive: formData.get("isActive") === "on",
+      isFeatured: formData.get("isFeatured") === "on",
+      featuredOrder: Number(formData.get("featuredOrder")) || 0,
     },
   });
 
   revalidatePath("/admin/partenaires");
   revalidatePath(`/admin/partenaires/${id}`);
+  revalidatePath("/");
 }

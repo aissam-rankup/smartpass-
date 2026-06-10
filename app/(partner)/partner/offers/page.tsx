@@ -37,7 +37,7 @@ export default async function PartnerOffersPage() {
             <tr>
               <th className="px-4 py-3 text-left">Offre</th>
               <th className="px-4 py-3 text-left">Tarif normal</th>
-              <th className="px-4 py-3 text-left">Tarif SmartPass</th>
+              <th className="px-4 py-3 text-left">Tarif Morocco Pass</th>
               <th className="px-4 py-3 text-left">Réduction</th>
               <th className="px-4 py-3 text-left">Scans</th>
               <th className="px-4 py-3 text-left">Statut</th>

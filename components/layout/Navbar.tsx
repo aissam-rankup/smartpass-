@@ -9,7 +9,7 @@ import { Shield, Menu, X, ArrowRight } from "lucide-react";
 
 const NAV = [
   { href: "/partenaires", label: "Partenaires" },
-  { href: "/smart-pass", label: "Le Smart Pass" },
+  { href: "/smart-pass", label: "Le Morocco Pass" },
   { href: "/about", label: "À propos" },
   { href: "/contact", label: "Contact" },
 ];
@@ -33,7 +33,7 @@ export function Navbar() {
             className="flex items-center gap-2 font-display text-xl font-bold tracking-tight"
           >
             <Shield className="h-5 w-5 text-coral" aria-hidden />
-            SmartPass
+            Morocco Pass
           </Link>
 
           {/* Desktop nav */}
@@ -158,7 +158,7 @@ export function Navbar() {
             </nav>
 
             <div className="px-8 pb-8 text-center text-xs text-muted">
-              © {new Date().getFullYear()} SmartPass Maroc
+              © {new Date().getFullYear()} Morocco Pass Maroc
             </div>
           </motion.div>
         )}

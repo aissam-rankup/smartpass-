@@ -55,7 +55,7 @@ export function AgadirExperience() {
               <em className="text-coral">un avant-goût.</em>
             </h2>
             <p className="mt-3 text-muted md:text-lg">
-              Voici à quoi ressemble une vraie journée d'un voyageur SmartPass.
+              Voici à quoi ressemble une vraie journée d'un voyageur Morocco Pass.
               Soleil, vagues, saveurs — au juste prix.
             </p>
           </div>
@@ -97,7 +97,7 @@ export function AgadirExperience() {
         <Reveal delay={0.2} className="mt-10 text-center">
           <p className="text-sm text-muted md:text-base">
             <span className="font-semibold text-coral">Total économisé sur la journée : 760 MAD</span>{" "}
-            · Le prix du Smart Pass remboursé en une seule journée.
+            · Le prix du Morocco Pass remboursé en une seule journée.
           </p>
         </Reveal>
       </div>

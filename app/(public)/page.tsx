@@ -2,6 +2,7 @@ import { Hero } from "@/components/landing/Hero";
 import { HowItWorks } from "@/components/landing/HowItWorks";
 import { SavingsDemo } from "@/components/landing/SavingsDemo";
 import { WhyLowPrices } from "@/components/landing/WhyLowPrices";
+import { Guarantees } from "@/components/landing/Guarantees";
 import { FeaturedPartners } from "@/components/landing/FeaturedPartners";
 import { Categories } from "@/components/landing/Categories";
 import { Testimonials } from "@/components/landing/Testimonials";
@@ -26,6 +27,8 @@ export default function HomePage() {
       <FeaturedPartners />
       {/* 5. Pourquoi les prix sont si bas — transparence */}
       <WhyLowPrices />
+      {/* 5b. Nos garanties — vérifié, garanti, transparent */}
+      <Guarantees />
       {/* 6. Catégories — toutes les catégories couvertes */}
       <Categories />
       {/* 7. Témoignages voyageurs */}

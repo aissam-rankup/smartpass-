@@ -80,7 +80,7 @@ export default async function AdminDashboard() {
           <p className="text-xs uppercase tracking-[0.18em] text-muted">Admin</p>
           <h1 className="mt-1 font-display text-3xl font-bold md:text-4xl">Dashboard</h1>
           <p className="mt-1 text-sm text-muted">
-            Vue d'ensemble — données en temps réel sur SmartPass.
+            Vue d'ensemble — données en temps réel sur Morocco Pass.
           </p>
         </div>
         <div className="flex flex-wrap gap-2">

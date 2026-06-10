@@ -37,3 +37,22 @@ export async function deleteOffer(id: string) {
   await prisma.offer.delete({ where: { id } });
   revalidatePath("/admin/offers");
 }
+
+export async function toggleOfferFeatured(id: string) {
+  const session = await auth();
+  if (!session?.user?.id) throw new Error("Not authenticated");
+  const offer = await prisma.offer.findUnique({ where: { id }, select: { isFeatured: true } });
+  if (!offer) return;
+  await prisma.offer.update({ where: { id }, data: { isFeatured: !offer.isFeatured } });
+  revalidatePath("/admin/offers");
+  revalidatePath("/");
+}
+
+export async function setOfferFeaturedOrder(id: string, formData: FormData) {
+  const session = await auth();
+  if (!session?.user?.id) throw new Error("Not authenticated");
+  const order = Number(formData.get("featuredOrder")) || 0;
+  await prisma.offer.update({ where: { id }, data: { featuredOrder: order } });
+  revalidatePath("/admin/offers");
+  revalidatePath("/");
+}

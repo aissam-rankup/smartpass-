@@ -62,7 +62,7 @@ export default async function DashboardPage({
           <Sparkles className="mt-0.5 h-5 w-5 shrink-0 text-teal" />
           <div>
             <p className="font-display text-sm font-semibold text-teal">
-              Bienvenue sur SmartPass !
+              Bienvenue sur Morocco Pass !
             </p>
             <p className="mt-0.5 text-xs text-teal/80">
               Votre Pass est actif. Explorez nos partenaires pour générer votre premier QR.
@@ -88,7 +88,7 @@ export default async function DashboardPage({
             <p className="text-xs uppercase tracking-[0.2em] text-sand/60">Bonjour</p>
             <h1 className="mt-1 font-display text-3xl font-bold md:text-5xl">{firstName}</h1>
             <p className="mt-2 max-w-md text-sm text-sand/70 md:text-base">
-              Voici votre espace SmartPass. Tarifs locaux, partenaires vérifiés, économies au
+              Voici votre espace Morocco Pass. Tarifs locaux, partenaires vérifiés, économies au
               rendez-vous.
             </p>
           </div>
@@ -97,7 +97,7 @@ export default async function DashboardPage({
             <div className="flex items-center justify-between gap-3">
               <div className="flex items-center gap-2">
                 <Crown className="h-4 w-4 text-coral" />
-                <span className="text-xs uppercase tracking-wider text-sand/70">Smart Pass</span>
+                <span className="text-xs uppercase tracking-wider text-sand/70">Morocco Pass</span>
               </div>
               {hasSubscription ? (
                 <Badge variant="teal">Actif</Badge>
@@ -162,7 +162,7 @@ export default async function DashboardPage({
           iconColor="coral"
           label="Économies réalisées"
           value={formatPrice(stats.savings)}
-          sub="Grâce à SmartPass"
+          sub="Grâce à Morocco Pass"
           highlight
         />
       </div>
@@ -195,7 +195,7 @@ export default async function DashboardPage({
           <div className="flex flex-col items-start gap-4 sm:flex-row sm:items-center sm:justify-between">
             <div>
               <h2 className="font-display text-lg font-bold text-charcoal md:text-xl">
-                Activez votre Smart Pass pour 299 DH
+                Activez votre Morocco Pass pour 299 DH
               </h2>
               <p className="mt-1 max-w-md text-sm text-coral-dark">
                 Une fois activé, générez vos QR codes et économisez dès la 2ᵉ activité. Valable 2

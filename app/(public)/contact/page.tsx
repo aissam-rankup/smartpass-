@@ -2,9 +2,9 @@ import type { Metadata } from "next";
 import { Mail, MessageSquare } from "lucide-react";
 
 export const metadata: Metadata = {
-  title: "Contact — Support SmartPass & Partenariats",
+  title: "Contact — Support Morocco Pass & Partenariats",
   description:
-    "Une question, un litige avec un partenaire, ou vous souhaitez rejoindre SmartPass en tant que partenaire ? Contactez-nous.",
+    "Une question, un litige avec un partenaire, ou vous souhaitez rejoindre Morocco Pass en tant que partenaire ? Contactez-nous.",
   alternates: { canonical: "/contact" },
 };
 
@@ -25,7 +25,7 @@ export default function ContactPage() {
           <Mail className="h-6 w-6 text-coral" />
           <h3 className="mt-4 font-display text-lg font-semibold">Support touristes</h3>
           <p className="mt-1 text-sm text-muted">
-            Litige, question sur votre Smart Pass, problème de QR code.
+            Litige, question sur votre Morocco Pass, problème de QR code.
           </p>
           <p className="mt-3 text-sm font-medium text-coral">support@smartpass.ma</p>
         </a>
@@ -37,7 +37,7 @@ export default function ContactPage() {
           <MessageSquare className="h-6 w-6 text-coral" />
           <h3 className="mt-4 font-display text-lg font-semibold">Devenir partenaire</h3>
           <p className="mt-1 text-sm text-muted">
-            Vous gérez un commerce, un service touristique au Maroc ? Rejoignez SmartPass.
+            Vous gérez un commerce, un service touristique au Maroc ? Rejoignez Morocco Pass.
           </p>
           <p className="mt-3 text-sm font-medium text-coral">partners@smartpass.ma</p>
         </a>

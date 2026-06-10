@@ -27,7 +27,7 @@ export async function generateMetadata({ params }: { params: { slug: string } })
   const partner = await loadPartner(params.slug);
   if (!partner) return {};
   return {
-    title: partner.metaTitle ?? `${partner.name} — Offres SmartPass à ${partner.city}`,
+    title: partner.metaTitle ?? `${partner.name} — Offres Morocco Pass à ${partner.city}`,
     description:
       partner.metaDescription ??
       `${partner.description.slice(0, 155)}…`,

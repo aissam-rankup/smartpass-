@@ -39,7 +39,7 @@ export default async function QrPage({ params }: { params: { offerId: string } }
               </p>
             </div>
             <div>
-              <p className="text-xs text-muted">Tarif SmartPass</p>
+              <p className="text-xs text-muted">Tarif Morocco Pass</p>
               <p className="font-display text-3xl font-bold text-teal">
                 {formatPrice(offer.reducedPrice)}
               </p>

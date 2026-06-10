@@ -42,7 +42,7 @@ export function Pricing() {
               <div className="flex items-center gap-2">
                 <Sparkles className="h-4 w-4 text-coral" />
                 <p className="text-xs font-medium uppercase tracking-[0.18em] text-coral">
-                  Le Smart Pass
+                  Le Morocco Pass
                 </p>
               </div>
 
@@ -64,7 +64,7 @@ export function Pricing() {
               </ul>
 
               <Button asChild size="lg" className="mt-10 w-full">
-                <Link href="/smart-pass">Obtenir mon Smart Pass</Link>
+                <Link href="/smart-pass">Obtenir mon Morocco Pass</Link>
               </Button>
 
               <p className="mt-4 text-center text-xs text-muted">

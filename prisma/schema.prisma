@@ -115,6 +115,8 @@ model Partner {
   images          String   @default("") // comma-separated URLs
   isVerified      Boolean  @default(false)
   isActive        Boolean  @default(true)
+  isFeatured      Boolean  @default(false)
+  featuredOrder   Int      @default(0)
   totalScans      Int      @default(0)
   metaTitle       String?
   metaDescription String?
@@ -129,6 +131,7 @@ model Partner {
   @@index([category])
   @@index([city])
   @@index([isActive])
+  @@index([isFeatured, featuredOrder])
 }
 
 model Offer {
@@ -147,6 +150,8 @@ model Offer {
   currency       String   @default("MAD")
   isActive       Boolean  @default(true)
   isPaused       Boolean  @default(false)
+  isFeatured     Boolean  @default(false)
+  featuredOrder  Int      @default(0)
   totalScans     Int      @default(0)
   imageUrl       String?
   validityDays   Int?
@@ -159,6 +164,7 @@ model Offer {
 
   @@index([partnerId])
   @@index([isActive, isPaused])
+  @@index([isFeatured, featuredOrder])
 }
 
 model QRCode {

@@ -48,7 +48,7 @@ export function OfferCard({ offer, hasSubscription }: { offer: OfferCardData; ha
             </Button>
           ) : (
             <Button asChild variant="secondary" className="w-full">
-              <Link href="/smart-pass">Débloquer avec SmartPass</Link>
+              <Link href="/smart-pass">Débloquer avec Morocco Pass</Link>
             </Button>
           )}
         </div>

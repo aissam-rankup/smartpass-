@@ -7,7 +7,7 @@ export function Footer() {
       <div className="container-px grid gap-10 py-16 md:grid-cols-4">
         <div>
           <Link href="/" className="flex items-center gap-2 font-display text-xl font-bold">
-            <Shield className="h-5 w-5 text-coral" /> SmartPass
+            <Shield className="h-5 w-5 text-coral" /> Morocco Pass
           </Link>
           <p className="mt-4 max-w-xs text-sm text-sand/70">
             Voyagez au Maroc sans payer le prix touriste. 47+ partenaires certifiés, tarifs officiels garantis.
@@ -16,7 +16,7 @@ export function Footer() {
 
         <FooterCol title="Découvrir">
           <FooterLink href="/partenaires">Partenaires</FooterLink>
-          <FooterLink href="/smart-pass">Le Smart Pass</FooterLink>
+          <FooterLink href="/smart-pass">Le Morocco Pass</FooterLink>
           <FooterLink href="/about">À propos</FooterLink>
         </FooterCol>
 
@@ -36,7 +36,7 @@ export function Footer() {
 
       <div className="border-t border-white/10">
         <div className="container-px flex flex-col items-center justify-between gap-2 py-6 text-xs text-sand/60 md:flex-row">
-          <p>© {new Date().getFullYear()} SmartPass Maroc. Tous droits réservés.</p>
+          <p>© {new Date().getFullYear()} Morocco Pass Maroc. Tous droits réservés.</p>
           <p>Paiement sécurisé via Stripe · Annulation en 1 clic</p>
         </div>
       </div>

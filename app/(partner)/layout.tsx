@@ -14,7 +14,7 @@ export default async function PartnerLayout({ children }: { children: React.Reac
       <header className="border-b border-border bg-white">
         <div className="container-px flex h-16 items-center justify-between">
           <Link href="/partner/scan" className="flex items-center gap-2 font-display text-lg font-bold">
-            <Shield className="h-5 w-5 text-coral" /> SmartPass · Espace Partenaire
+            <Shield className="h-5 w-5 text-coral" /> Morocco Pass · Espace Partenaire
           </Link>
 
           <nav className="flex items-center gap-6 text-sm">

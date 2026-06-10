@@ -5,7 +5,7 @@ import { Reveal, RevealStagger, RevealItem } from "@/components/ui/Reveal";
 const steps = [
   {
     Icon: Crown,
-    title: "Achetez votre SmartPass",
+    title: "Achetez votre Morocco Pass",
     body:
       "Créez votre compte et payez 299 DH en un seul paiement sécurisé Stripe. Activation immédiate, valable 2 mois.",
     img: IMG.surfBoards,
@@ -13,7 +13,7 @@ const steps = [
   },
   {
     Icon: QrCode,
-    title: "Présentez votre SmartPass",
+    title: "Présentez votre Morocco Pass",
     body:
       "Accédez immédiatement à nos 47 partenaires certifiés. Générez un QR code par offre et présentez-le sur place.",
     img: IMG.cityMarrakech,

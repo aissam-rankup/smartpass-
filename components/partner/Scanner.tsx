@@ -164,7 +164,7 @@ function ResultCard({ result, onReset }: { result: ScanResult; onReset: () => vo
     return (
       <div className="rounded-lg border-2 border-teal bg-teal-light p-6 text-center">
         <CheckCircle2 className="mx-auto h-12 w-12 text-teal" />
-        <h3 className="mt-4 font-display text-2xl font-bold text-teal">Smart Pass valide !</h3>
+        <h3 className="mt-4 font-display text-2xl font-bold text-teal">Morocco Pass valide !</h3>
         <p className="mt-2 text-sm text-charcoal">
           Touriste : <span className="font-semibold">{result.touristName}</span>
         </p>
@@ -199,7 +199,7 @@ function ResultCard({ result, onReset }: { result: ScanResult; onReset: () => vo
         </p>
         <p className="mt-1 text-sm text-muted">Offre : {result.offer.name}</p>
         <p className="mt-4 text-xs text-muted">
-          Le touriste peut générer un nouveau QR depuis son espace SmartPass.
+          Le touriste peut générer un nouveau QR depuis son espace Morocco Pass.
         </p>
         <Button onClick={onReset} variant="secondary" size="lg" className="mt-6 w-full">
           Fermer

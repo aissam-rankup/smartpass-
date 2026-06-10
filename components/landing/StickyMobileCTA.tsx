@@ -34,7 +34,7 @@ export function StickyMobileCTA() {
           className="group inline-flex shrink-0 items-center gap-1.5 rounded-full bg-coral px-5 py-3 text-sm font-bold text-white shadow-md transition active:scale-95"
         >
           <Sparkles className="h-4 w-4" />
-          Obtenir mon SmartPass
+          Obtenir mon Morocco Pass
           <ArrowRight className="h-4 w-4 transition group-hover:translate-x-0.5" />
         </Link>
       </div>
