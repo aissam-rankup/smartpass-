@@ -15,6 +15,7 @@ import { FAQ } from "@/components/landing/FAQ";
 import { LiveSocialProof } from "@/components/landing/LiveSocialProof";
 import { LiveCounter } from "@/components/landing/LiveCounter";
 import { LaunchCountdown } from "@/components/landing/LaunchCountdown";
+import { IMG } from "@/lib/images";
 
 export const metadata: Metadata = {
   title: "Le Morocco Pass — 299 DH paiement unique · Valable 2 mois",
@@ -43,18 +44,30 @@ export default function SmartPassPage({ searchParams }: { searchParams: { cancel
   return (
     <>
       {/* ============ HERO ============ */}
-      <section className="relative overflow-hidden bg-gradient-to-b from-charcoal via-charcoal to-charcoal/95 py-14 text-sand md:py-20">
-        {/* Animated gradient blobs */}
-        <div
-          aria-hidden
-          className="pointer-events-none absolute inset-0 opacity-60"
-          style={{
-            backgroundImage:
-              "radial-gradient(circle at 15% 20%, rgba(216,90,48,0.35) 0px, transparent 45%), radial-gradient(circle at 85% 80%, rgba(29,158,117,0.22) 0px, transparent 45%)",
-          }}
-        />
+      <section className="relative overflow-hidden bg-charcoal py-14 text-sand md:py-20">
+        {/* Background image — touristic activity */}
+        <div className="absolute inset-0 -z-0">
+          {/* eslint-disable-next-line @next/next/no-img-element */}
+          <img
+            src={IMG.desertCamels}
+            alt="Caravane de chameaux dans le désert marocain"
+            className="h-full w-full object-cover"
+            loading="eager"
+          />
+          {/* Dark gradient overlay for text readability */}
+          <div className="absolute inset-0 bg-gradient-to-b from-charcoal/85 via-charcoal/75 to-charcoal/90" />
+          {/* Coral/teal accent blobs */}
+          <div
+            aria-hidden
+            className="absolute inset-0 opacity-70"
+            style={{
+              backgroundImage:
+                "radial-gradient(circle at 15% 20%, rgba(216,90,48,0.4) 0px, transparent 45%), radial-gradient(circle at 85% 80%, rgba(29,158,117,0.28) 0px, transparent 45%)",
+            }}
+          />
+        </div>
 
-        <div className="container-px relative">
+        <div className="container-px relative z-10">
           <div className="mx-auto max-w-3xl text-center">
             <div className="flex flex-wrap items-center justify-center gap-2">
               <span className="inline-flex items-center gap-1.5 rounded-full bg-gradient-to-r from-coral to-coral-dark px-3 py-1 text-[11px] font-bold uppercase tracking-[0.18em] text-white shadow-lg shadow-coral/30">
