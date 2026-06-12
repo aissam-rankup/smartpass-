@@ -2,7 +2,7 @@
 
 import Link from "next/link";
 import { motion } from "framer-motion";
-import { Shield, Star, ArrowRight, CheckCircle2, Sparkles, Lock, BadgeCheck, Zap } from "lucide-react";
+import { Shield, Star, ArrowRight, CheckCircle2, Sparkles, Lock, BadgeCheck, Zap, UtensilsCrossed, Waves, Hotel, Mountain, Bath } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { IMG } from "@/lib/images";
 
@@ -142,18 +142,67 @@ export function Hero() {
             </span>
           </motion.h1>
 
-          {/* Sous-titre — frosted backdrop pour visibilité */}
-          <motion.p
+          {/* Sous-titre — carte membership avec chips catégories + badge éco */}
+          <motion.div
             initial={{ opacity: 0, y: 8 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, delay: 0.2 }}
-            className="mx-auto mt-5 max-w-2xl rounded-2xl bg-white/55 px-4 py-3 text-center text-base font-medium leading-relaxed text-charcoal backdrop-blur-md sm:text-lg"
+            className="relative mx-auto mt-6 max-w-3xl"
           >
-            Un pass <span className="font-bold text-coral">all inclusive</span> qui vous ouvre les portes
-            de tous nos partenaires vérifiés — restaurants, activités, hammams,
-            excursions, hébergements.{" "}
-            <span className="font-bold text-teal">Jusqu&apos;à 60% d&apos;économies.</span>
-          </motion.p>
+            <div className="relative overflow-hidden rounded-2xl border border-white/60 bg-white/85 shadow-[0_10px_40px_rgba(0,0,0,0.08)] backdrop-blur-xl">
+              {/* Coral accent ribbon top */}
+              <div className="h-1.5 w-full bg-gradient-to-r from-coral via-coral-dark to-teal" />
+
+              <div className="grid gap-5 p-5 sm:grid-cols-[1fr_auto] sm:items-center sm:gap-6 sm:p-6">
+                {/* Left: tagline + chips */}
+                <div>
+                  <p className="flex items-center gap-2 text-[11px] font-bold uppercase tracking-[0.18em] text-coral">
+                    <Sparkles className="h-3 w-3" />
+                    Pass all inclusive
+                  </p>
+                  <p className="mt-2 text-base font-semibold leading-snug text-charcoal sm:text-lg">
+                    Toutes les portes vous sont ouvertes :
+                  </p>
+
+                  <ul className="mt-3 flex flex-wrap gap-1.5">
+                    {[
+                      { Icon: UtensilsCrossed, label: "Restaurants" },
+                      { Icon: Waves,           label: "Surf & activités" },
+                      { Icon: Bath,            label: "Hammams" },
+                      { Icon: Mountain,        label: "Excursions" },
+                      { Icon: Hotel,           label: "Hébergements" },
+                    ].map(({ Icon, label }) => (
+                      <li
+                        key={label}
+                        className="inline-flex items-center gap-1.5 rounded-full border border-coral/20 bg-coral/5 px-2.5 py-1 text-xs font-medium text-charcoal"
+                      >
+                        <Icon className="h-3.5 w-3.5 text-coral" />
+                        {label}
+                      </li>
+                    ))}
+                  </ul>
+                </div>
+
+                {/* Right: stamp badge */}
+                <div className="relative shrink-0 sm:ml-2">
+                  <div className="relative inline-flex flex-col items-center justify-center rounded-2xl bg-gradient-to-br from-teal to-teal/85 px-5 py-3 text-white shadow-lg shadow-teal/20">
+                    <span className="text-[10px] font-bold uppercase tracking-[0.18em] text-white/80">
+                      Jusqu&apos;à
+                    </span>
+                    <span className="font-display text-3xl font-extrabold leading-none sm:text-4xl">
+                      −60%
+                    </span>
+                    <span className="mt-0.5 text-[10px] font-semibold uppercase tracking-wider text-white/90">
+                      d&apos;économies
+                    </span>
+                    {/* Petites étoiles décoratives */}
+                    <span aria-hidden className="absolute -right-1.5 -top-1.5 text-coral text-base">✦</span>
+                    <span aria-hidden className="absolute -left-2 -bottom-2 text-coral text-sm">✦</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </motion.div>
 
           {/* Prix */}
           <motion.div
