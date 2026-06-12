@@ -61,21 +61,84 @@ export function Hero() {
             </span>
           </motion.div>
 
-          {/* Titre principal — accès illimité, all inclusive */}
+          {/* Titre principal — visibilité maximale + style créatif */}
           <motion.h1
             initial={{ opacity: 0, y: 18 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.7 }}
-            className="mt-5 text-center font-display font-bold leading-[1.05] tracking-tight"
-            style={{
-              fontSize: "clamp(2.1rem, 7.5vw, 4.5rem)",
-              textShadow:
-                "0 1px 0 rgba(247,243,236,0.85), 0 2px 14px rgba(247,243,236,0.6), 0 0 28px rgba(247,243,236,0.4)",
-            }}
+            className="relative mt-5 text-center font-display font-extrabold leading-[1.02] tracking-tight"
+            style={{ fontSize: "clamp(2.1rem, 7.5vw, 4.5rem)" }}
           >
-            <span className="block">Accès illimité aux</span>
-            <span className="block bg-gradient-to-r from-coral via-coral-dark to-coral bg-clip-text text-transparent">
-              tarifs privilégiés du Maroc.
+            {/* Ligne 1 — charcoal solide + halo sand */}
+            <span
+              className="block text-charcoal"
+              style={{
+                textShadow:
+                  "0 2px 0 rgba(247,243,236,0.95), 0 4px 18px rgba(247,243,236,0.85), 0 0 40px rgba(247,243,236,0.7)",
+              }}
+            >
+              Accès illimité aux
+            </span>
+
+            {/* Ligne 2 — coral massif + texture créative */}
+            <span className="relative mt-1 inline-block">
+              {/* Halo coral derrière pour pop visuel */}
+              <span
+                aria-hidden
+                className="pointer-events-none absolute inset-0 -z-10 rounded-full bg-coral/25 blur-3xl"
+              />
+              <span
+                className="relative block text-coral"
+                style={{
+                  textShadow:
+                    "0 2px 0 #fff, 0 4px 0 rgba(255,255,255,0.5), 0 6px 22px rgba(216,90,48,0.45), 0 0 50px rgba(255,255,255,0.55)",
+                  WebkitTextStroke: "1px rgba(91,42,17,0.15)",
+                }}
+              >
+                tarifs privilégiés
+              </span>
+              {/* Brush underline coral */}
+              <svg
+                aria-hidden
+                viewBox="0 0 320 14"
+                preserveAspectRatio="none"
+                className="mx-auto mt-1 block h-2.5 w-[80%] sm:h-3"
+              >
+                <path
+                  d="M4 9 C 60 2, 130 12, 200 6 S 300 10, 316 5"
+                  stroke="currentColor"
+                  strokeWidth="5"
+                  strokeLinecap="round"
+                  fill="none"
+                  className="text-coral"
+                />
+              </svg>
+            </span>
+
+            <span
+              className="block text-charcoal"
+              style={{
+                textShadow:
+                  "0 2px 0 rgba(247,243,236,0.95), 0 4px 14px rgba(247,243,236,0.8)",
+              }}
+            >
+              du Maroc.
+            </span>
+
+            {/* Petites étoiles flottantes pour le fun */}
+            <span
+              aria-hidden
+              className="absolute -left-2 top-2 text-2xl text-coral/70 sm:-left-6 sm:top-4 sm:text-3xl"
+              style={{ animation: "pulse 3s ease-in-out infinite" }}
+            >
+              ✦
+            </span>
+            <span
+              aria-hidden
+              className="absolute -right-1 bottom-6 text-xl text-teal/70 sm:-right-4 sm:text-3xl"
+              style={{ animation: "pulse 3.5s ease-in-out infinite" }}
+            >
+              ✦
             </span>
           </motion.h1>
 
