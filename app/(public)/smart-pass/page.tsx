@@ -54,15 +54,25 @@ export default function SmartPassPage({ searchParams }: { searchParams: { cancel
             className="h-full w-full object-cover"
             loading="eager"
           />
-          {/* Dark gradient overlay for text readability */}
-          <div className="absolute inset-0 bg-gradient-to-b from-charcoal/85 via-charcoal/75 to-charcoal/90" />
+          {/* Dark gradient overlay for text readability — much stronger */}
+          <div className="absolute inset-0 bg-charcoal/55" />
+          <div className="absolute inset-0 bg-gradient-to-b from-charcoal/80 via-charcoal/60 to-charcoal/85" />
+          {/* Center darkening spotlight — pulls eye to headline */}
+          <div
+            aria-hidden
+            className="absolute inset-0"
+            style={{
+              backgroundImage:
+                "radial-gradient(ellipse at center 45%, rgba(20,17,15,0.45) 0%, transparent 65%)",
+            }}
+          />
           {/* Coral/teal accent blobs */}
           <div
             aria-hidden
-            className="absolute inset-0 opacity-70"
+            className="absolute inset-0 opacity-55"
             style={{
               backgroundImage:
-                "radial-gradient(circle at 15% 20%, rgba(216,90,48,0.4) 0px, transparent 45%), radial-gradient(circle at 85% 80%, rgba(29,158,117,0.28) 0px, transparent 45%)",
+                "radial-gradient(circle at 15% 20%, rgba(216,90,48,0.55) 0px, transparent 40%), radial-gradient(circle at 85% 80%, rgba(29,158,117,0.32) 0px, transparent 40%)",
             }}
           />
         </div>
@@ -81,16 +91,45 @@ export default function SmartPassPage({ searchParams }: { searchParams: { cancel
               </span>
             </div>
 
-            <h1 className="mt-6 font-display text-4xl font-extrabold leading-[1.05] tracking-tight md:text-6xl">
-              Le pass qui débloque le <br className="hidden sm:inline" />
-              <span className="relative inline-block">
-                <span className="relative z-10 bg-gradient-to-r from-coral via-coral-light to-coral bg-clip-text text-transparent">
-                  vrai prix du Maroc.
-                </span>
+            <h1
+              className="mt-6 font-display text-4xl font-extrabold leading-[1.05] tracking-tight md:text-6xl"
+              style={{
+                textShadow:
+                  "0 2px 0 rgba(0,0,0,0.45), 0 4px 18px rgba(0,0,0,0.55), 0 0 60px rgba(0,0,0,0.4)",
+              }}
+            >
+              <span className="block text-white">Le pass qui débloque le</span>
+              <span className="relative mt-1 inline-block">
+                {/* Halo coral derrière pour le pop */}
                 <span
                   aria-hidden
-                  className="absolute inset-x-0 bottom-1 h-3 -skew-x-6 bg-coral/30 blur-md"
+                  className="pointer-events-none absolute inset-0 -z-10 rounded-full bg-coral/45 blur-3xl"
                 />
+                <span
+                  className="relative block font-extrabold text-coral"
+                  style={{
+                    textShadow:
+                      "0 2px 0 rgba(0,0,0,0.5), 0 4px 20px rgba(0,0,0,0.6), 0 0 40px rgba(216,90,48,0.55)",
+                    WebkitTextStroke: "1px rgba(0,0,0,0.15)",
+                  }}
+                >
+                  vrai prix du Maroc.
+                </span>
+                {/* Underline brushstroke */}
+                <svg
+                  aria-hidden
+                  viewBox="0 0 320 14"
+                  preserveAspectRatio="none"
+                  className="mx-auto mt-1 block h-2.5 w-[85%] text-coral sm:h-3"
+                >
+                  <path
+                    d="M4 9 C 60 2, 130 12, 200 6 S 300 10, 316 5"
+                    stroke="currentColor"
+                    strokeWidth="5"
+                    strokeLinecap="round"
+                    fill="none"
+                  />
+                </svg>
               </span>
             </h1>
 
