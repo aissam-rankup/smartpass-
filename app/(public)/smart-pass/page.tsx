@@ -1,37 +1,18 @@
 import type { Metadata } from "next";
-import {
-  Check,
-  Shield,
-  Sparkles,
-  Star,
-  Lock,
-  Zap,
-  BadgeCheck,
-  RefreshCw,
-  ArrowRight,
-} from "lucide-react";
-import { CheckoutButton } from "@/components/subscription/CheckoutButton";
+import { Sparkles, Star } from "lucide-react";
 import { FAQ } from "@/components/landing/FAQ";
 import { LiveSocialProof } from "@/components/landing/LiveSocialProof";
 import { LiveCounter } from "@/components/landing/LiveCounter";
 import { LaunchCountdown } from "@/components/landing/LaunchCountdown";
+import { PricingTiers } from "@/components/landing/PricingTiers";
 import { IMG } from "@/lib/images";
 
 export const metadata: Metadata = {
-  title: "Le Morocco Pass — 299 DH paiement unique · Valable 2 mois",
+  title: "Choisissez votre Morocco Pass — Tourist ou Tout Exclusif",
   description:
-    "Morocco Pass : 299 DH en paiement unique, valable 2 mois. Accès illimité à 47 partenaires certifiés dans 6 villes du Maroc.",
+    "2 packs (Tourist activités touristiques, Tout Exclusif toutes catégories) en 3 formats : Solo, Duo, Famille. À partir de 299 DH, valable 2 mois.",
   alternates: { canonical: "/smart-pass" },
 };
-
-const FEATURES: { Icon: typeof Check; text: string }[] = [
-  { Icon: BadgeCheck, text: "Accès illimité aux 47 partenaires certifiés pendant 2 mois" },
-  { Icon: Sparkles,   text: "Offres et QR codes illimités durant la période" },
-  { Icon: Shield,     text: "6 villes : Agadir, Marrakech, Essaouira, Taghazout, Ouarzazate, Casablanca" },
-  { Icon: RefreshCw,  text: "Renouvelable à votre rythme — uniquement si vous le souhaitez" },
-  { Icon: Lock,       text: "Paiement unique sécurisé Stripe — pas d'abonnement" },
-  { Icon: Zap,        text: "Activation immédiate après paiement" },
-];
 
 const TRUST = [
   { stat: "1 284", label: "membres actifs" },
@@ -45,7 +26,6 @@ export default function SmartPassPage({ searchParams }: { searchParams: { cancel
     <>
       {/* ============ HERO ============ */}
       <section className="relative overflow-hidden bg-charcoal py-14 text-sand md:py-20">
-        {/* Background image — touristic activity */}
         <div className="absolute inset-0 -z-0">
           {/* eslint-disable-next-line @next/next/no-img-element */}
           <img
@@ -54,10 +34,8 @@ export default function SmartPassPage({ searchParams }: { searchParams: { cancel
             className="h-full w-full object-cover"
             loading="eager"
           />
-          {/* Dark gradient overlay for text readability — much stronger */}
           <div className="absolute inset-0 bg-charcoal/55" />
           <div className="absolute inset-0 bg-gradient-to-b from-charcoal/80 via-charcoal/60 to-charcoal/85" />
-          {/* Center darkening spotlight — pulls eye to headline */}
           <div
             aria-hidden
             className="absolute inset-0"
@@ -66,7 +44,6 @@ export default function SmartPassPage({ searchParams }: { searchParams: { cancel
                 "radial-gradient(ellipse at center 45%, rgba(20,17,15,0.45) 0%, transparent 65%)",
             }}
           />
-          {/* Coral/teal accent blobs */}
           <div
             aria-hidden
             className="absolute inset-0 opacity-55"
@@ -82,7 +59,7 @@ export default function SmartPassPage({ searchParams }: { searchParams: { cancel
             <div className="flex flex-wrap items-center justify-center gap-2">
               <span className="inline-flex items-center gap-1.5 rounded-full bg-gradient-to-r from-coral to-coral-dark px-3 py-1 text-[11px] font-bold uppercase tracking-[0.18em] text-white shadow-lg shadow-coral/30">
                 <Sparkles className="h-3 w-3" />
-                Offre de lancement · −0% les 14 prochains jours
+                Offre de lancement
               </span>
               <span className="inline-flex items-center gap-1 rounded-full bg-sand/15 px-3 py-1 text-xs text-sand backdrop-blur">
                 <Star className="h-3 w-3 fill-coral text-coral" />
@@ -98,9 +75,8 @@ export default function SmartPassPage({ searchParams }: { searchParams: { cancel
                   "0 2px 0 rgba(0,0,0,0.45), 0 4px 18px rgba(0,0,0,0.55), 0 0 60px rgba(0,0,0,0.4)",
               }}
             >
-              <span className="block text-white">Le pass qui débloque le</span>
+              <span className="block text-white">Choisissez le pass qui</span>
               <span className="relative mt-1 inline-block">
-                {/* Halo coral derrière pour le pop */}
                 <span
                   aria-hidden
                   className="pointer-events-none absolute inset-0 -z-10 rounded-full bg-coral/45 blur-3xl"
@@ -113,9 +89,8 @@ export default function SmartPassPage({ searchParams }: { searchParams: { cancel
                     WebkitTextStroke: "1px rgba(0,0,0,0.15)",
                   }}
                 >
-                  vrai prix du Maroc.
+                  vous ressemble.
                 </span>
-                {/* Underline brushstroke */}
                 <svg
                   aria-hidden
                   viewBox="0 0 320 14"
@@ -134,12 +109,12 @@ export default function SmartPassPage({ searchParams }: { searchParams: { cancel
             </h1>
 
             <p className="mx-auto mt-5 max-w-xl text-sand/80 md:text-lg">
-              <span className="font-semibold text-sand">299 DH une fois</span>,
-              valable 2 mois. Vous économisez en moyenne{" "}
-              <span className="font-semibold text-coral">900 DH par semaine.</span>
+              <span className="font-semibold text-sand">2 packs</span>,{" "}
+              <span className="font-semibold text-sand">3 formats</span> —
+              voyagez seul, en couple ou en famille. À partir de{" "}
+              <span className="font-semibold text-coral">299 DH</span>.
             </p>
 
-            {/* Live counter under headline */}
             <div className="mt-7 flex flex-wrap items-center justify-center gap-3">
               <LiveCounter />
             </div>
@@ -163,101 +138,18 @@ export default function SmartPassPage({ searchParams }: { searchParams: { cancel
               </div>
             ))}
           </div>
-        </div>
-      </section>
 
-      {/* ============ PRICING CARD ============ */}
-      <section className="bg-sand py-14 md:py-20">
-        <div className="container-px">
-          <div className="mx-auto max-w-md">
-            {/* Countdown above card */}
+          {/* Countdown */}
+          <div className="mx-auto mt-8 max-w-md">
             <LaunchCountdown />
-
-            <div className="relative mt-5 overflow-hidden rounded-3xl border-2 border-coral bg-white p-7 shadow-[0_30px_60px_-15px_rgba(216,90,48,0.35)] transition hover:-translate-y-1 hover:shadow-[0_40px_70px_-15px_rgba(216,90,48,0.45)] md:p-9">
-              {/* Decorative blobs */}
-              <div
-                aria-hidden
-                className="pointer-events-none absolute -right-12 -top-12 h-44 w-44 rounded-full bg-coral/20 blur-3xl"
-              />
-              <div
-                aria-hidden
-                className="pointer-events-none absolute -bottom-12 -left-12 h-40 w-40 rounded-full bg-teal/15 blur-3xl"
-              />
-
-              {/* Corner ribbon */}
-              <span className="absolute right-0 top-5 z-10 rounded-l-full bg-gradient-to-r from-coral to-coral-dark px-3 py-1 text-[10px] font-bold uppercase tracking-wider text-white shadow-lg">
-                ⚡ Le plus populaire
-              </span>
-
-              <div className="relative">
-                <p className="flex items-center gap-2 text-[11px] font-bold uppercase tracking-[0.18em] text-coral">
-                  <Sparkles className="h-3.5 w-3.5" />
-                  Le Morocco Pass · Édition lancement
-                </p>
-
-                <div className="mt-5 flex items-baseline gap-2">
-                  <span className="font-display text-6xl font-extrabold leading-none text-charcoal md:text-7xl">
-                    299
-                  </span>
-                  <span className="font-display text-2xl font-bold text-charcoal/75">DH</span>
-                  <span className="ml-1 text-sm text-muted">une seule fois</span>
-                </div>
-                <p className="mt-2 inline-flex items-center gap-1.5 rounded-full bg-teal-light px-3 py-1 text-xs font-semibold text-teal">
-                  <Check className="h-3.5 w-3.5" />
-                  Paiement unique · Valable 2 mois
-                </p>
-
-                <ul className="mt-7 space-y-3">
-                  {FEATURES.map(({ Icon, text }) => (
-                    <li
-                      key={text}
-                      className="group flex items-start gap-3 text-sm leading-relaxed text-charcoal"
-                    >
-                      <span className="mt-0.5 flex h-6 w-6 shrink-0 items-center justify-center rounded-full bg-teal-light text-teal transition group-hover:scale-110 group-hover:bg-teal group-hover:text-white">
-                        <Icon className="h-3.5 w-3.5" />
-                      </span>
-                      <span>{text}</span>
-                    </li>
-                  ))}
-                </ul>
-
-                {/* CTA with pulse halo */}
-                <div className="relative mt-9">
-                  <span
-                    className="pointer-events-none absolute inset-0 -z-10 rounded-full bg-coral/40 blur-2xl"
-                    style={{ animation: "pulse 2.2s ease-in-out infinite" }}
-                    aria-hidden
-                  />
-                  <CheckoutButton plan="monthly">
-                    <span className="inline-flex items-center gap-2">
-                      <Sparkles className="h-4 w-4" />
-                      Obtenir mon Morocco Pass
-                      <ArrowRight className="h-4 w-4 transition group-hover:translate-x-1" />
-                    </span>
-                  </CheckoutButton>
-                </div>
-
-                <p className="mt-4 flex flex-wrap items-center justify-center gap-x-3 gap-y-1 text-center text-[11px] text-muted">
-                  <span className="inline-flex items-center gap-1">
-                    <Lock className="h-3 w-3" /> Stripe sécurisé
-                  </span>
-                  <span className="opacity-50">·</span>
-                  <span>Remboursement 7 jours</span>
-                  <span className="opacity-50">·</span>
-                  <span>Activation immédiate</span>
-                </p>
-              </div>
-            </div>
-
-            {/* Reassurance below */}
-            <div className="mt-6 flex items-center justify-center gap-2 text-center text-xs text-muted">
-              <Shield className="h-3.5 w-3.5 text-teal" />
-              Annulation impossible : le pass n&apos;est pas un abonnement.
-            </div>
           </div>
         </div>
       </section>
 
+      {/* ============ PRICING TIERS ============ */}
+      <PricingTiers />
+
+      {/* ============ FAQ ============ */}
       <FAQ />
 
       {/* Floating live social proof toast */}
