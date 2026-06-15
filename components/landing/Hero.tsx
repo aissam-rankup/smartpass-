@@ -2,7 +2,7 @@
 
 import Link from "next/link";
 import { motion } from "framer-motion";
-import { Shield, Star, ArrowRight, CheckCircle2, Sparkles, Lock, BadgeCheck, Zap, UtensilsCrossed, Waves, Hotel, Mountain, Bath } from "lucide-react";
+import { Star, ArrowRight, CheckCircle2, Sparkles, BadgeCheck, Zap, UtensilsCrossed, Waves, Hotel, Mountain, Bath } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { IMG } from "@/lib/images";
 
@@ -10,10 +10,9 @@ const PASS_PRICE = "299";
 const CUR = "DH";
 
 const REASSURANCES = [
-  { Icon: Lock,        label: "Paiement Stripe" },
-  { Icon: CheckCircle2,label: "Aucun abonnement" },
-  { Icon: BadgeCheck,  label: "Partenaires vérifiés" },
-  { Icon: Zap,         label: "Activation immédiate" },
+  { Icon: BadgeCheck,   label: "Aucun prix à la tête du client" },
+  { Icon: CheckCircle2, label: "Budget maîtrisé avant votre arrivée" },
+  { Icon: Zap,          label: "Pass rentabilisé en quelques activités" },
 ];
 
 export function Hero() {
@@ -77,7 +76,7 @@ export function Hero() {
                   "0 2px 0 rgba(247,243,236,0.95), 0 4px 18px rgba(247,243,236,0.85), 0 0 40px rgba(247,243,236,0.7)",
               }}
             >
-              Accès illimité aux
+              Voyagez au Maroc
             </span>
 
             {/* Ligne 2 — coral massif + texture créative */}
@@ -95,7 +94,7 @@ export function Hero() {
                   WebkitTextStroke: "1px rgba(91,42,17,0.15)",
                 }}
               >
-                tarifs privilégiés
+                sans payer le prix touriste.
               </span>
               {/* Brush underline coral */}
               <svg
@@ -113,16 +112,6 @@ export function Hero() {
                   className="text-coral"
                 />
               </svg>
-            </span>
-
-            <span
-              className="block text-charcoal"
-              style={{
-                textShadow:
-                  "0 2px 0 rgba(247,243,236,0.95), 0 4px 14px rgba(247,243,236,0.8)",
-              }}
-            >
-              du Maroc.
             </span>
 
             {/* Petites étoiles flottantes pour le fun */}
@@ -158,10 +147,10 @@ export function Hero() {
                 <div>
                   <p className="flex items-center gap-2 text-[11px] font-bold uppercase tracking-[0.18em] text-coral">
                     <Sparkles className="h-3 w-3" />
-                    Pass all inclusive
+                    Tarifs négociés à l&apos;avance
                   </p>
                   <p className="mt-2 text-base font-semibold leading-snug text-charcoal sm:text-lg">
-                    Toutes les portes vous sont ouvertes :
+                    Jusqu&apos;à <span className="text-coral">−60%</span> chez nos partenaires vérifiés :
                   </p>
 
                   <ul className="mt-3 flex flex-wrap gap-1.5">
@@ -250,20 +239,20 @@ export function Hero() {
             </Button>
           </motion.div>
 
-          {/* Réassurances sous le bouton */}
+          {/* Réassurances sous le bouton — 3 promesses anti-prix-touriste */}
           <motion.ul
             initial={{ opacity: 0, y: 12 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, delay: 0.55 }}
-            className="mx-auto mt-6 grid w-full max-w-xl grid-cols-2 gap-x-4 gap-y-2 sm:grid-cols-4"
+            className="mx-auto mt-6 grid w-full max-w-2xl gap-2 sm:grid-cols-3"
           >
             {REASSURANCES.map(({ Icon, label }) => (
               <li
                 key={label}
-                className="flex items-center justify-center gap-1.5 text-xs text-charcoal/80 sm:text-[13px]"
+                className="flex items-center justify-center gap-2 rounded-full border border-teal/20 bg-white/70 px-3 py-1.5 text-xs font-medium text-charcoal backdrop-blur sm:text-[13px]"
               >
                 <Icon className="h-3.5 w-3.5 shrink-0 text-teal" />
-                <span className="font-medium">{label}</span>
+                <span>{label}</span>
               </li>
             ))}
           </motion.ul>

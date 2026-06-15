@@ -1,6 +1,7 @@
 import { Hero } from "@/components/landing/Hero";
-import { HowItWorks } from "@/components/landing/HowItWorks";
+import { WhyExists } from "@/components/landing/WhyExists";
 import { SavingsDemo } from "@/components/landing/SavingsDemo";
+import { HowItWorks } from "@/components/landing/HowItWorks";
 import { WhyLowPrices } from "@/components/landing/WhyLowPrices";
 import { Guarantees } from "@/components/landing/Guarantees";
 import { FeaturedPartners } from "@/components/landing/FeaturedPartners";
@@ -17,29 +18,31 @@ export default function HomePage() {
   return (
     <>
       <HomeJsonLd />
-      {/* 1. Hero — value prop, prix, CTA, réassurances */}
+      {/* 1. Hero — Voyagez sans payer le prix touriste */}
       <Hero />
-      {/* 2. Comment ça marche — 3 étapes */}
-      <HowItWorks />
-      {/* 3. Démonstration des économies — exemple chiffré */}
+      {/* 2. Pourquoi Morocco Pass existe — explication du problème AVANT la promesse */}
+      <WhyExists />
+      {/* 3. Démonstration des économies — ROI immédiat */}
       <SavingsDemo />
-      {/* 4. Partenaires vedettes — preuve sociale concrète */}
+      {/* 4. Comment ça marche — 3 étapes */}
+      <HowItWorks />
+      {/* 5. Partenaires vedettes — preuve sociale concrète */}
       <FeaturedPartners />
-      {/* 5. Pourquoi les prix sont si bas — transparence */}
+      {/* 6. Pourquoi les prix sont si bas — transparence */}
       <WhyLowPrices />
-      {/* 5b. Nos garanties — vérifié, garanti, transparent */}
+      {/* 7. Nos garanties — vérifié, garanti, transparent */}
       <Guarantees />
-      {/* 6. Catégories — toutes les catégories couvertes */}
+      {/* 8. Catégories — toutes les catégories couvertes */}
       <Categories />
-      {/* 7. Témoignages voyageurs */}
+      {/* 9. Témoignages voyageurs */}
       <Testimonials />
-      {/* 8. Tableau comparatif — combien économiser */}
+      {/* 10. Tableau comparatif — combien économiser */}
       <ComparisonTable />
-      {/* 9. Villes couvertes */}
+      {/* 11. Villes couvertes */}
       <Cities />
-      {/* 10. FAQ */}
+      {/* 12. FAQ */}
       <FAQ />
-      {/* 11. CTA final */}
+      {/* 13. CTA final */}
       <FinalCTA />
       {/* Mobile sticky CTA bar */}
       <StickyMobileCTA />
