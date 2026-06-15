@@ -7,10 +7,25 @@ import type { Prisma } from "@prisma/client";
 import { PartnerCategory } from "@/lib/enums";
 
 export const metadata: Metadata = {
-  title: "Partenaires Morocco Pass — Restaurants, Surf, Transport & Excursions au Maroc",
+  title: "47 partenaires certifiés au Maroc — Tarifs garantis par catégorie et ville",
   description:
-    "Découvrez les 47 partenaires certifiés Morocco Pass au Maroc. Comparez les tarifs officiels et les réductions disponibles avec votre Morocco Pass (299 DH, valable 2 mois).",
-  alternates: { canonical: "/partenaires" },
+    "Tous les partenaires Morocco Pass : restaurants, surf à Taghazout, excursions désert à Marrakech, hammams, hébergements, transferts aéroport, location voiture. Comparez les tarifs locaux dans 6 villes : Agadir, Marrakech, Essaouira, Taghazout, Ouarzazate, Casablanca.",
+  keywords: [
+    "partenaires maroc", "restaurant agadir prix", "surf taghazout école",
+    "excursion désert marrakech", "hammam marrakech tarif", "riad marrakech prix",
+    "que faire à agadir", "que faire à essaouira", "transfert aéroport agadir",
+    "location voiture maroc prix",
+  ],
+  alternates: {
+    canonical: "/partenaires",
+    languages: { "fr-MA": "/partenaires", "en-US": "/partenaires", "x-default": "/partenaires" },
+  },
+  openGraph: {
+    title: "47 partenaires certifiés Morocco Pass",
+    description: "Restaurants, surf, excursions, hammams, hébergements — tarifs locaux garantis dans 6 villes au Maroc.",
+    url: "/partenaires",
+    type: "website",
+  },
 };
 
 export const dynamic = "force-dynamic";

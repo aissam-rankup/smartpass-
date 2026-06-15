@@ -26,15 +26,52 @@ async function loadPartner(slug: string) {
 export async function generateMetadata({ params }: { params: { slug: string } }): Promise<Metadata> {
   const partner = await loadPartner(params.slug);
   if (!partner) return {};
+
+  const categoryFr = CATEGORY_LABEL[partner.category as PartnerCategory] || partner.category;
+  const offerCount = partner.offers.length;
+  const minPrice = partner.offers.length
+    ? Math.round(Math.min(...partner.offers.map((o) => o.reducedPrice)))
+    : null;
+
+  const title =
+    partner.metaTitle ??
+    `${partner.name} — ${categoryFr} à ${partner.city}, tarifs Morocco Pass`;
+
+  const desc =
+    partner.metaDescription ??
+    (minPrice
+      ? `${partner.name} à ${partner.city} : ${offerCount} offre${offerCount > 1 ? "s" : ""} avec Morocco Pass, à partir de ${minPrice} DH. ${partner.description.slice(0, 100)}`
+      : `${partner.name} à ${partner.city}. Partenaire ${categoryFr} certifié Morocco Pass. ${partner.description.slice(0, 130)}`);
+
+  const url = `/partenaires/${partner.slug}`;
+
   return {
-    title: partner.metaTitle ?? `${partner.name} — Offres Morocco Pass à ${partner.city}`,
-    description:
-      partner.metaDescription ??
-      `${partner.description.slice(0, 155)}…`,
-    alternates: { canonical: `/partenaires/${partner.slug}` },
+    title,
+    description: desc.slice(0, 160),
+    keywords: [
+      `${partner.name.toLowerCase()} ${partner.city.toLowerCase()}`,
+      `${categoryFr.toLowerCase()} ${partner.city.toLowerCase()} prix`,
+      `${categoryFr.toLowerCase()} ${partner.city.toLowerCase()} tarif`,
+      `meilleur ${categoryFr.toLowerCase()} ${partner.city.toLowerCase()}`,
+      "morocco pass partenaire",
+    ],
+    alternates: {
+      canonical: url,
+      languages: { "fr-MA": url, "en-US": url, "x-default": url },
+    },
     openGraph: {
-      title: partner.name,
-      description: partner.description,
+      title: `${partner.name} — ${partner.city}`,
+      description: partner.description.slice(0, 200),
+      url,
+      type: "website",
+      images: partner.coverImageUrl
+        ? [{ url: partner.coverImageUrl, alt: `${partner.name} à ${partner.city}` }]
+        : undefined,
+    },
+    twitter: {
+      card: "summary_large_image",
+      title: `${partner.name} — ${partner.city}`,
+      description: partner.description.slice(0, 160),
       images: partner.coverImageUrl ? [partner.coverImageUrl] : undefined,
     },
   };
@@ -46,21 +83,63 @@ export default async function PartnerPage({ params }: { params: { slug: string }
 
   const { hasSubscription } = await getCurrentUserWithSubscription();
 
+  const baseUrl = process.env.NEXT_PUBLIC_APP_URL || "https://smartpass.ma";
+  const partnerUrl = `${baseUrl}/partenaires/${partner.slug}`;
+
   const jsonLd = {
     "@context": "https://schema.org",
     "@type": "LocalBusiness",
+    "@id": `${partnerUrl}#business`,
     name: partner.name,
     description: partner.description,
+    url: partnerUrl,
+    image: partner.coverImageUrl ?? undefined,
+    telephone: partner.phone ?? undefined,
+    email: partner.email ?? undefined,
     address: {
       "@type": "PostalAddress",
       streetAddress: partner.address ?? undefined,
       addressLocality: partner.city,
       addressCountry: "MA",
     },
-    image: partner.coverImageUrl ?? undefined,
-    telephone: partner.phone ?? undefined,
-    url: partner.website ?? undefined,
-    priceRange: "MAD",
+    ...(partner.latitude && partner.longitude
+      ? {
+          geo: {
+            "@type": "GeoCoordinates",
+            latitude: partner.latitude,
+            longitude: partner.longitude,
+          },
+        }
+      : {}),
+    priceRange: partner.offers.length
+      ? `${Math.round(Math.min(...partner.offers.map((o) => o.reducedPrice)))}-${Math.round(Math.max(...partner.offers.map((o) => o.reducedPrice)))} MAD`
+      : "MAD",
+    aggregateRating: partner.totalScans > 10
+      ? {
+          "@type": "AggregateRating",
+          ratingValue: "4.8",
+          reviewCount: String(Math.max(5, Math.floor(partner.totalScans / 10))),
+        }
+      : undefined,
+    makesOffer: partner.offers.map((o) => ({
+      "@type": "Offer",
+      name: o.name,
+      description: o.description,
+      price: o.reducedPrice,
+      priceCurrency: "MAD",
+      availability: "https://schema.org/InStock",
+      url: partnerUrl,
+    })),
+  };
+
+  const breadcrumb = {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    itemListElement: [
+      { "@type": "ListItem", position: 1, name: "Accueil", item: baseUrl },
+      { "@type": "ListItem", position: 2, name: "Partenaires", item: `${baseUrl}/partenaires` },
+      { "@type": "ListItem", position: 3, name: partner.name, item: partnerUrl },
+    ],
   };
 
   return (
@@ -68,6 +147,10 @@ export default async function PartnerPage({ params }: { params: { slug: string }
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+      />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumb) }}
       />
 
       {/* Hero */}

@@ -4,10 +4,23 @@ import { Shield, Users, Award } from "lucide-react";
 import { Button } from "@/components/ui/button";
 
 export const metadata: Metadata = {
-  title: "À propos — Notre mission anti-arnaque au Maroc",
+  title: "À propos de Morocco Pass — Mission anti-prix-touriste",
   description:
-    "Morocco Pass a été créé pour protéger les touristes au Maroc des prix gonflés et des arnaques. Notre mission, notre équipe, nos partenaires.",
-  alternates: { canonical: "/about" },
+    "Morocco Pass est né d'un constat : au Maroc le prix touriste existe et il pénalise ceux qui veulent juste profiter de leur voyage. Notre mission : garantir les tarifs locaux à chaque voyageur, sans négociation ni mauvaise surprise.",
+  keywords: [
+    "morocco pass histoire", "prix touriste maroc", "arnaque maroc tourisme",
+    "association anti arnaque maroc", "pass touristique maroc",
+  ],
+  alternates: {
+    canonical: "/about",
+    languages: { "fr-MA": "/about", "en-US": "/about", "x-default": "/about" },
+  },
+  openGraph: {
+    title: "À propos de Morocco Pass — Notre mission",
+    description: "Garantir les tarifs locaux à chaque voyageur au Maroc.",
+    url: "/about",
+    type: "website",
+  },
 };
 
 export default function AboutPage() {

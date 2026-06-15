@@ -2,10 +2,23 @@ import type { Metadata } from "next";
 import { Mail, MessageSquare } from "lucide-react";
 
 export const metadata: Metadata = {
-  title: "Contact — Support Morocco Pass & Partenariats",
+  title: "Contact Morocco Pass — Support voyageurs & demandes partenaires",
   description:
-    "Une question, un litige avec un partenaire, ou vous souhaitez rejoindre Morocco Pass en tant que partenaire ? Contactez-nous.",
-  alternates: { canonical: "/contact" },
+    "Une question sur votre Morocco Pass, un litige avec un partenaire, ou vous êtes un établissement marocain qui souhaite rejoindre le réseau ? Notre équipe répond sous 2h en français.",
+  keywords: [
+    "morocco pass contact", "support touriste maroc",
+    "devenir partenaire morocco pass", "partenariat tourisme maroc",
+  ],
+  alternates: {
+    canonical: "/contact",
+    languages: { "fr-MA": "/contact", "en-US": "/contact", "x-default": "/contact" },
+  },
+  openGraph: {
+    title: "Contact Morocco Pass",
+    description: "Support 7j/7 en français. Réponse sous 2h.",
+    url: "/contact",
+    type: "website",
+  },
 };
 
 export default function ContactPage() {

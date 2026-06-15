@@ -8,10 +8,27 @@ import { PricingTiers } from "@/components/landing/PricingTiers";
 import { IMG } from "@/lib/images";
 
 export const metadata: Metadata = {
-  title: "Choisissez votre Morocco Pass — Tourist ou Tout Exclusif",
+  title: "Morocco Pass — Tarifs locaux garantis au Maroc · à partir de 299 DH",
   description:
-    "2 packs (Tourist activités touristiques, Tout Exclusif toutes catégories) en 3 formats : Solo, Duo, Famille. À partir de 299 DH, valable 2 mois.",
-  alternates: { canonical: "/smart-pass" },
+    "Le pass voyage qui débloque les tarifs locaux au Maroc. 2 packs (Tourist activités, Tout Exclusif toutes catégories) × 3 formats (Solo 299 DH, Duo 499 DH, Famille 999 DH). Excursions désert, surf Taghazout, hammam Marrakech, restaurants. Valable 2 mois.",
+  keywords: [
+    "morocco pass prix", "morocco pass tarif", "morocco pass famille",
+    "pass voyage maroc", "carte tourisme maroc", "anti arnaque maroc",
+    "tarifs garantis maroc", "réductions tourisme maroc",
+    "excursion désert marrakech prix", "surf taghazout tarif",
+    "hammam marrakech prix", "transfert aéroport agadir",
+  ],
+  alternates: {
+    canonical: "/smart-pass",
+    languages: { "fr-MA": "/smart-pass", "en-US": "/smart-pass", "x-default": "/smart-pass" },
+  },
+  openGraph: {
+    title: "Morocco Pass — 2 packs, 3 formats, à partir de 299 DH",
+    description:
+      "Tourist (activités touristiques) ou Tout Exclusif (toutes catégories). Solo, Duo, Famille. Tarifs négociés à l'avance chez 47 partenaires certifiés.",
+    url: "/smart-pass",
+    type: "website",
+  },
 };
 
 const TRUST = [
